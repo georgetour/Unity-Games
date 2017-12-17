@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\Text Adventure\Assets\TextController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TextController.cs">
     <Files>
-      <File FileName="..\Text Adventure\Assets\TextController.cs" Line="13" Column="3" />
+      <File FileName="Assets\TextController.cs" Line="13" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

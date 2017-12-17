@@ -15,9 +15,12 @@ public class NumberWizard : MonoBehaviour {
 
 	public void StartGame()
 	{
+		//We must have these values so we can start using where the number is between
 		max = 1000;
 		min = 1;
-		guess = 500;
+
+		//Gives a random number at start instead of a fixed
+		guess = Random.Range (1, 1000);
 
 		print(Color.white);
 
@@ -35,6 +38,8 @@ public class NumberWizard : MonoBehaviour {
 		max = max + 1;
 	}
 
+	//This is how binary search / binary chop works in computer science
+	//https://en.wikipedia.org/wiki/Binary_search_algorithm
 	void NextGuess()
 	{
 		guess = (max + min)/2;
@@ -46,19 +51,24 @@ public class NumberWizard : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		//According to key pressed and with else if two buttons can't be pressed simultaneously
+
+		//If the up key is pressed min must change 
 		if (Input.GetKeyDown(KeyCode.UpArrow)) {
 			
-			//This is how binary chop works in computer science
-			//https://en.wikipedia.org/wiki/Binary_search_algorithm
+
 			min = guess;
+			//print (min);
+			//print (max);
 			NextGuess();
 
 		}
+		//Chnage max value if down key pressed
 		else if (Input.GetKeyDown(KeyCode.DownArrow)) {
 			//The only difference is that maximum becomes the guess
 			//Since you want to to not have anything above 500
 			max = guess;
+			//print (min);
+			//print (max);
 			NextGuess ();
 		}
 		//For pressing Enter
