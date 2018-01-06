@@ -5,7 +5,13 @@ using UnityEngine;
 public class LoseCollider : MonoBehaviour {
 
     //Access to level manager
-    public LevelManager levelmanager ;
+    private LevelManager levelmanager ;
+
+    private void Start()
+    {
+        levelmanager = GameObject.FindObjectOfType<LevelManager>();
+    }
+
 
     //When ball hits bottom go to Win-Lose scene
     private void OnTriggerEnter2D(Collider2D collider)
