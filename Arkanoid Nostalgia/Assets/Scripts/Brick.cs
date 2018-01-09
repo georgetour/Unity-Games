@@ -7,11 +7,13 @@ public class Brick : MonoBehaviour {
 
     //How many times can be hit
     public int maxHits ;
+    public Sprite[] hitSprites;
+
 
     private LevelManager levelmanager;
 
     //How many times have been hit
-    public int timesHit;
+    private int timesHit;
 
 	// Use this for initialization
 	void Start () {
@@ -24,10 +26,27 @@ public class Brick : MonoBehaviour {
 		
 	}
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
         timesHit++;
-        SimulateWin();
+        //Destroy brick on maxhits
+        if (timesHit >= maxHits)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            LoadSprites();
+        }
+    }
+
+    private void LoadSprites()
+    {
+        //Find Array indexer according to times hit so if hit one time the array ndexer will be 0
+        int spriteIndex = timesHit - 1;
+
+        //Find component sprite renderer and change it according to index
+        this.GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
     }
 
     //TODO Remove this method when we can actually win
