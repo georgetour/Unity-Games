@@ -3,8 +3,9 @@ using System.Collections;
 
 public class LevelManager : MonoBehaviour {
 
- 
-	public void LoadLevel(string name)
+    
+
+    public void LoadLevel(string name)
 	{
 		//Load level according to parameter
 		Application.LoadLevel(name);
@@ -17,7 +18,21 @@ public class LevelManager : MonoBehaviour {
 
     public void LoadNextLevel()
     {
-       Application.LoadLevel(Application.loadedLevel + 1);
+        Application.LoadLevel(Application.loadedLevel + 1);
+    }
+
+    //If all bricks are destroyed load next level
+    public void AllBricksDestroyed()
+    {
+        //Total bricks for current scene
+        int totalBricks = Brick.totalBricks;
+
+        print(totalBricks);
+        if(totalBricks <= 0)
+        {
+            LoadNextLevel();
+        }
+        
     }
 
 

@@ -11,7 +11,6 @@ public class Ball : MonoBehaviour {
 
     //Distance between ball and paddle
     private Vector3 paddleToBallVector;
-
     
 
 
@@ -44,4 +43,16 @@ public class Ball : MonoBehaviour {
     {
         this.transform.position = paddle.transform.position + paddleToBallVector;
     }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (gameStarted)
+        {
+            print("BLINK");
+            GetComponent<AudioSource>().Play();
+        }
+       
+    }
+
 }

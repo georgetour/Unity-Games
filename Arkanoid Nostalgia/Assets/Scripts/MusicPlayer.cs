@@ -8,7 +8,6 @@ public class MusicPlayer : MonoBehaviour {
 
      void Awake()
      {
-        
         ////If any Music Player exists destroy it else continue in next scenes
         if (instance != null)
         {

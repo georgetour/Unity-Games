@@ -5,21 +5,35 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour {
 
-    //How many times can be hit
-    public int maxHits ;
     public Sprite[] hitSprites;
 
+    //Totalbricks that we will access in levelmanager
+    public static int totalBricks=0;
 
     private LevelManager levelmanager;
 
     //How many times have been hit
     private int timesHit;
 
-	// Use this for initialization
-	void Start () {
+    bool isBreakable;
+
+
+    // Use this for initialization
+    void Start () {
+
+        //Set our bricks that have tag Breakable to isBreakable
+        isBreakable = (tag == "Breakable");
+
+        //Count all bricks that are breakables
+        if (isBreakable)
+        {
+            totalBricks++;
+        }
+        
         levelmanager = GameObject.FindObjectOfType<LevelManager>();
-        timesHit = 0;   
-	}
+        timesHit = 0;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -28,17 +42,34 @@ public class Brick : MonoBehaviour {
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        //Handle hits only if you can break it
+        if (isBreakable)
+        {
+            HandleHits();
+        }
+    }
+
+    void HandleHits()
+    {
         timesHit++;
-        //Destroy brick on maxhits
+
+        //How many times it can be hit
+        int maxHits = hitSprites.Length + 1;
+        
+        //Destroy brick on maxhits and remove the total counter for bricks
         if (timesHit >= maxHits)
         {
+            totalBricks--;
+            levelmanager.AllBricksDestroyed();
             Destroy(gameObject);
         }
         else
         {
             LoadSprites();
         }
+       
     }
+
 
     private void LoadSprites()
     {
@@ -46,7 +77,8 @@ public class Brick : MonoBehaviour {
         int spriteIndex = timesHit - 1;
 
         //Find component sprite renderer and change it according to index
-        this.GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
+        if(hitSprites[spriteIndex])
+            this.GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
     }
 
     //TODO Remove this method when we can actually win
