@@ -27,7 +27,7 @@ public class LevelManager : MonoBehaviour {
         //Total bricks for current scene
         int totalBricks = Brick.totalBricks;
 
-        print(totalBricks);
+        
         if(totalBricks <= 0)
         {
             LoadNextLevel();

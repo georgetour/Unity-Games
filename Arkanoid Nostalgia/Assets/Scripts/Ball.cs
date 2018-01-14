@@ -33,8 +33,8 @@ public class Ball : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)&&!gameStarted)
         {
             gameStarted = true;
-            print("gave velocity");
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(2f,10f);
+            
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(2f,7f);
         }
     }
 
@@ -47,10 +47,12 @@ public class Ball : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //Fix if ball can't reach top or stays in loop
+        Vector2 tweak = new Vector2(Random.Range(0f, 0.3f), Random.Range(0f, 0.3f));
+
         if (gameStarted)
         {
-            print("BLINK");
-            GetComponent<AudioSource>().Play();
+            GetComponent<Rigidbody2D>().velocity += tweak;
         }
        
     }

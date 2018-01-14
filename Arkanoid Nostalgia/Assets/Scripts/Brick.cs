@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour {
 
+    public AudioClip[] crack;
     public Sprite[] hitSprites;
 
     //Totalbricks that we will access in levelmanager
@@ -42,6 +43,7 @@ public class Brick : MonoBehaviour {
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        
         //Handle hits only if you can break it
         if (isBreakable)
         {
@@ -52,7 +54,7 @@ public class Brick : MonoBehaviour {
     void HandleHits()
     {
         timesHit++;
-
+        AudioSource.PlayClipAtPoint(crack[0], transform.position);
         //How many times it can be hit
         int maxHits = hitSprites.Length + 1;
         
@@ -61,7 +63,9 @@ public class Brick : MonoBehaviour {
         {
             totalBricks--;
             levelmanager.AllBricksDestroyed();
+            AudioSource.PlayClipAtPoint(crack[1], transform.position);
             Destroy(gameObject);
+            
         }
         else
         {

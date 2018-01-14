@@ -1,3 +1,15 @@
 **********Arkanoid nostalgia TODO requirements*********
 
 Be able to play with arrows and mouse
+
+Level easier not many level blocks ok
+
+Add score and user input withnickname high score
+
+Να μην σε πεταει τοσο αποτομα στο επομενο LEVEL ΝΑ ΓΡΑΦΕΙ ΣΤΟ ΚΕΝΤΡΟ ΤΟ level και μετα να εξαφανίζεται με ηχο
+
+Ηχος οταν χανεις
+
+Ζωές
+
+Hidden extras όπως ζωές, να μεγαλώνει το paddle να πυροβολάς κτλ

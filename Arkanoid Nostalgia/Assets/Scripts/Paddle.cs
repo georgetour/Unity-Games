@@ -18,7 +18,7 @@ public class Paddle : MonoBehaviour {
         float mousePosInBlocks = Input.mousePosition.x / Screen.width * 20;
 
         //Limit left right so it doesn't leave the screen
-        float maxLeftRightPosition = Mathf.Clamp(mousePosInBlocks, 0.63f, 18.65f);
+        float maxLeftRightPosition = Mathf.Clamp(mousePosInBlocks, 0.68f, 18.60f);
 
         //Set where the paddle starts according to position.y which set in Unity and fixed x
         Vector3 paddlePos = new Vector3(0.6f, this.transform.position.y, 0f);
