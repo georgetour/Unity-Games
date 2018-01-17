@@ -13,6 +13,8 @@ public class Brick : MonoBehaviour {
 
     private LevelManager levelmanager;
 
+    private Score score;
+
     //How many times have been hit
     private int timesHit;
 
@@ -20,20 +22,21 @@ public class Brick : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
-
+    void Start()
+    {
+        
+        score = GameObject.Find("Score").GetComponent<Score>();
         //Set our bricks that have tag Breakable to isBreakable
         isBreakable = (tag == "Breakable");
-
+        
         //Count all bricks that are breakables
         if (isBreakable)
         {
             totalBricks++;
         }
-        
+
         levelmanager = GameObject.FindObjectOfType<LevelManager>();
         timesHit = 0;
-
     }
 	
 	// Update is called once per frame
@@ -65,11 +68,13 @@ public class Brick : MonoBehaviour {
             levelmanager.AllBricksDestroyed();
             AudioSource.PlayClipAtPoint(crack[1], transform.position);
             Destroy(gameObject);
+            score.HitBrickScore(100);
             
         }
         else
         {
             LoadSprites();
+            score.HitBrickScore(20);
         }
        
     }

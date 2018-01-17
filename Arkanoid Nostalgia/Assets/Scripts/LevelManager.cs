@@ -3,6 +3,7 @@ using System.Collections;
 
 public class LevelManager : MonoBehaviour {
 
+    Score score;
     
 
     public void LoadLevel(string name)

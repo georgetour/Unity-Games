@@ -6,15 +6,18 @@ public class LoseCollider : MonoBehaviour {
 
     //Access to level manager
     private LevelManager levelmanager ;
+    private Score score;
 
     private void Start()
     {
         levelmanager = GameObject.FindObjectOfType<LevelManager>();
+        score = GameObject.FindObjectOfType<Score>();
+        score.ResetScore();
     }
 
 
     //When ball hits bottom go to Win-Lose scene
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerExit2D(Collider2D collider)
     {
         levelmanager.LoadLevel("Win-Lose");
     }
