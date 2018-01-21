@@ -16,7 +16,7 @@ public class Brick : MonoBehaviour {
     private Score score;
 
     //How many times have been hit
-    private int timesHit;
+    private static int timesHit;
 
     bool isBreakable;
 
@@ -34,7 +34,7 @@ public class Brick : MonoBehaviour {
         {
             totalBricks++;
         }
-
+        
         levelmanager = GameObject.FindObjectOfType<LevelManager>();
         timesHit = 0;
     }
@@ -56,6 +56,8 @@ public class Brick : MonoBehaviour {
 
     void HandleHits()
     {
+        //SimulateWin();
+
         timesHit++;
         AudioSource.PlayClipAtPoint(crack[0], transform.position);
         //How many times it can be hit
