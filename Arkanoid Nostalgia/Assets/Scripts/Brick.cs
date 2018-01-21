@@ -34,9 +34,11 @@ public class Brick : MonoBehaviour {
         {
             totalBricks++;
         }
-        
+       
         levelmanager = GameObject.FindObjectOfType<LevelManager>();
         timesHit = 0;
+
+        
     }
 	
 	// Update is called once per frame
@@ -90,6 +92,12 @@ public class Brick : MonoBehaviour {
         //Find component sprite renderer and change it according to index
         if(hitSprites[spriteIndex])
             this.GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
+    }
+
+    //Reset bricks for next lext etc
+    public static void ResetBricks()
+    {
+        totalBricks = 0;
     }
 
     //TODO Remove this method when we can actually win

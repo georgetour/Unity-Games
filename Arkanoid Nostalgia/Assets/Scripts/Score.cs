@@ -18,7 +18,6 @@ public class Score : MonoBehaviour {
 
     public void HitBrickScore(int scorePoints)
     {
-        Debug.Log("score");
         score += scorePoints;
         scoreText.text = score.ToString();
         

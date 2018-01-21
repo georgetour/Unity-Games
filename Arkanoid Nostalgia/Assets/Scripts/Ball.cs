@@ -34,7 +34,7 @@ public class Ball : MonoBehaviour {
         {
             gameStarted = true;
             
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(2f,7f);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(2f,9f);
         }
     }
 
@@ -47,7 +47,7 @@ public class Ball : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Fix if ball can't reach top or stays in loop
+        //Fix the second parameter if ball can't reach top or stays in loop
         Vector2 tweak = new Vector2(Random.Range(0f, 0.3f), Random.Range(0f, 0.3f));
 
         if (gameStarted)
