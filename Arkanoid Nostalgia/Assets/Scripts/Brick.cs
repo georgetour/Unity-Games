@@ -16,7 +16,7 @@ public class Brick : MonoBehaviour {
     private Score score;
 
     //How many times have been hit
-    private static int timesHit;
+    private int timesHit;
 
     bool isBreakable;
 
@@ -43,8 +43,8 @@ public class Brick : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        
+    }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -58,7 +58,7 @@ public class Brick : MonoBehaviour {
 
     void HandleHits()
     {
-        //SimulateWin();
+        
 
         timesHit++;
         AudioSource.PlayClipAtPoint(crack[0], transform.position);
@@ -90,8 +90,15 @@ public class Brick : MonoBehaviour {
         int spriteIndex = timesHit - 1;
 
         //Find component sprite renderer and change it according to index
-        if(hitSprites[spriteIndex])
+        if (hitSprites[spriteIndex] != null)
+        {
             this.GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
+        }
+        else
+        {
+                Debug.LogError("Missing sprite");
+        }
+
     }
 
     //Reset bricks for next lext etc

@@ -16,7 +16,6 @@ public class Ball : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
         //Connecting programmatically the paddle with the Paddle class
         paddle = GameObject.FindObjectOfType<Paddle>();
         paddleToBallVector = this.transform.position - paddle.transform.position;
@@ -50,8 +49,9 @@ public class Ball : MonoBehaviour {
         //Fix the second parameter if ball can't reach top or stays in loop
         Vector2 tweak = new Vector2(Random.Range(0f, 0.3f), Random.Range(0f, 0.3f));
 
-        if (gameStarted)
+        if (gameStarted==true)
         {
+            GetComponent<AudioSource>().Play();
             GetComponent<Rigidbody2D>().velocity += tweak;
         }
        
