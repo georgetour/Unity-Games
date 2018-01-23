@@ -12,6 +12,7 @@ public class Brick : MonoBehaviour {
     public static int totalBricks=0;
 
     private LevelManager levelmanager;
+    public GameObject smoke;
 
     private Score score;
 
@@ -38,7 +39,6 @@ public class Brick : MonoBehaviour {
         levelmanager = GameObject.FindObjectOfType<LevelManager>();
         timesHit = 0;
 
-        
     }
 	
 	// Update is called once per frame
@@ -58,22 +58,25 @@ public class Brick : MonoBehaviour {
 
     void HandleHits()
     {
-        
 
         timesHit++;
         AudioSource.PlayClipAtPoint(crack[0], transform.position);
         //How many times it can be hit
         int maxHits = hitSprites.Length + 1;
-        
+
+       
         //Destroy brick on maxhits and remove the total counter for bricks
         if (timesHit >= maxHits)
         {
+            Debug.Log(this.transform.position.x);
             totalBricks--;
             levelmanager.AllBricksDestroyed();
             AudioSource.PlayClipAtPoint(crack[1], transform.position);
+            GameObject smokePuff = Instantiate<GameObject>(smoke, new Vector3(this.transform.position.x, this.transform.position.y), Quaternion.identity);
+            smokePuff.GetComponent<ParticleSystem>().startColor = this.GetComponent<SpriteRenderer>().color;
             Destroy(gameObject);
             score.HitBrickScore(100);
-            
+
         }
         else
         {
