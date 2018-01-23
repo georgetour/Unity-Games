@@ -68,12 +68,10 @@ public class Brick : MonoBehaviour {
         //Destroy brick on maxhits and remove the total counter for bricks
         if (timesHit >= maxHits)
         {
-            Debug.Log(this.transform.position.x);
             totalBricks--;
             levelmanager.AllBricksDestroyed();
             AudioSource.PlayClipAtPoint(crack[1], transform.position);
-            GameObject smokePuff = Instantiate<GameObject>(smoke, new Vector3(this.transform.position.x, this.transform.position.y), Quaternion.identity);
-            smokePuff.GetComponent<ParticleSystem>().startColor = this.GetComponent<SpriteRenderer>().color;
+            SmokePuffs();
             Destroy(gameObject);
             score.HitBrickScore(100);
 
@@ -84,6 +82,13 @@ public class Brick : MonoBehaviour {
             score.HitBrickScore(20);
         }
        
+    }
+
+    //Handle the particle when brick is destroyed
+    private void SmokePuffs()
+    {
+        var smokePuff = Instantiate(smoke, new Vector3(this.transform.position.x, this.transform.position.y), Quaternion.identity);
+        smokePuff.GetComponent<ParticleSystem>().startColor = this.GetComponent<SpriteRenderer>().color;
     }
 
 
