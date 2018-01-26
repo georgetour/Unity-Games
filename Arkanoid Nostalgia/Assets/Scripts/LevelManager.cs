@@ -1,18 +1,40 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
-    Score score;
-    
+    private Score score;
+    private LifeManager life;
+
+    Scene currentScene;
+    string sceneName;
+
+    private void Start()
+    {
+        
+        Ball.gameStarted = false;
+        currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
+
+        score = GameObject.FindObjectOfType<Score>();
+        life = GameObject.FindObjectOfType<LifeManager>();
+       
+    }
+
 
     public void LoadLevel(string name)
-	{
-        
+	{ 
         Brick.ResetBricks();
         //Load level according to parameter
         Application.LoadLevel(name);
-	}
+        if (sceneName == "Start")
+        {
+            Score.ResetScore();
+            LifeManager.ResetLives();
+        }
+
+    }
 
 	public void QuitRequest()
 	{

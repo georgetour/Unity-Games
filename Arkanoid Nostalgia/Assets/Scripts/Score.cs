@@ -23,7 +23,7 @@ public class Score : MonoBehaviour {
         
     }
 
-    public void ResetScore()
+    public static  void ResetScore()
     {
         score = 0;
     }
