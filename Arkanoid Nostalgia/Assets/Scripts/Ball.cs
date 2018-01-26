@@ -7,7 +7,7 @@ public class Ball : MonoBehaviour {
     private Paddle paddle;
 
     //Check if game has started
-    private bool gameStarted = false;
+    public static bool gameStarted = false;
 
     //Distance between ball and paddle
     private Vector3 paddleToBallVector;
@@ -38,9 +38,10 @@ public class Ball : MonoBehaviour {
     }
 
     //Set starting position of the ball to be the same with paddle
-    void ballStartingPosition()
+    public void ballStartingPosition()
     {
-        this.transform.position = paddle.transform.position + paddleToBallVector;
+        
+        transform.position = paddle.transform.position + paddleToBallVector;
     }
 
 
