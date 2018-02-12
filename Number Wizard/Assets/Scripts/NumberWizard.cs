@@ -70,6 +70,7 @@ public class NumberWizard : MonoBehaviour {
 			//print (min);
 			//print (max);
 			NextGuess ();
+            
 		}
 		//For pressing Enter
 		else if (Input.GetKeyDown("return")) {

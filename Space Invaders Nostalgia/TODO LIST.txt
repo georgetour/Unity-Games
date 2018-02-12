@@ -1,0 +1,8 @@
+SPACE INVADERS NOSTALGIA
+
+
+- Add move with arrows for spaceship
+- Have bosses(wow really?)
+- Different enemies
+- Power ups
+- Maybe ship permanent upgrades?
