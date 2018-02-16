@@ -20,10 +20,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 930
-  m_MinSize: {x: 679, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 683, y: 471}
+  m_MaxSize: {x: 14002, y: 14021}
   vertical: 0
-  controlID: 6082
+  controlID: 6057
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -120,10 +120,10 @@ MonoBehaviour:
     y: 0
     width: 1390
     height: 930
-  m_MinSize: {x: 402, y: 492}
-  m_MaxSize: {x: 10002, y: 14042}
+  m_MinSize: {x: 406, y: 471}
+  m_MaxSize: {x: 10000, y: 14021}
   vertical: 1
-  controlID: 6083
+  controlID: 6035
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,10 +144,10 @@ MonoBehaviour:
     y: 0
     width: 1390
     height: 659
-  m_MinSize: {x: 402, y: 221}
-  m_MaxSize: {x: 8002, y: 4021}
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 6084
+  controlID: 6036
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -201,9 +201,9 @@ MonoBehaviour:
     height: 638
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e2350000
-    m_LastClickedID: 13794
-    m_ExpandedIDs: 3c5cffff945effff825fffff8a60ffff5862ffff2463ffff0c64ffff6e6affff546bffff54b1ffff3eb2ffff36b3ffff9ec3ffff88c4ffff30cbffff1eccffffdafbffff00000000
+    m_SelectedIDs: ea2a0000
+    m_LastClickedID: 10986
+    m_ExpandedIDs: c640ffff40aeffff48aeffffbeb7ffff9ebeffff90cfffff82d0ffffd4dcffffdafbffff000000001e2600006a2700004c280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -244,8 +244,8 @@ MonoBehaviour:
     y: 0
     width: 1004
     height: 659
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 8}
@@ -279,14 +279,14 @@ MonoBehaviour:
     width: 1000
     height: 638
   m_SceneLighting: 0
-  lastFramingTime: 605.1087273763878
+  lastFramingTime: 1820.7054379529661
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.20023255, y: 0.055376906, z: 0}
+    m_Target: {x: 1.24, y: 2.03, z: 0}
     speed: 2
-    m_Value: {x: -0.20023255, y: 0.055376906, z: 0}
+    m_Value: {x: 1.24, y: 2.03, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -313,9 +313,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10.996187
+    m_Target: 15.192543
     speed: 2
-    m_Value: 10.996187
+    m_Value: 15.192543
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -344,8 +344,8 @@ MonoBehaviour:
     y: 659
     width: 1390
     height: 271
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 10}
   m_Panes:
   - {fileID: 10}
@@ -389,20 +389,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Entities/Enemy
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Entities/Enemy
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Public\Documents\Unity Projects\Unity-Games\Space Invaders
     Nostalgia
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 5c250000
-    m_LastClickedID: 9564
-    m_ExpandedIDs: 00000000a824000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 43}
+    m_SelectedIDs: e62d0000
+    m_LastClickedID: 11750
+    m_ExpandedIDs: 00000000a8240000e02d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -430,7 +430,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a824000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000a8240000e02d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -455,10 +455,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: e2350000
-    m_LastClickedInstanceID: 13794
+    m_SelectedInstanceIDs: ea2a0000
+    m_LastClickedInstanceID: 10986
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: ec240000083d0000fc240000d23e000046250000626b0000502500006c400000142500000000000028300000
+    m_ExpandedInstanceIDs: ec240000083d0000fc240000d23e000046250000626b0000502500006c400000142500000000000028300000302e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
