@@ -10,6 +10,8 @@ public class LoseCollider : MonoBehaviour {
 
     private Ball ball;
 
+    private string ballTag = "Ball";
+
     private LifeManager life;
 
     private void Start()
@@ -21,21 +23,24 @@ public class LoseCollider : MonoBehaviour {
     }
 
 
-    //When ball hits bottom go to Win-Lose scene
+    //When ball hits bottom go to Win-Lose scene if life < 0 
     private void OnTriggerExit2D(Collider2D collider)
     {
-        if (LifeManager.lives <= 0)
+        if (collider.transform.tag == ballTag)
         {
-            Ball.gameStarted = false;
-            levelmanager.LoadLevel("Win-Lose"); 
-        }
-        else
-        {
+            if (LifeManager.lives <= 0)
+            {
+                Ball.gameStarted = false;
+                levelmanager.LoadLevel("Win-Lose"); 
+            }
+            else
+            {
             
-            Ball.gameStarted = false;
-            life.ContolLives(-1);
+                Ball.gameStarted = false;
+                life.ContolLives(-1);
+            }
+            //Debug.Log(LifeManager.lives);
         }
-        Debug.Log(LifeManager.lives);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -21,6 +21,9 @@ public class Brick : MonoBehaviour {
 
     bool isBreakable;
 
+    //Powerup
+    private LoadPowerUp loadPowerUp;
+
 
     // Use this for initialization
     void Start()
@@ -37,6 +40,7 @@ public class Brick : MonoBehaviour {
         }
        
         levelmanager = GameObject.FindObjectOfType<LevelManager>();
+        loadPowerUp = GameObject.FindObjectOfType<LoadPowerUp>();
         timesHit = 0;
 
     }
@@ -72,8 +76,8 @@ public class Brick : MonoBehaviour {
             levelmanager.AllBricksDestroyed();
             AudioSource.PlayClipAtPoint(crack[1], transform.position);
             SmokePuffs();
-            
             Destroy(gameObject);
+            loadPowerUp.Activate(this.transform.position);
             score.HitBrickScore(100);
 
         }
