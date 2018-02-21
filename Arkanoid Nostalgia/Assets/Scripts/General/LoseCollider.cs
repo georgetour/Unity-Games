@@ -14,12 +14,14 @@ public class LoseCollider : MonoBehaviour {
 
     private LifeManager life;
 
+    private Paddle paddle;
+
     private void Start()
     {
         levelmanager = GameObject.FindObjectOfType<LevelManager>();
         score = GameObject.FindObjectOfType<Score>();
         life = GameObject.FindObjectOfType<LifeManager>();
-        
+        paddle = GameObject.FindGameObjectWithTag("Paddle").GetComponent<Paddle>();
     }
 
 
@@ -28,6 +30,7 @@ public class LoseCollider : MonoBehaviour {
     {
         if (collider.transform.tag == ballTag)
         {
+            paddle.ResizeToOriginal();
             if (LifeManager.lives <= 0)
             {
                 Ball.gameStarted = false;

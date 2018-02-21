@@ -8,18 +8,16 @@ public class PowerUpScore : ControlPowerUps {
     
     public override void PowerUpBehavior()
     {
-        score.HitBrickScore(scoreToGive);
+        SmokePuffs();
+        score.HitBrickScore(scoreToGive); 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-
         if (collision.transform.tag == paddleTag)
-        {
-            
+        {  
             PowerUpBehavior();
-            Destroy(gameObject);
         }
         else if (collision.transform.tag == loseTag)
         {

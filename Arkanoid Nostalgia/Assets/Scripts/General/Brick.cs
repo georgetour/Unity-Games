@@ -66,6 +66,8 @@ public class Brick : MonoBehaviour {
         timesHit++;
         AudioSource.PlayClipAtPoint(crack[0], transform.position);
         //How many times it can be hit
+
+        //TODO CONTROL ACCORDING TO FIREBALL
         int maxHits = hitSprites.Length + 1;
 
        

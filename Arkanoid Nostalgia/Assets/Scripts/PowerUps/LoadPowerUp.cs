@@ -10,20 +10,16 @@ public class LoadPowerUp : MonoBehaviour {
         public string name;
         public GameObject powerUp;
         public int dropRarity;
-
-
+        
     }
 
 
     public List<PowerUp> PowerUpTable = new List<PowerUp>();
-    private PowerUp ItemPowerUp = new PowerUp();
     public int dropChance; 
    
 
     int number;
     
-
-
 
     //Make powerup appear when brick is destroyed
     public void Activate(Vector3 position)

@@ -51,4 +51,10 @@ public class Paddle : MonoBehaviour {
         paddlePos.x = maxLeftRightPosition;
         this.transform.position = paddlePos;
     }
+
+    public void ResizeToOriginal()
+    {
+        this.transform.localScale = new Vector3(0.65f, 0.6781099f, 1);
+
+    }
 }
