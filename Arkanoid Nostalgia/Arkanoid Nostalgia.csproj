@@ -93,6 +93,9 @@
     <Compile Include="Assets\Scripts\LoseCollider.cs" />
     <Compile Include="Assets\Scripts\MusicPlayer.cs" />
     <Compile Include="Assets\Scripts\Paddle.cs" />
+    <Compile Include="Assets\Scripts\PowerUpLife.cs" />
+    <Compile Include="Assets\Scripts\PowerUpPaddle.cs" />
+    <Compile Include="Assets\Scripts\PowerUpScore.cs" />
     <Compile Include="Assets\Scripts\Score.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

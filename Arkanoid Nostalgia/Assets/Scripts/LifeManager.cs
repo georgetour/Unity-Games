@@ -29,8 +29,14 @@ public class LifeManager : MonoBehaviour {
     //Gain or remove lives according to parameter
     public void ContolLives(int gainLoseLife)
     {
+        
         lives += gainLoseLife;
         
+        //Limit Lives
+        if(lives >= 5)
+        {
+            lives = 5;
+        }
             this.GetComponent<SpriteRenderer>().sprite = lifeSprites[lives];
         
     }

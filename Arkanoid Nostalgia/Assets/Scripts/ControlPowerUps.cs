@@ -2,37 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControlPowerUps : MonoBehaviour {
+public abstract class ControlPowerUps : MonoBehaviour {
+    //***ALL POWER UPS WILL INHERIT FROM THIS CLASS***
+    //What power ups will do
+    public abstract void PowerUpBehavior();
 
-    public Sprite[] powerUpSrpite;
-
-    private Score score;
-    private LifeManager life;
-
+    protected Score score;
+    protected LifeManager life;
+    protected Paddle paddle;
+    
     //Tag name for collision
-    private string paddleTag = "Paddle";
+    public string paddleTag = "Paddle";
+    public string loseTag = "LoseCollider";
+
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
+
+        paddle = GameObject.FindGameObjectWithTag(paddleTag).GetComponent<Paddle>();
+
+
         score = GameObject.Find("Score").GetComponent<Score>();
         life = GameObject.FindObjectOfType<LifeManager>();
-        this.GetComponent<SpriteRenderer>().sprite = powerUpSrpite[8];
+        
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.transform.tag == paddleTag)
-        {
-            Debug.Log("Power Up yeeeeeeeessss");
-            life.ContolLives(1);
-            score.HitBrickScore(200);
-        }
-    }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
+
+
 
     
 }
