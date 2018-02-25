@@ -28,7 +28,7 @@ public class Brick : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        
+        this.GetComponent<BoxCollider2D>().isTrigger = false;
         score = GameObject.Find("Score").GetComponent<Score>();
         //Set our bricks that have tag Breakable to isBreakable
         isBreakable = (tag == "Breakable");
@@ -47,12 +47,41 @@ public class Brick : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (PowerUpFireball.fireball)
+        {
+            this.GetComponent<BoxCollider2D>().isTrigger = true;
+        }
+        else if (!PowerUpFireball.fireball)
+        {
+            this.GetComponent<BoxCollider2D>().isTrigger = false;
+        }
         
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (PowerUpFireball.fireball)
+        {
+            int maxHits = 0;
+
+            if (timesHit >= maxHits)
+            {
+
+                totalBricks--;
+                levelmanager.AllBricksDestroyed();
+                AudioSource.PlayClipAtPoint(crack[1], transform.position);
+                SmokePuffs();
+                Destroy(gameObject);
+                loadPowerUp.Activate(this.transform.position);
+                score.HitBrickScore(100);
+            }
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        
+
         //Handle hits only if you can break it
         if (isBreakable)
         {

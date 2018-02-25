@@ -10,6 +10,19 @@ Add score and user input withnickname high score
 
 Ηχος οταν χανεις
 
-Ζωές
+Ζωές ok
 
 Hidden extras όπως ζωές, να μεγαλώνει το paddle να πυροβολάς κτλ
+
+Έχουν μπει powerups:
+life,
+score,
+biggerpaddle(chocobo) 
+smallerpaddle(skull)
+fireball
+TODO laser
+TODO extra balls
+
+Να μεγαλω΄νει λίγο ίγο για κάθε cvhocobbo Και αντίστοιχα να μικραίνει και όχι fixed
+Score ίσως σε όλα τα Powerup
+

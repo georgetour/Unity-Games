@@ -31,6 +31,8 @@ public class LoseCollider : MonoBehaviour {
         if (collider.transform.tag == ballTag)
         {
             paddle.ResizeToOriginal();
+            PowerUpFireball.fireball = false; 
+            
             if (LifeManager.lives <= 0)
             {
                 Ball.gameStarted = false;

@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arkanoid Nostalgia", "Arkanoid Nostalgia.csproj", "{80C06AAE-257C-0CC8-0D21-07B26905D355}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arkanoid Nostalgia.Editor", "Arkanoid Nostalgia.Editor.csproj", "{FB5077CE-5F6C-2067-E60B-B0AB93E1A874}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{80C06AAE-257C-0CC8-0D21-07B26905D355}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80C06AAE-257C-0CC8-0D21-07B26905D355}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80C06AAE-257C-0CC8-0D21-07B26905D355}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB5077CE-5F6C-2067-E60B-B0AB93E1A874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB5077CE-5F6C-2067-E60B-B0AB93E1A874}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB5077CE-5F6C-2067-E60B-B0AB93E1A874}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB5077CE-5F6C-2067-E60B-B0AB93E1A874}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

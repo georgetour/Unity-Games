@@ -30,7 +30,7 @@ public class LoadPowerUp : MonoBehaviour {
         int calc_dropChance = randomNumber();
         if (calc_dropChance > dropChance)
         {
-            Debug.Log("no power up");
+            //Debug.Log("no power up");
             return;
         }
         else if(calc_dropChance <= dropChance)

@@ -13,24 +13,26 @@ public  class ControlPowerUps : MonoBehaviour {
     
     public virtual void PowerUpBehavior(Collider2D collision)
     {
-
         this.PowerUpBehavior(collision);
     }
 
     protected Score score;
     protected LifeManager life;
     protected Paddle paddle;
+    protected Ball ball;
     public AudioClip sound;
     public GameObject smoke;
 
     //Tag name for collision
     public string paddleTag = "Paddle";
     public string loseTag = "LoseCollider";
+    public string ballTag = "Ball";
 
 
     // Use this for initialization
     void Awake () {
         paddle = GameObject.FindGameObjectWithTag(paddleTag).GetComponent<Paddle>();
+        ball = GameObject.FindGameObjectWithTag(ballTag).GetComponent<Ball>();
         score = GameObject.Find("Score").GetComponent<Score>();
         life = GameObject.FindObjectOfType<LifeManager>();
         
