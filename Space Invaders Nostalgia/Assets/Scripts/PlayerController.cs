@@ -16,7 +16,8 @@ public class PlayerController : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         StartingPosition();
         RestrictPosition();
     }
