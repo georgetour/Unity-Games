@@ -10,13 +10,15 @@ public class PlayerController : MonoBehaviour {
     public float padding = 1f;
 
     float xmin;
-    float xmax; 
+    float xmax;
+
+    public GameObject projectile;
+    public float projectileSpeed;
+    public float firingRate = 0.2f;
 
 
-
-
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         StartingPosition();
         RestrictPosition();
@@ -27,6 +29,13 @@ public class PlayerController : MonoBehaviour {
         
         MoveWithArrows();
 	}
+
+    //Shoot projectiles
+    void Fire()
+    {
+        GameObject beam = Instantiate(projectile, new Vector3(this.transform.position.x, this.transform.position.y + 0.6f, 0), Quaternion.identity);
+        beam.GetComponent<Rigidbody2D>().velocity = new Vector3(0, projectileSpeed, 0);
+    }
 
 
     //Move ship right and left
@@ -41,6 +50,17 @@ public class PlayerController : MonoBehaviour {
         else if (Input.GetKey(KeyCode.LeftArrow))
             //transform.position += new Vector3(-shipSpeed * Time.deltaTime, 0, 0);
             transform.position += Vector3.left * speed * Time.deltaTime;
+
+        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            InvokeRepeating("Fire", 0.0000001f, firingRate);
+        }
+
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            CancelInvoke("Fire");
+        }
 
         //Restrict player from leaving boundaries
         float newX = Mathf.Clamp(transform.position.x, xmin, xmax);

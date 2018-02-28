@@ -19,10 +19,7 @@ public class PowerUpScore : ControlPowerUps {
         {  
             PowerUpBehavior();
         }
-        else if (collision.transform.tag == loseTag)
-        {
-            Destroy(gameObject);
-        }
+        
     }
 
 

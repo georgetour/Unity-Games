@@ -29,13 +29,11 @@ public class Ball : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        var emission = particle.emission; 
         if (PowerUpFireball.fireball)
-            particle.enableEmission= true;
+            emission.enabled = true;
         else if (!PowerUpFireball.fireball)
-            particle.enableEmission = false;
-
-       
-        
+            emission.enabled = false;
 
         if (!gameStarted)
             ballStartingPosition();

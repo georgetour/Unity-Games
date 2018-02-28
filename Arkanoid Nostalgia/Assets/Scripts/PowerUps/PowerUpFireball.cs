@@ -26,10 +26,7 @@ public class PowerUpFireball : ControlPowerUps {
             fireball = true;
         }
 
-        else if (collision.transform.tag == loseTag)
-        {
-            Destroy(gameObject);
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

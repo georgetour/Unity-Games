@@ -46,6 +46,10 @@ public class LoseCollider : MonoBehaviour {
             }
             //Debug.Log(LifeManager.lives);
         }
+        else
+        {
+            Destroy(collider.gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

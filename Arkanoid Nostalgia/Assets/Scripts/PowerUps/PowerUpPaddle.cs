@@ -23,10 +23,7 @@ public class PowerUpPaddle : ControlPowerUps {
 
         //TODO ADD LASER
 
-        else if (collision.transform.tag == loseTag)
-        {
-            Destroy(gameObject);
-        }
+        
         
     }
 
