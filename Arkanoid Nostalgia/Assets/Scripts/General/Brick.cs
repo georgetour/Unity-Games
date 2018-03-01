@@ -28,8 +28,10 @@ public class Brick : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        
         this.GetComponent<BoxCollider2D>().isTrigger = false;
         score = GameObject.Find("Score").GetComponent<Score>();
+        
         //Set our bricks that have tag Breakable to isBreakable
         isBreakable = (tag == "Breakable");
         
@@ -47,39 +49,21 @@ public class Brick : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        if (PowerUpFireball.fireball)
+        Debug.Log(totalBricks);
+        if (PowerUpFireball.fireball )
         {
             this.GetComponent<BoxCollider2D>().isTrigger = true;
         }
-        else if (!PowerUpFireball.fireball)
+        else if (!PowerUpFireball.fireball )
         {
             this.GetComponent<BoxCollider2D>().isTrigger = false;
         }
         
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (PowerUpFireball.fireball)
-        {
-            int maxHits = 0;
 
-            if (timesHit >= maxHits)
-            {
 
-                totalBricks--;
-                levelmanager.AllBricksDestroyed();
-                AudioSource.PlayClipAtPoint(crack[1], transform.position);
-                SmokePuffs();
-                Destroy(gameObject);
-                loadPowerUp.Activate(this.transform.position);
-                score.HitBrickScore(100);
-            }
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
 
         //Handle hits only if you can break it
@@ -89,25 +73,43 @@ public class Brick : MonoBehaviour {
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (PowerUpFireball.fireball)
+        {
+            int maxHits = 0;
+
+            if (timesHit >= maxHits)
+            {
+                Destroy(gameObject);
+                totalBricks--;
+                levelmanager.AllBricksDestroyed();
+                AudioSource.PlayClipAtPoint(crack[1], transform.position);
+                SmokePuffs();
+                loadPowerUp.Activate(this.transform.position);
+                score.HitBrickScore(100);
+            }
+        }
+
+    }
+
     void HandleHits()
     {
-
         timesHit++;
-        AudioSource.PlayClipAtPoint(crack[0], transform.position);
+        
         //How many times it can be hit
 
         //TODO CONTROL ACCORDING TO FIREBALL
         int maxHits = hitSprites.Length + 1;
 
-       
         //Destroy brick on maxhits and remove the total counter for bricks
         if (timesHit >= maxHits)
         {
+            Destroy(gameObject);
             totalBricks--;
             levelmanager.AllBricksDestroyed();
             AudioSource.PlayClipAtPoint(crack[1], transform.position);
             SmokePuffs();
-            Destroy(gameObject);
             loadPowerUp.Activate(this.transform.position);
             score.HitBrickScore(100);
 
@@ -117,7 +119,7 @@ public class Brick : MonoBehaviour {
             LoadSprites();
             score.HitBrickScore(20);
         }
-       
+        AudioSource.PlayClipAtPoint(crack[0], transform.position);
     }
 
     //Handle the particle when brick is destroyed

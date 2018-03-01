@@ -141,8 +141,10 @@
     <Compile Include="Assets\Scripts\Life\LifeManager.cs" />
     <Compile Include="Assets\Scripts\Music\MusicPlayer.cs" />
     <Compile Include="Assets\Scripts\PowerUps\ControlPowerUps.cs" />
+    <Compile Include="Assets\Scripts\PowerUps\Laser.cs" />
     <Compile Include="Assets\Scripts\PowerUps\LoadPowerUp.cs" />
     <Compile Include="Assets\Scripts\PowerUps\PowerUpFireball.cs" />
+    <Compile Include="Assets\Scripts\PowerUps\PowerUpLaser.cs" />
     <Compile Include="Assets\Scripts\PowerUps\PowerUpLife.cs" />
     <Compile Include="Assets\Scripts\PowerUps\PowerUpPaddle.cs" />
     <Compile Include="Assets\Scripts\PowerUps\PowerUpScore.cs" />

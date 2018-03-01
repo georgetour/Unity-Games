@@ -21,9 +21,6 @@ public class PowerUpPaddle : ControlPowerUps {
             paddle.transform.localScale = new Vector3(0.5f, 0.6781099f, 1);
         }
 
-        //TODO ADD LASER
-
-        
         
     }
 

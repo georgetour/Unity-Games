@@ -16,26 +16,46 @@ public class Paddle : MonoBehaviour {
 
     private float size;
 
-
+    //Lasers
+    public float fireRate;
+    public GameObject projectile;
+    public float projectileSpeed = 5f;
+    private float nextFire;
 
     // Use this for initialization
     void Start () {
         
-        
         ball = GameObject.FindObjectOfType<Ball>();
 	}
+
+   
 	
 	// Update is called once per frame
 	void Update () {
+
         paddleScale();
         RestrictPosition();
+        
+        if (Time.time > nextFire && PowerUpLaser.laser){
+            nextFire = Time.time + fireRate;
+            Fire(0.8f);
+            Fire(-0.8f);
+        }
+
         if (autoPLay == false)
-            
+        { 
             MoveWithMouse();
+        }
         else
             Autoplay();
        
 	}
+
+    void Fire(float xPosition)
+    {
+        Laser.CreateLasers(projectile, new Vector3(this.transform.position.x+xPosition, this.transform.position.y+0.6f, 0),projectileSpeed);
+        
+    }
 
     //Move the mouse automatically according to ball
     private void Autoplay()

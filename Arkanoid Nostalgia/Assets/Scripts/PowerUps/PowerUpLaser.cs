@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpFireball : ControlPowerUps {
+public class PowerUpLaser : ControlPowerUps {
 
-    public static bool fireball;
+    public static bool laser = true;
     public int scoreToGive;
-
 
     public override void PowerUpBehavior(Collider2D collision)
     {
@@ -14,15 +13,20 @@ public class PowerUpFireball : ControlPowerUps {
         {
             SmokePuffs();
             score.HitBrickScore(scoreToGive);
-            fireball = true;
+            laser = true;
+            
         }
 
-        
+
     }
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PowerUpBehavior(collision);
     }
+
+
+
 
 }
