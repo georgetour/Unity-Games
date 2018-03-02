@@ -11,9 +11,9 @@ public  class ControlPowerUps : MonoBehaviour {
         this.PowerUpBehavior();
     }
     
-    public virtual void PowerUpBehavior(Collider2D collision)
+    public virtual void PowerUpBehavior(Collider2D collider)
     {
-        this.PowerUpBehavior(collision);
+        this.PowerUpBehavior(collider);
     }
 
     protected Score score;
@@ -23,7 +23,7 @@ public  class ControlPowerUps : MonoBehaviour {
     public AudioClip sound;
     public GameObject smoke;
 
-    //Tag name for collision
+    //Tag name for collider
     public string paddleTag = "Paddle";
     public string loseTag = "LoseCollider";
     public string ballTag = "Ball";

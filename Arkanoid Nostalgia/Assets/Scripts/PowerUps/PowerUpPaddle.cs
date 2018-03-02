@@ -6,16 +6,16 @@ public class PowerUpPaddle : ControlPowerUps {
 
     public string powerUp;
 
-	public override void PowerUpBehavior(Collider2D collision)
+	public override void PowerUpBehavior(Collider2D collider)
     {
         
 
-        if (collision.transform.tag == paddleTag &&  powerUp == "big")
+        if (collider.transform.tag == paddleTag &&  powerUp == "big")
         {
             SmokePuffs();
             paddle.transform.localScale = new Vector3(0.8f, 0.6781099f, 1); 
         }
-        else if (collision.transform.tag == paddleTag && powerUp == "small")
+        else if (collider.transform.tag == paddleTag && powerUp == "small")
         {
             SmokePuffs();
             paddle.transform.localScale = new Vector3(0.5f, 0.6781099f, 1);
@@ -25,8 +25,8 @@ public class PowerUpPaddle : ControlPowerUps {
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        PowerUpBehavior(collision);
+        PowerUpBehavior(collider);
     }
 }

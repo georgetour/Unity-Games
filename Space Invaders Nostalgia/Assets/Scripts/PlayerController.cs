@@ -8,12 +8,15 @@ public class PlayerController : MonoBehaviour {
     //Move speed
     public float speed = 10f;
     public float padding = 1f;
+    public float health = 250;
 
     float xmin;
     float xmax;
 
-    public GameObject projectile;
-    public float projectileSpeed;
+    Projectile projectile;
+    public GameObject playerProjectile;
+    
+    public float laserSpeed ;
     public float firingRate = 0.2f;
 
 
@@ -30,11 +33,31 @@ public class PlayerController : MonoBehaviour {
         MoveWithArrows();
 	}
 
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        Debug.Log(collider);
+        //Check if the collider was a projectile
+        projectile = collider.gameObject.GetComponent<Projectile>();
+        if (projectile)
+            health -= projectile.GetDamage();
+
+
+        Destroy(collider.gameObject);
+
+        if (health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+
+    }
+
+
     //Shoot projectiles
     void Fire()
     {
-        GameObject beam = Instantiate(projectile, new Vector3(this.transform.position.x, this.transform.position.y + 0.6f, 0), Quaternion.identity);
-        beam.GetComponent<Rigidbody2D>().velocity = new Vector3(0, projectileSpeed, 0);
+        GameObject beam = Instantiate(playerProjectile, new Vector3(this.transform.position.x, this.transform.position.y + 0.6f, 0), Quaternion.identity);
+        beam.GetComponent<Rigidbody2D>().velocity = new Vector3(0, laserSpeed, 0);
+        
     }
 
 
@@ -54,13 +77,14 @@ public class PlayerController : MonoBehaviour {
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            InvokeRepeating("Fire", 0.0000001f, firingRate);
+            Fire();
+            //InvokeRepeating("Fire", 0.0000001f, firingRate);
         }
 
-        if(Input.GetKeyUp(KeyCode.Space))
-        {
-            CancelInvoke("Fire");
-        }
+        //if (Input.GetKeyUp(KeyCode.Space))
+        //{
+        //    CancelInvoke("Fire");
+        //}
 
         //Restrict player from leaving boundaries
         float newX = Mathf.Clamp(transform.position.x, xmin, xmax);

@@ -6,3 +6,4 @@ SPACE INVADERS NOSTALGIA
 - Different enemies
 - Power ups
 - Maybe ship permanent upgrades?
+- Shields for enemies

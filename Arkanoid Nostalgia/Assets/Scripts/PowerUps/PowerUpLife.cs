@@ -10,9 +10,9 @@ public class PowerUpLife : ControlPowerUps {
         life.ContolLives(1);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.transform.tag == paddleTag)
+        if (collider.transform.tag == paddleTag)
         {  
             PowerUpBehavior();
             
