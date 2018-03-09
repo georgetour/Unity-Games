@@ -49,7 +49,7 @@ public class Brick : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(totalBricks);
+        
         if (PowerUpFireball.fireball )
         {
             this.GetComponent<BoxCollider2D>().isTrigger = true;

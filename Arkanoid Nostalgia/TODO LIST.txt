@@ -29,3 +29,6 @@ TODO extra balls
 Να μεγαλω΄νει λίγο ίγο για κάθε cvhocobbo Και αντίστοιχα να μικραίνει και όχι fixed
 Score ίσως σε όλα τα Powerup
 
+Sound for laser and fireball
+Να μη γίνεται fireball και laser power up ok
+Change paddle when fireball is active

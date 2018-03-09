@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerUpLaser : ControlPowerUps {
 
-    public static bool laser = true;
+    public static bool laser = false;
     public int scoreToGive;
 
     public override void PowerUpBehavior(Collider2D collision)

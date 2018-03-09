@@ -26,12 +26,13 @@ public class LoseCollider : MonoBehaviour {
 
 
     //When ball hits bottom go to Win-Lose scene if life < 0 
-    private void OnTriggerExit2D(Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.transform.tag == ballTag)
         {
             paddle.ResizeToOriginal();
-            PowerUpFireball.fireball = false; 
+            PowerUpFireball.fireball = false;
+            PowerUpLaser.laser = false;
             
             if (LifeManager.lives <= 0)
             {

@@ -15,11 +15,26 @@ public class LoadPowerUp : MonoBehaviour {
 
 
     public List<PowerUp> PowerUpTable = new List<PowerUp>();
-    public int dropChance; 
-   
+    public int dropChance;
 
     int number;
-    
+
+
+
+    private void Update()
+    {
+        //Don't allow firebal and laser to drop together if either of them is active
+        if (PowerUpFireball.fireball)
+        {
+            PowerUpTable[7].dropRarity = 0;
+        }
+        if (PowerUpLaser.laser)
+        {
+            PowerUpTable[6].dropRarity = 0;
+        }
+       
+    }
+
 
     //Make powerup appear when brick is destroyed
     public void Activate(Vector3 position)

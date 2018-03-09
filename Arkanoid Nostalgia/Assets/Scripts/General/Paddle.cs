@@ -6,7 +6,8 @@ using UnityEngine;
 public class Paddle : MonoBehaviour {
 
     public bool autoPLay = true;
-
+    public Sprite[] paddleSprite;
+    int spriteIndex = 1;//The laser sprites
     private Ball ball;
 
     public float speed = 10f;
@@ -33,9 +34,12 @@ public class Paddle : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        
         paddleScale();
+        LasersSprite();
         RestrictPosition();
         
+        //Fire laser if laser is active
         if (Time.time > nextFire && PowerUpLaser.laser){
             nextFire = Time.time + fireRate;
             Fire(0.8f);
@@ -48,12 +52,14 @@ public class Paddle : MonoBehaviour {
         }
         else
             Autoplay();
+
+        Debug.Log(paddleScale());
        
 	}
 
     void Fire(float xPosition)
     {
-        Laser.CreateLasers(projectile, new Vector3(this.transform.position.x+xPosition, this.transform.position.y+0.6f, 0),projectileSpeed);
+        Laser.CreateLasers(projectile, new Vector3(this.transform.position.x+xPosition, this.transform.position.y + 0.6f, 0),projectileSpeed);
         
     }
 
@@ -101,17 +107,29 @@ public class Paddle : MonoBehaviour {
         float distance = transform.position.z - Camera.main.transform.position.z;
         Vector3 leftMost = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, distance));
         Vector3 rightMost = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, distance));
-        xmin = leftMost.x  + paddleScale();
+        xmin = leftMost.x + paddleScale();
         xmax = rightMost.x - paddleScale();
-    }
 
+
+    }
 
     //Check paddlesize
     public float paddleScale()
     {
-        size = this.transform.localScale.x+0.1f;
-
+        size = GetComponent<Renderer>().bounds.size.x - GetComponent<Renderer>().bounds.size.x/2 + 0.1f;
         return size;
+    }
+
+    void LasersSprite()
+    {
+        if (PowerUpLaser.laser)
+        {
+            this.GetComponent<SpriteRenderer>().sprite = paddleSprite[spriteIndex];
+        }
+        else
+        {
+            this.GetComponent<SpriteRenderer>().sprite = paddleSprite[0];
+        }
     }
 
 
