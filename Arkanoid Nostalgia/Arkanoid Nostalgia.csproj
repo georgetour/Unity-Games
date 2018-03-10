@@ -138,6 +138,8 @@
     <Compile Include="Assets\Scripts\General\LevelManager.cs" />
     <Compile Include="Assets\Scripts\General\LoseCollider.cs" />
     <Compile Include="Assets\Scripts\General\Paddle.cs" />
+    <Compile Include="Assets\Scripts\General\Reseting.cs" />
+    <Compile Include="Assets\Scripts\General\TimerStart.cs" />
     <Compile Include="Assets\Scripts\Life\LifeManager.cs" />
     <Compile Include="Assets\Scripts\Music\MusicPlayer.cs" />
     <Compile Include="Assets\Scripts\PowerUps\ControlPowerUps.cs" />

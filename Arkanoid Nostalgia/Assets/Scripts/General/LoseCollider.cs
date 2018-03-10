@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LoseCollider : MonoBehaviour {
 
@@ -14,14 +12,25 @@ public class LoseCollider : MonoBehaviour {
 
     private LifeManager life;
 
-    private Paddle paddle;
+    private Reseting reseting;
+
+    private TimerStart timer;
+    
 
     private void Start()
     {
         levelmanager = GameObject.FindObjectOfType<LevelManager>();
         score = GameObject.FindObjectOfType<Score>();
+        ball = GameObject.FindGameObjectWithTag("Ball").GetComponent<Ball>();
         life = GameObject.FindObjectOfType<LifeManager>();
-        paddle = GameObject.FindGameObjectWithTag("Paddle").GetComponent<Paddle>();
+        reseting = GameObject.FindGameObjectWithTag("Reseting").GetComponent<Reseting>();
+        timer = GameObject.FindGameObjectWithTag("Timer").GetComponent<TimerStart>();
+
+    }
+
+    private void Update()
+    {
+        Debug.Log(TimerStart.startTimer);
     }
 
 
@@ -30,10 +39,10 @@ public class LoseCollider : MonoBehaviour {
     {
         if (collider.transform.tag == ballTag)
         {
-            paddle.ResizeToOriginal();
-            PowerUpFireball.fireball = false;
-            PowerUpLaser.laser = false;
-            
+
+            reseting.EnablePaddleAndBall(false);
+            timer.Start();
+
             if (LifeManager.lives <= 0)
             {
                 Ball.gameStarted = false;
@@ -53,8 +62,5 @@ public class LoseCollider : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //print("collision");
-    }
+   
 }

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 public class Ball : MonoBehaviour {
@@ -38,15 +37,8 @@ public class Ball : MonoBehaviour {
         if (!gameStarted)
             ballStartingPosition();
 
-      
-        //Start the game with mouse press and launch the ball
-        if (Input.GetMouseButtonDown(0)&&!gameStarted)
-        {
-            gameStarted = true;
-            
-            //Ball spee launch
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(1f,7.5f);
-        }
+        if (!TimerStart.startTimer)
+            LaunchBallWithMouse();
     }
 
     //Set starting position of the ball to be the same with paddle
@@ -68,6 +60,27 @@ public class Ball : MonoBehaviour {
             GetComponent<Rigidbody2D>().velocity += tweak;
         }
        
+    }
+
+    void LaunchBallWithMouse()
+    {
+        //Start the game with mouse press and launch the ball
+        if (Input.GetMouseButtonDown(0) && !gameStarted)
+        {
+            gameStarted = true;
+
+            //Ball spee launch
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(1f, 7.5f);
+        }
+
+        //Start the game with mouse press and launch the ball
+        if (Input.GetKeyDown("space") && !gameStarted)
+        {
+            gameStarted = true;
+
+            //Ball spee launch
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(1f, 7.5f);
+        }
     }
 
 }

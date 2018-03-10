@@ -1,7 +1,7 @@
 <html>
 <head><meta charset="UTF-8">
 
-<style>body{font-size:1.5em; padding:20px;}section{border:1px solid black; padding:10px;margin-bottom :20px;}img{width:100%;}</style>
+<style>body{font-size:1.5em; padding:20px;}section{border:1px solid black; padding:10px;margin-bottom :20px;}img{width:50%;}</style>
 </head>
 <body>
 
@@ -110,7 +110,7 @@ You must select where you want to be created and if it's gonna be 2D or 3D</li>
 
 <p>Printing to the console check <img src="console.jpg"></p>
 <p>To delete the camera select the camera right click and the delete</p>
-<p>To have a script run we need an empty Game Object to be attached to as you can see in add_component.jpg</p>
+<p>To have a script run we need an empty Game Object to be attached to as you can see in <img src="add_component.jpg"</p>
 <p>To create a folder wirght click in assets -> Create Folder and name it scripts so you can have scripts in it</p>
 <p>The method Start() will be executed when the game starts. </p>
 <p>To print something in the console you use the method print as you can see in the game and inside the parenthesis what you want to be printed</p>
@@ -128,61 +128,65 @@ You must select where you want to be created and if it's gonna be 2D or 3D</li>
 
 </section>
 
-Chapter 5 Interface
 
-	Adding 2D User Interface Text
+<section>
+<h1>Chapter 5 Interface</h1>
 
-To add an image just drag and drop it in assets and by clicking on it you can see in the Inspector up right what type it is as shown in image_type_jpg
-To enable 2D mode just click the mode you want in the Scene as shown in choosing_2D_3D.jpg
-To insert a text in our scene check insert_item_in_scene.jpg or
-insert UI element add_ui_element.jpg
-Now we have created a canvas and the canvas renderer as you see in canvas_and_object.jpg
-Also top right we have the layers as shown in layers.jpg.
-As you see in zoom_level.jpg we have high zoom 
-You click the scene and then with mouse scroll you channge the zoom level
-Also you can double click on the word Text below Canvas or double clik on the canvas will go in all canvas
-A canvas is where something is drawn in our case our entire game
-You can drag and drop the item inside the canvas wherever you want
-To change the background color of the canvas select the Main Camera and choose background color you want
-Don't forget permanet changes should be made outside the play/tint mode
-To center item check center_item.jpg
-To change color in text item go to inspector and choose the color you want
-To add a script in a UI element see add_script_ui_element_.jpg
-To access text programatically we need to drag and drop Text in Inspector as shown in access_text.jpg
-To add image go to GameObject  -> Ui - > Image as shown in add_image.jpg(dont't forget to add the image in Canvas Renderer as you did in access_text)
+	<h2>Adding 2D User Interface Text</h2>
+<ul>
+<li>To add an image just drag and drop it in assets and by clicking on it you can see in the Inspector up right what type it is as shown in <img src="image_type.jpg"></li>
+<li>To enable 2D mode just click the mode you want in the Scene as shown in choosing_2D_3D.jpg</li>
+<li>To insert a text in our scene check <img src="insert_item_in_scene.jpg" or
+insert UI element <img src="add_ui_element.jpg"</li>
+<li>Now we have created a canvas and the canvas renderer as you see in <img src="canvas_and_object.jpg"></li>
+<li>Also top right we have the layers as shown in <img src="layers.jpg"></li>
+<li>As you see in <img src="zoom_level.jpg"> we have high zoom </li>
+<li>You click the scene and then with mouse scroll you change the zoom level</li>
+<li>Also you can double click on the word Text below Canvas or double clik on the canvas will go in all canvas</li>
+<li>A canvas is where something is drawn in our case our entire game</li>
+<li>You can drag and drop the item inside the canvas wherever you want</li>
+<li>To change the background color of the canvas select the Main Camera and choose background color you want</li>
+<li>Don't forget permanet changes should be made outside the play/tint mode</li>
+<li>To center item check <img src="center_item.jpg"></li>
+<li>To change color in text item go to inspector and choose the color you want</li>
+<li>To add a script in a UI element see <img src="add_script_ui_element_.jpg"></li>
+<li>To access text programatically we need to drag and drop Text in Inspector as shown in <img src="access_text.jpg"></li>
+<li>To add image go to GameObject  -> Ui - > Image as shown in <img src="add_image.jpg">(dont't forget to add the image in Canvas Renderer as you did in access_text)</li>
+</ul>
+	<h2>Frame by frame play</h2>
 
-	Frame by frame play
+<p>If you want to see your scene running frame by frame first press pause and then play.</p>
 
-If you want to see your scene running frame by frame first press pause and then play.
+	<h2>Word Wrapping and Joining strings</h2>
 
-	Word Wrapping and Joining strings
+<p>To have text fill the whole area you have wrap or overflow option as seen in <img src="word_wrapping.jpg"></p>
+<p>To join strings which called concatenation you use the + in C# and \n to break line</p>
 
-To have text fill the whole area you have wrap or overflow option as seen in word_wrapping.jpg
-To join strings which called concatenation you use the + in C# and \n to break line
+	<h2>Changing Resolution</h2>
 
-	Changing Resolution
-
-To change resolution go at Game -> Free aspect as in changing_resolution.jpg
-If you drag and drop the Game window you will see how it looks with the resolution you picked as shown in dragged_game_window.jpg
+<p>To change resolution go at Game -> Free aspect as in <img src="changing_resolution.jpg"></p>
+<p>If you drag and drop the Game window you will see how it looks with the resolution you picked as shown in <img src="dragged_game_window.jpg"></p>
 
 	
 
-	Prepare the game for publishing
+	<h2>Prepare the game for publishing</h2>
 
-First we need to change our build settings by going in File -> Build settings
-Then we drag and drop our scene and at player settings we put the resolution we want and the background
-According to device we want to publishwe should set and change the Aspect
+<p>First we need to change our build settings by going in File -> Build settings</p>
+<p>Then we drag and drop our scene and at player settings we put the resolution we want and the background</p>
+<p>According to device we want to publishwe should set and change the Aspect</p>
 
 
-	Unity 5 and WebGL
-Unity 5 and above supports easy deployment with WebGL
-Check unity_webgl.jpg
-Don't forget the resolutions at plaeys setting to be same as the canvas you created
+	<h2>Unity 5 and WebGL</h2>
+<p>Unity 5 and above supports easy deployment with WebGL</p>
+<p>Check <img src="unity_webgl.jpg"</p>
+<p>Don't forget the resolutions at plays setting to be same as the canvas you created</p>
 
-	Multiple text dynamically
-If you have text that values change from script first you must create the fields as shown in multiple_text_fields.jpg
-Then you must assign them to inspector for script by draging and dropping them since they will have appeared to it as shown in multiple_text_in_script.jpg
+	<h2>Multiple text dynamically</h2>
+<p>If you have text that values change from script first you must create the fields as shown in <img src="multiple_text_fields.jpg"></p>
+<p>Then you must assign them to inspector for script by draging and dropping them since they will have appeared to it as shown in <img src="multiple_text_to_script.jpg"></p>
 
+
+</section>
 
 
 Chapter 6 Objects and Scenes
@@ -742,6 +746,18 @@ this.transform.position = paddlePos;</pre>
         }
         return true;
     }</pre>
+	
+<h3>Size of an object and localscale</h3>
+<p>To get the size of an object :</p>
+<pre>GetComponent<Renderer>().bounds.size.x</pre>
+
+<p>Scale changes the object by percentage :</p>
+<pre>    void Example()
+    {
+        // Widen the object by 0.1
+        transform.localScale += new Vector3(0.1F, 0, 0);
+    }</pre>
+
 </section>		
 		
 		
@@ -895,8 +911,10 @@ To check where objects are when editing
 	  multiple_objects_for_parent.jpg
 	  
 <section>
-<h1>Chapter 20  Run something every some seconds(Time.time and Time.deltatime)</h1>
+<h1>Chapter 20  Run something every some seconds or wait for some seconds before something happens</h1>
 	<a href="https://answers.unity.com/questions/344314/difference-with-timetime- timedeltatime-timeframeco.html">https://answers.unity.com/questions/344314/difference-with-timetime- timedeltatime-timeframeco.html</a>
+	
+	<h2>Time.time</h2>
 	<p>The general idea is p(fire this frame) = time elapsed x frequency</p>
 	<pre>public float fireRate;
     	private float nextFire;
@@ -910,6 +928,7 @@ To check where objects are when editing
         }
 	}</pre>
 
+	<h2>Time.deltatime</h2>
 	<p>Better way using Time.deltatime</p>
 	<pre>public float firerate= 0.5f;
    	//private float probability;
@@ -935,6 +954,10 @@ To check where objects are when editing
         Invoke("SpawnUntilFull", 0.5f);
         
     }</pre>
+	
+	<h2>WaitForSeconds</h2>
+	<p>It runs the code below this line after 3 seconds</p>
+	<pre>yield return new WaitForSeconds(3.0f);</pre>
 	</section>
 
 Chapter 21 Resetting a script or component

@@ -1,7 +1,4 @@
-﻿
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Paddle : MonoBehaviour {
 
@@ -25,7 +22,7 @@ public class Paddle : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        
+        this.transform.position = new Vector2(9.6f,0.51f);
         ball = GameObject.FindObjectOfType<Ball>();
 	}
 
@@ -46,14 +43,16 @@ public class Paddle : MonoBehaviour {
             Fire(-0.8f);
         }
 
-        if (autoPLay == false)
+        if (autoPLay == false && !TimerStart.startTimer)
         { 
-            MoveWithMouse();
+            MoveWithArrows();
         }
-        else
+        else if (autoPLay == true && !TimerStart.startTimer)
+        {
             Autoplay();
+        }
+           
 
-        Debug.Log(paddleScale());
        
 	}
 
@@ -73,7 +72,30 @@ public class Paddle : MonoBehaviour {
         this.transform.position = paddlePos;
     }
 
-  
+
+    //Move ship right and left
+    void MoveWithArrows()
+    {
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            //transform.position += new Vector3(speed *Time.deltaTime, 0, 0);
+            transform.position += Vector3.right * speed * Time.deltaTime;
+
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
+            //transform.position += new Vector3(-shipSpeed * Time.deltaTime, 0, 0);
+            transform.position += Vector3.left * speed * Time.deltaTime;
+
+
+
+        //Restrict player from leaving boundaries
+        float newX = Mathf.Clamp(transform.position.x, xmin, xmax);
+        transform.position = new Vector3(newX, transform.position.y, transform.position.z);
+    }
+
+
+
+
 
 
     void MoveWithMouse()
@@ -98,7 +120,7 @@ public class Paddle : MonoBehaviour {
     public void ResizeToOriginal()
     {
         this.transform.localScale = new Vector3(0.65f, 0.6781099f, 1);
-
+        
     }
 
 
