@@ -51,7 +51,6 @@ public class Paddle : MonoBehaviour {
         {
             Autoplay();
         }
-           
 
        
 	}
@@ -92,9 +91,6 @@ public class Paddle : MonoBehaviour {
         float newX = Mathf.Clamp(transform.position.x, xmin, xmax);
         transform.position = new Vector3(newX, transform.position.y, transform.position.z);
     }
-
-
-
 
 
 

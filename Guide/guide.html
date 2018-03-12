@@ -1,7 +1,25 @@
 <html>
 <head><meta charset="UTF-8">
 
-<style>body{font-size:1.5em; padding:20px;}section{border:1px solid black; padding:10px;margin-bottom :20px;}img{width:50%;}</style>
+<style>
+	body{
+		font-size:1.5em; 
+		padding:20px;
+	}
+
+	section{
+		border:1px solid black; 
+		padding:10px;
+		margin-bottom :20px;
+	}
+	img{
+		width:50%;
+	}
+	img:hover{
+	
+		width:100%;
+	}
+</style>
 </head>
 <body>
 
@@ -845,54 +863,59 @@ This trangle shows that you can have 2 of these. As time passes you can have the
 Debug.Log() vs Debug.LogError()
 To test something you can have Debug.Log which will show in the console for example the value of a variable. Debug.LogError() will thow a red error in the console.
 
-Chapter 19 Create an Object from nothing
-If we want to create an object from nothing we have to use the Instantiate a function
-public GameObject enemyPrefab;
+
+<section>
+<h1>Chapter 19 Create an Object from nothing</h1>
+<p>If we want to create an object from nothing we have to use the Instantiate a function.</p>
+<pre>
+	public GameObject enemyPrefab;
 
 	// Use this for initialization
 	void Start () {
 
-        //Spawn new enemy 
-        Instantiate(enemyPrefab, new Vector3(0, 0, 0),Quaternion.identity);
-	}
+		//Spawn new enemy 
+		Instantiate(enemyPrefab, new Vector3(0, 0, 0),Quaternion.identity);
+	}</pre>
+	<p> Quaternion is used for rotation of the object</p>
+
+	<p> To have it created now we have to drag and drop the prefab to our editor as shown in prefab_to_gameobject.jpg</p>
+	<img src="prefab_to_gameobject.jpg">
+
 	
-
-	 Quaternion is used for rotation of the object
-
-	 To have it created now we have to drag and drop the prefab to our editor as shown in 	 	 prefab_to_object.jpg
-
-	
-	Changing object hierarchy in scene
-Sometimes we want an object to appear under some specific objects in scene and not go to top
-//Spawn new enemy 
+	<h2>Changing object hierarchy in scene</h2>
+<p>Sometimes we want an object to appear under some specific objects in scene and not go to top</p>
+<pre>	//Spawn new enemy 
         //And keep hierarchy in editor and the Instantiation wil be a GameObject
-        GameObject enemy = Instantiate(enemyPrefab, new Vector3(0, 0, 			 	  0),Quaternion.identity)as GameObject;
+        GameObject enemy = Instantiate(enemyPrefab, new Vector3(0, 0,0),Quaternion.identity)as GameObject;
         
-	 //Make parent wherever this script is attached to
-        enemy.transform.parent = transform;
-		
+	//Make parent wherever this script is attached to
+        enemy.transform.parent = transform;</pre>		
 
-	  As we see hierarchy_in_scene.jpg  now its parent is where it belongs to
+	  <p>As we see hierarchy_in_scene.jpg  now its parent is where it belongs to</p>
+	  <img src="hierarchy_in_scene.jpg">
 
-	Gizmos
-Gizmos are used to give visual debugging or setup aids in the scene view as show in gizmos.jpg(they are not shown in game).
-	OnDrawGizmos
-https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnDrawGizmos.html
-Implement OnDrawGizmos if you want to draw gizmos that are also pickable and always drawn.
-To check where objects are when editing
-	This allows you to quickly pick important objects in your scene.
+	<h3>Gizmos</h3>
+	<p>Gizmos are used to give visual debugging or setup aids in the scene view as show in gizmos.jpg(they are not shown in game).</p>
+	<h3>OnDrawGizmos()</h3>
+		<a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnDrawGizmos.html">https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnDrawGizmos.html</a>
+	<ol>	
+	<li>Implement OnDrawGizmos if you want to draw gizmos that are also pickable and always drawn.</li>
+	<li>To check where objects are when editing</li>
+	<li>This allows you to quickly pick important objects in your scene.</li>
+	</ol>
 	
-	Find where is the object with gizmo sphere
- 	void OnDrawGizmos()
+	<p>Find where is the object with gizmo sphere</p>
+<pre>	void OnDrawGizmos()
     	{
-        Gizmos.DrawWireSphere(this.transform.position, 1);
-       }
+		Gizmos.DrawWireSphere(this.transform.position, 1);
+        }</pre>
 
 	 
-	Now we have created a sphere gizmo as shown in  ondrawgizmo.jpg.
+	<p>Now we have created a sphere gizmo as shown in  ondrawgizmo.jpg.</p>
+	<img src="ondrawgizmo.jpg">
 
-	Create multiple objects according to where they belong
-
+	<h3>Create multiple objects according to where they belong</h3>
+<pre>
 	public GameObject enemyPrefab;
 
 	// Use this for initialization
@@ -902,14 +925,14 @@ To check where objects are when editing
         {
             //Spawn new enemy for every child EnemySpwane has
             //And keep hierarchy in editor and the Instantiation wil be a GameObject
-            GameObject enemy = Instantiate(enemyPrefab, child.transform.position, 		     Quaternion.identity) as GameObject;
+            GameObject enemy = Instantiate(enemyPrefab, child.transform.position,Quaternion.identity) as GameObject;
 
             //Make parent wherever this script is attached to which is the Position
             enemy.transform.parent =child;
-        }
+        }</pre>
 
-	  multiple_objects_for_parent.jpg
-	  
+	  <p><img src="multiple_objects_for_parent.jpg"></p>
+	  </section>
 <section>
 <h1>Chapter 20  Run something every some seconds or wait for some seconds before something happens</h1>
 	<a href="https://answers.unity.com/questions/344314/difference-with-timetime- timedeltatime-timeframeco.html">https://answers.unity.com/questions/344314/difference-with-timetime- timedeltatime-timeframeco.html</a>

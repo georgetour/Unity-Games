@@ -27,11 +27,6 @@ public class Score : MonoBehaviour {
         score = 0;
     }
 
-
-    //******** todo power up score
-    void PowerUpscore()
-    {
-
-    }
+    
 
 }

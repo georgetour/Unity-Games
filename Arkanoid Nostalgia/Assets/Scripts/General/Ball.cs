@@ -43,8 +43,7 @@ public class Ball : MonoBehaviour {
 
     //Set starting position of the ball to be the same with paddle
     public void ballStartingPosition()
-    {
-        
+    { 
         transform.position = paddle.transform.position + paddleToBallVector;
     }
 

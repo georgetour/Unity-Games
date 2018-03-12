@@ -2,14 +2,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TimerStart : Reseting {
+public class TimerStart:MonoBehaviour {
 
     private Text counter;
+    private Reseting reseting;
     public static bool startTimer;
+    public static bool paddleDestroyed;
 
 	// Use this for initialization
 	public void Start () {
 
+        reseting = GameObject.FindGameObjectWithTag("Reseting").GetComponent<Reseting>();
         counter = GetComponent<Text>();
         startTimer = true;
         counter.text = "";
@@ -21,7 +24,8 @@ public class TimerStart : Reseting {
     //Countdown in start level or when ball hits bottom
     IEnumerator CountDown()
     {
-
+        if (paddleDestroyed)
+            reseting.DestroyPaddle();
         counter.text = "3";
         yield return new WaitForSeconds(1.0f);
         counter.text = "2";
@@ -32,9 +36,10 @@ public class TimerStart : Reseting {
         yield return new WaitForSeconds(0.5f);
         counter.text = "";
         startTimer = false;
-        
-        ResetPaddle();
+        if (paddleDestroyed)
+            reseting.ResetPaddle();
         yield return new WaitForSeconds(0.3f);
-        EnablePaddleAndBall(true);
+        paddleDestroyed = false;
+
     }
 }
