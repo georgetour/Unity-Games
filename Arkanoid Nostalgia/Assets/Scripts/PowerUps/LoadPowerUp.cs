@@ -26,12 +26,13 @@ public class LoadPowerUp : MonoBehaviour {
         //Don't allow firebal and laser to drop together if either of them is active
         if (PowerUpFireball.fireball)
         {
-            PowerUpTable[7].dropRarity = -500;
+            PowerUpTable[7].dropRarity = 0;
         }
         if (PowerUpLaser.laser)
         {
-            PowerUpTable[6].dropRarity = -500;
+            PowerUpTable[6].dropRarity = 0;
         }
+        Debug.Log(randomNumber());
        
     }
 
