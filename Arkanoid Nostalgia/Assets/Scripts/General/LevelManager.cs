@@ -20,6 +20,7 @@ public class LevelManager : MonoBehaviour {
         score = GameObject.FindObjectOfType<Score>();
         life = GameObject.FindObjectOfType<LifeManager>();
        
+       
     }
 
 
@@ -52,7 +53,8 @@ public class LevelManager : MonoBehaviour {
     {
         
         if (Brick.totalBricks <= 0)
-        { 
+        {
+            Reseting.ResetPowerUps();
             LoadNextLevel();  
         }
         

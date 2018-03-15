@@ -1,14 +1,12 @@
 **********Arkanoid nostalgia TODO requirements*********
 
-Be able to play with arrows and mouse
+Be able to play with arrows and mouse (arrows ok)
 
 Level easier not many level blocks ok
 
-Smaller bricks like the original
-
 Add score and user input withnickname high score
 
-Να μην σε πεταει τοσο αποτομα στο επομενο LEVEL ΝΑ ΓΡΑΦΕΙ ΣΤΟ ΚΕΝΤΡΟ ΤΟ level και μετα να εξαφανίζεται με ηχο
+Να μην σε πεταει τοσο αποτομα στο επομενο LEVEL ΝΑ ΓΡΑΦΕΙ ΣΤΟ ΚΕΝΤΡΟ ΤΟ level και μετα να εξαφανίζεται με ηχο οκ(λείπει ο ήχος)
 
 Ηχος οταν χανεις και να διαλύεται το paddle
 
@@ -22,13 +20,15 @@ score,
 biggerpaddle(chocobo) 
 smallerpaddle(skull)
 fireball
-TODO laser
+TODO laser ok
 TODO hold ball
 TODO extra balls
 
 Να μεγαλω΄νει λίγο ίγο για κάθε cvhocobbo Και αντίστοιχα να μικραίνει και όχι fixed
-Score ίσως σε όλα τα Powerup
+Score ίσως σε όλα τα Powerup(ναι θα γίνει)
 
 Sound for laser and fireball
 Να μη γίνεται fireball και laser power up ok
-Change paddle when fireball is active
+
+Θα υπάρχουν 9 πλανήτες και ο καθέςνας θα έχει 5 section 
+Σύνολο 45 πίστες

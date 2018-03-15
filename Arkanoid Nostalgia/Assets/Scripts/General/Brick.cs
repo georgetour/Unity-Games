@@ -110,7 +110,7 @@ public class Brick : MonoBehaviour {
             SmokePuffs();
             loadPowerUp.Activate(this.transform.position);
             score.HitBrickScore(100);
-
+            
         }
         else
         {

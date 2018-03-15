@@ -40,8 +40,9 @@ public class LoseCollider : MonoBehaviour {
             {
                 Ball.gameStarted = false;
                 life.ContolLives(-1);
+                
             }
-            reseting.ResetPowerUps();
+            Reseting.ResetPowerUps();
         }
         else
         {

@@ -22,6 +22,7 @@ public class LifeManager : MonoBehaviour {
     //Reset lives for starting game
     public static void ResetLives()
     {
+        
         lives = 3;
     }
 

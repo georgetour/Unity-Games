@@ -18,7 +18,7 @@ public class Reseting : MonoBehaviour {
         paddle.ResizeToOriginal();
     }
 
-    public void ResetPowerUps()
+    public static void ResetPowerUps()
     {
         PowerUpFireball.fireball = false;
         PowerUpLaser.laser = false;
