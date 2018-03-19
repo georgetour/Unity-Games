@@ -810,24 +810,30 @@ This methods find the object exactly with its name and dynamically the component
 In the below example we have gameObject called Score which has a component with a script called Score
 GameObject.Find("Score").GetComponent<Score>();
 
+<section>
+<h1>Chapter 15 Prefabs</h1>
+<ul>
+<li>Prefab is a collection of predefined GameObjects & Components that are reusabe throughout your game</li>
+<li>https://docs.unity3d.com/Manual/Prefabs.html</li>
+<li>https://docs.unity3d.com/Manual/InstantiatingPrefabs.html</li>
+<li>An example is the paddle as shown in <img src="paddle.jpg"> that has many components and we can reuse it</li>
+<li>To create a prefab you drag and drop the object from the left to the folder</li>
+<li>First you should create a duplicate and NOT use the original and we will have a prefab created as shown in <img src="prefab_creation.jpg"></li>
+<li>If you make a change to the object left you should hit Apply so changes take place in the prefab also</li>
+<li>If we make a change to the prefab and not the instance it s immediately applied so if we drag and drop new they will be the same as the prefab and all the instances will be changed</li>
+<li>Revert changes back to the prefab settings</li>
+<li>Different prefabs can have different scripts or properties values</li>
+<li>You should prefab everything os if you make changes to something it will pappy to all in next scenes etc</li>
+<li><strong>Changing prefab :</strong> If you want to change the prefab of a game object in a scene, you can simply drag the new prefab over the old object while holding the ALT key</li>
+	<li>Linking prefabs programmaticaly(check particle systems)</li>
+<li>You have to instatiate the prefab </li>
+<pre>public GameObject smoke;
+Instantiate<GameObject>(smoke, new Vector3(this.transform.position.x, this.transform.position.y), Quaternion.identity);<pre>
+<li><strong>Relative prefab position</strong>To have the prefab position relative to where it belongs you must reset it from the cog.</li>
 
-Chapter 15 Prefabs
-Prefab is a collection of predefined GameObjects & Components that are reusabe throughout your game
-https://docs.unity3d.com/Manual/Prefabs.html
-https://docs.unity3d.com/Manual/InstantiatingPrefabs.html
-An example is the paddle as shown in paddle.jpg that has many components and we can reuse it
-To create a prefab you drag and drop the object from the left to the folder
-First you should create a duplicate and NOT use the original and we will have a prefab created as shown in prefab_creation.jpg
-If you make a change to the object left you should hit Apply so changes take place in the prefab also
-If we make a change to the prefab and not the instance it s immediately applied so if we drag and drop new they will be the same as the prefab and all the instances will be changed
-Revert changes back to the prefab settings
-Different prefabs can have different scripts or properties values
-You should prefab everything os if you make changes to something it will pappy to all in next scenes etc
-Changing prefab : If you want to change the prefab of a game object in a scene, you can simply drag the new prefab over the old object while holding the ALT key
-	Linking prefabs programmaticaly(check particle systems)
-You have to instatiate the prefab 
-public GameObject smoke;
-Instantiate<GameObject>(smoke, new Vector3(this.transform.position.x, this.transform.position.y), Quaternion.identity);
+</ul>
+</section>
+
 
 Chapter 16 Sprites 
 Sprite Sheets
@@ -1003,6 +1009,35 @@ Chapter 21 Resetting a script or component
 <p>To see all layers and tags</p>
 <img src="all_layers_and_tags.jpg">
 </section>
+
+
+<section>
+<h1>Chapter 23 Animation</h1>
+<p>Animation is something that will make an object appear smoothly and not just immediately appear. First we add the animation tab :</p>
+<img src="animation_tab.jpg">
+<p>After we choose the object we create a new clip by clicking the button Create. We see that we have a new property at our inspector.</p>
+<img src="animator.jpg"
+<p>Then we see where it was crewated we have a controller and the animator window.</p>
+<img src="animator_controller.jpg"
+<p>Unity creates a lot of stuff that will run in background for the animation. We can see in our editor what animation we have
+chosen :</p>
+<img src="animation_choose.jpg">
+<p>After all the above we need to apply the animation to the prefab.</p>
+<p>Then we click Add Property so we can tell the animation what to do :</p>
+<img src="animation_property.jpg">
+<p>Then we choose what to do in our case the position in Transform. We can see we have a timer that says what the animation position will be from 0 to 1 sec. If we press the record button in animation it shows that we are in Animation mode and we will see what the animation does. When we are at animation record mode we can drag and drop and change the position of the object.</p>
+Finally we add at the keyframe where the object we want to be .
+<p>If we want to add rotation we add at keyframe the z rotation we want the object will rotate.</p>
+<p>Animations are really sophisticated and anything you can change in the inspector it can be done in the animation(ANYTHING).</p>
+<p>When we Play the game we can see what the animation does.</p>
+<img src="animation_looping.jpg">
+<p>We will use an empty state by right clicking in the Animator and Create Sate. TO have a default animation you right click on it in the animator and choose Mkae it default :</p>
+<img src="animator_default_state.jpg">
+<p>To stop the loop we need to tell unity what to do after animation Arrival. We right click and choose Make transition and connect it with the object that will do.</p>
+<img src="animation_transition.jpg">
+<p>If we have position problems with Idle animation we should create another animation with 0 positions and place it in it</p>
+ </section>
+
 </body>
 </html>	
 	

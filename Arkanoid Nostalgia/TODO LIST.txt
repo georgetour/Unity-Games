@@ -30,5 +30,7 @@ Score ίσως σε όλα τα Powerup(ναι θα γίνει)
 Sound for laser and fireball
 Να μη γίνεται fireball και laser power up ok
 
-Θα υπάρχουν 9 πλανήτες και ο καθέςνας θα έχει 5 section 
-Σύνολο 45 πίστες
+Θα υπάρχουν 9 πλανήτες και ο καθέςνας θα έχει 2  section πλην του πρώτου που έχει 5
+Σύνολο 21 πίστες
+
+Add animation in drops!!!
