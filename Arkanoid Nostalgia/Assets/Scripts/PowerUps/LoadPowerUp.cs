@@ -32,7 +32,7 @@ public class LoadPowerUp : MonoBehaviour {
         {
             PowerUpTable[6].dropRarity = 0;
         }
-        Debug.Log(randomNumber());
+        Debug.Log("Drop chance" +dropChance);
        
     }
 
@@ -40,10 +40,8 @@ public class LoadPowerUp : MonoBehaviour {
     //Make powerup appear when brick is destroyed
     public void Activate(Vector3 position)
     {
-        
-       
-        randomNumber();
-        int calc_dropChance = randomNumber();
+        //Debug.Log(Random.Range(0, 101));
+        int calc_dropChance = Random.Range(0, 101); 
         if (calc_dropChance > dropChance)
         {
             //Debug.Log("no power up");
