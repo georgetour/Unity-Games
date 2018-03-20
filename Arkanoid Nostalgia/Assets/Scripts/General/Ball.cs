@@ -51,7 +51,7 @@ public class Ball : MonoBehaviour {
     public void OnCollisionEnter2D(Collision2D collision)
     {
         //Fix the second parameter if ball can't reach top or stays in loop
-        Vector2 tweak = new Vector2(Random.Range(-0.05f, 0.4f), Random.Range(0f, 0.3f));
+        Vector2 tweak = new Vector2(Random.Range(-0.05f, 0.3f), Random.Range(-0.05f, 0.3f));
 
         if (gameStarted==true)
         {
@@ -69,7 +69,7 @@ public class Ball : MonoBehaviour {
             gameStarted = true;
 
             //Ball spee launch
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(1f, 8f);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(1f, 7f);
         }
 
         //Start the game with mouse press and launch the ball
@@ -78,7 +78,7 @@ public class Ball : MonoBehaviour {
             gameStarted = true;
 
             //Ball spee launch
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(1f, 8f);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(1f, 7f);
         }
     }
 
