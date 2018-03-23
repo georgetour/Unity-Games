@@ -69,7 +69,7 @@ public class Ball : MonoBehaviour {
             gameStarted = true;
 
             //Ball spee launch
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(1f, 7f);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(1f, 7.1f);
         }
 
         //Start the game with mouse press and launch the ball
@@ -78,7 +78,7 @@ public class Ball : MonoBehaviour {
             gameStarted = true;
 
             //Ball spee launch
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(1f, 7f);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(1f, 7.1f);
         }
     }
 
