@@ -1,7 +1,11 @@
 sceneSetups:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 - path: Assets/_Scenes/Level_02.unity
+=======
+- path: Assets/_Scenes/Level_10.unity
+>>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
 =======
 - path: Assets/_Scenes/Level_10.unity
 >>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1

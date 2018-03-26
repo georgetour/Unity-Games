@@ -22,10 +22,17 @@ MonoBehaviour:
     height: 930
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_MinSize: {x: 681, y: 342}
   m_MaxSize: {x: 12006, y: 8042}
   vertical: 0
   controlID: 3403
+=======
+  m_MinSize: {x: 679, y: 471}
+  m_MaxSize: {x: 14000, y: 14021}
+  vertical: 0
+  controlID: 20341
+>>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
 =======
   m_MinSize: {x: 679, y: 471}
   m_MaxSize: {x: 14000, y: 14021}
@@ -136,6 +143,7 @@ MonoBehaviour:
     height: 930
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_MinSize: {x: 404, y: 342}
   m_MaxSize: {x: 8004, y: 8042}
   vertical: 1
@@ -150,6 +158,12 @@ MonoBehaviour:
 <<<<<<< HEAD
 >>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
 =======
+>>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
+=======
+  m_MinSize: {x: 404, y: 471}
+  m_MaxSize: {x: 10000, y: 14021}
+  vertical: 1
+  controlID: 20342
 >>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
 --- !u!114 &4
 MonoBehaviour:
@@ -176,7 +190,11 @@ MonoBehaviour:
   vertical: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 3382
+=======
+  controlID: 20343
+>>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
 =======
   controlID: 20343
 >>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
@@ -237,6 +255,7 @@ MonoBehaviour:
   m_TreeViewState:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
@@ -244,11 +263,16 @@ MonoBehaviour:
 =======
 =======
 >>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
+=======
+>>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
     scrollPos: {x: 0, y: 19}
     m_SelectedIDs: 722b0000
     m_LastClickedID: 11122
     m_ExpandedIDs: 3aa0f8ff7a0dffff84faffffdafbffff00000000c22a0000722b0000942b0000ea2b00000e2c0000
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
+=======
 >>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
 =======
 >>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
@@ -394,10 +418,13 @@ MonoBehaviour:
     height: 271
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 11}
 =======
+=======
+>>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
 =======
 >>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
   m_MinSize: {x: 230, y: 250}
@@ -458,6 +485,7 @@ MonoBehaviour:
   m_FolderTreeState:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 47}
     m_SelectedIDs: 5e270000
     m_LastClickedID: 10078
@@ -465,11 +493,16 @@ MonoBehaviour:
 =======
 =======
 >>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
+=======
+>>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 5a270000
     m_LastClickedID: 10074
     m_ExpandedIDs: 0000000096250000f627000002280000c8290000ffffff7f
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
+=======
 >>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
 =======
 >>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
@@ -502,7 +535,11 @@ MonoBehaviour:
     m_LastClickedID: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 0000000096250000fa27000006280000d0290000ffffff7f
+=======
+    m_ExpandedIDs: 0000000096250000f627000002280000c8290000ffffff7f
+>>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
 =======
     m_ExpandedIDs: 0000000096250000f627000002280000c8290000ffffff7f
 >>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
@@ -535,8 +572,13 @@ MonoBehaviour:
   m_ListAreaState:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedInstanceIDs: eaaefeff
     m_LastClickedInstanceID: -86294
+=======
+    m_SelectedInstanceIDs: 722b0000
+    m_LastClickedInstanceID: 11122
+>>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
 =======
     m_SelectedInstanceIDs: 722b0000
     m_LastClickedInstanceID: 11122
