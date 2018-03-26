@@ -109,7 +109,11 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 495}
   m_MaxSize: {x: 14004, y: 14045}
   vertical: 0
+<<<<<<< HEAD
   controlID: 3597
+=======
+  controlID: 21865
+>>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +137,11 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 495}
   m_MaxSize: {x: 10002, y: 14045}
   vertical: 1
+<<<<<<< HEAD
   controlID: 3598
+=======
+  controlID: 21866
+>>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +165,11 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
+<<<<<<< HEAD
   controlID: 3599
+=======
+  controlID: 21867
+>>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -363,10 +375,17 @@ MonoBehaviour:
     width: 278
     height: 638
   m_TreeViewState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: c6260000
     m_LastClickedID: 0
     m_ExpandedIDs: 3e47fcff9e4bfcffecaefeff4cb0feff0ab6feffc8bbfeff76c0feff54c1feff3cc2feff2cc3fefffac6feff8ccafeffe6cdfeff6ad1feffbad5feff2ad9fefff8dcfeffa8e0feffc2e3feff0ae6feffb8e7feffd4e7feffbef1feff64f9feff9a01ffff8608ffff3e0fffff6616ffff9a1cffff0622ffff7a27ffff642cfffff230ffff127fffff0c80ffff7685ffff008affff90b9fffff0baffff84cbffff20d0ffffa0d6ffff26dbffffc8dfffff80e5ffff66eaffff16efffff3ef4ffffdafbffff00000000da400000e0470000304800003e9d0000c29d0000f69d00001a9e00002e9e0000d09e0000
+=======
+    scrollPos: {x: 0, y: 19}
+    m_SelectedIDs: 722b0000
+    m_LastClickedID: 11122
+    m_ExpandedIDs: 3aa0f8ff7a0dffff84faffffdafbffff00000000c22a0000722b0000942b0000ea2b00000e2c0000
+>>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 2 hits
@@ -385,7 +404,11 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
   m_ExpandedScenes:
+<<<<<<< HEAD
   - Level_02
+=======
+  - Level_10
+>>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -416,14 +439,24 @@ MonoBehaviour:
     width: 1249
     height: 638
   m_SceneLighting: 0
+<<<<<<< HEAD
   lastFramingTime: 4397.078438094404
+=======
+  lastFramingTime: 4097.257405230047
+>>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 9.472968, y: 5.6672297, z: 0}
     speed: 2
     m_Value: {x: 9.472968, y: 5.6672297, z: 0}
+=======
+    m_Target: {x: 12.958012, y: 6.2147655, z: 1}
+    speed: 2
+    m_Value: {x: 12.958012, y: 6.2147655, z: 1}
+>>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -450,9 +483,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 12.371552
     speed: 2
     m_Value: 12.371552
+=======
+    m_Target: 13.76181
+    speed: 2
+    m_Value: 13.76181
+>>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -511,9 +550,15 @@ MonoBehaviour:
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 5e270000
     m_LastClickedID: 10078
     m_ExpandedIDs: 0000000096250000fa27000006280000d0290000ffffff7f
+=======
+    m_SelectedIDs: 5a270000
+    m_LastClickedID: 10074
+    m_ExpandedIDs: 0000000096250000f627000002280000c8290000ffffff7f
+>>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -541,7 +586,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 0000000096250000fa27000006280000d0290000ffffff7f
+=======
+    m_ExpandedIDs: 0000000096250000f627000002280000c8290000ffffff7f
+>>>>>>> parent of 98393cb9... Add Arkanoid Jupiter level 1
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
