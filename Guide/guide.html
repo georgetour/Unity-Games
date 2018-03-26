@@ -166,7 +166,7 @@ insert UI element <img src="add_ui_element.jpg"</li>
 <li>To change the background color of the canvas select the Main Camera and choose background color you want</li>
 <li>Don't forget permanet changes should be made outside the play/tint mode</li>
 <li>To center item check <img src="center_item.jpg"></li>
-<li>To change color in text item go to inspector and choose the color you want</li>
+<li>To change color in text item go to inspector and choose the color you want(we can also change the alpha which is the opacity)</li>
 <li>To add a script in a UI element see <img src="add_script_ui_element_.jpg"></li>
 <li>To access text programatically we need to drag and drop Text in Inspector as shown in <img src="access_text.jpg"></li>
 <li>To add image go to GameObject  -> Ui - > Image as shown in <img src="add_image.jpg">(dont't forget to add the image in Canvas Renderer as you did in access_text)</li>
@@ -206,86 +206,88 @@ insert UI element <img src="add_ui_element.jpg"</li>
 
 </section>
 
+<section>
 
-Chapter 6 Objects and Scenes
+<h1>Chapter 6 Objects and Scenes</h1>
 
-	New scenes and levels
+	<h2>New scenes and levels</h2>
 
-Unity has the concept of scenes. We ofter hear the word level in unity.  But they are the same
+<p>Unity has the concept of scenes. We ofter hear the word level in unity.  But they are the same
 Imagine you play mario. The levels it has 1 -1 1 -2 etc are levels/scenes
 Also you can have scenes for start menu/splash screen or the options menu
-Remeber to create a New scene go to File-> New Scene and then Save Scene
+Remeber to create a New scene go to File-> New Scene and then Save Scene</p>
 
-	Find Current Scene
-
+	<h3>Find Current Scene</h3>
+<pre>
 Scene currentScene = SceneManager.GetActiveScene();
       string sceneName = currentScene.name;
       Debug.Log(sceneName);
+</pre>
+	<h2>Canvas</h2>
 
-	Canvas
+<p>Also it has a render mode which is how the canvas is rendered in our scene</p>
+<p>As you see in <br><img src="canvas.jpg"><br> we have some properties like Screen Space – Overlay, Screen Space – Camera, World Space</p>
+<p>With Screen Space – Overlay means that the canvas is what is rendered first in scene</p>
+<p>You can anchor an element as you see in <br><img src="text_anchoring.jpg"></p>
+<p>You can resize the ui by having pressed the u mode as shown in <br><img src="ui_mode.jpg"></p>
+<p>Holding Alt key whilce resizing the element it will scale more smoothly</p>
+<p>Also we have the event system which handles all the events that will be thrown by the UI and triggers the handlers. For example in tablet will automatically check touch events</p>
+<p>Canvas isn't needed if you will have collisions etc and you fit everything according to background</p>
 
-Also it has a render mode which is how the canvas is rendered in our scene
-As you see in canvas.jpg we have some properties like Screen Space – Overlay, Screen Space – Camera, World Space
-With Screen Space – Overlay means that the canvas is what is rendered first in scene
-You can anchor an element as you see in text_anchoring.jpg
-You can resize the ui by having pressed the u mode as shown in ui_mode.jpg
-Holding Alt key whilce resizing the element it will scale more smoothly
-Also we have the event system which handles all the events that will be thrown by the UI and triggers the handlers. For example in tablet will automatically check touch events
-Canvas isn't needed if you will have collisions etc and you fit everything according to background
+	<p><strong>Note : To have the ui element work make sure you have an event system as shown in</strong><br> 
+	<img src="event_system.jpg"></p>
 
-	Note : To have the ui element work make sure you have an event system as shown in event_system.jpg
+	<h3>Change Text to a Component </h3>
 
-	Change Text to a Component 
-
-As you can see in change_to_component.jpg you can change any component to something else
-To remove it check remove_component.jpg
-Also we can connect a script to a text as shown in script_to_text.jpg
-
-
-	Change Colors in Button Hovering
-
-You can check button_color_change.jpg
+<p>As you can see in <br><img src="change_to_component.jpg"> <br>you can change any component to something else</p>
+<p>To remove it check <br><img src="remove_component.jpg"></p>
+<p>Also we can connect a script to a text as shown in <br><img src="script_to_text.jpg"></p>
 
 
-Calling script from button
+	<h3>Change Colors in Button Hovering</h3>
+<p>You can check <br><img src="button_color_change.jpg"></p>
 
-We can call a specific script for a button as shown in script_from_button.jpg
-When you crerate a new object that have scripts on it you just set its positions to 0
-To add a script to a component check script_to_component.jpg
-Also we drag and drop the script as shown in script_to_click.jpg and we must choose what function we will run (don't forget to have public the function you want to run)
 
-	Application.LoadLevel() 
+<h3>Calling script from button</h3>
 
-Application.LoadLevel() requires one parameter that is the actual level which will load
-or we can have an index
-Unity must know that a level is ready so we don't get an error as shown in scenes_in_building.jpg
-The first in order will be the first run as shown in scenes_order.jpg
-You can copy the empty object and paste it in the scene you want
-We have Application.loadedLevel also that returns current level according to order placed in Build Settings
+<p>We can call a specific script for a button as shown in <br><img src="script_from_button.jpg"></p>
+<p>When you crerate a new object that have scripts on it you just set its positions to 0</p>
+<p>To add a script to a component check <br><img src="script_to_component.jpg"></p>
+<p>Also we drag and drop the script as shown in <br><img src="script_to_click.jpg"> and we must choose what function we will run (don't forget to have public the function you want to run)</p>
 
-	Application.Quit()
-Application.Quit() quits the game but NOT if you run it in a browser or in the Debug Unity mode
-Also in mobile platforms it will NOT work and the app will be rejected
+	<h3>Application.LoadLevel() </h3>
 
-	Z-depth
+<p>Application.LoadLevel() requires one parameter that is the actual level which will load
+or we can have an index</p>
+<p>Unity must know that a level is ready so we don't get an error as shown in <br><img src="scenes_in_building.jpg"></p>
+<p>The first in order will be the first run as shown in <br><img src="scenes_order.jpg"></p>
+<p>You can copy the empty object and paste it in the scene you want</p>
+<p>We have Application.loadedLevel also that returns current level according to order placed in Build Settings</p>
 
-Unity is always 3D even when switched to 2D
-The Z-position of sprites matters for rendering
-Sprites further from the camera get rendered first
-See z-position.jpg 
-Imagine it what goes on top. The bakground has z = 0. So an object must be in front of the background. Make it z = 5 for example.
-If you change the camera to 3D you will see in what order the objects appear
+	<h3>Application.Quit()</h3>
+<p>Application.Quit() quits the game but NOT if you run it in a browser or in the Debug Unity mode</p>
+<p>Also in mobile platforms it will NOT work and the app will be rejected</p>
 
-	Sprite
+	<h3>Z-depth</h3>
 
-To add a sprite just drag and drop it into your scene and you will see it will create an object as seen object_from_sprite.jpg
+<p>Unity is always 3D even when switched to 2D</p>
+<p>The Z-position of sprites matters for rendering and the bigger is the most in the sprite is(check 3d to see where they are)</p>
+<p>Sprites further from the camera get rendered first</p>
+<p>See <br><img src="z-position.jpg"></p>
+<p>Imagine it what goes on top. The bakground has z = 0. So an object must be in front of the background. Make it z = -5 for example.</p>
+<p>If you change the camera to 3D you will see in what order the objects appear</p>
 
-Instances and Objects
+	<h3>Sprite</h3>
 
-The objects in the left in the editor are unique and are like having new instances for each object
-They have different properties and you can apply to each of them different scripts
-Also you can change values specific to that object if they have a script with public fields/methods as in private_vc_public_editor.jpg
+<p>To add a sprite just drag and drop it into your scene and you will see it will create an object as seen <br><img src="object_from_sprite.jpg"></p>
 
+<h3>Instances and Objects</h3>
+
+<p>The objects in the left in the editor are unique and are like having new instances for each object</p>
+<p>They have different properties and you can apply to each of them different scripts</p>
+<p>Also you can change values specific to that object if they have a script with public fields/methods as in <br><img src="private_vc_public_editor.jpg"></p>
+
+</section>
 
 Chapter 7 Game Design Document
 
@@ -448,27 +450,33 @@ GetInstanceID()
 Returns the instance id of the object.
 The instance id of an object is always guaranteed to be unique.
 
-Chapter 11 Using space and resolutions
+<section>
+<h1>Chapter 11 Using space and resolutions</h1>
 
-Orthographic vs Perspective
-As you see in inspector for Camera we have an option called projection
-An orthographic camera doesn't take account of how far away an object is from it, at all whereas a repsective camera does
-Make sure the camera has lower z depth value than the object so you can see it
-World Units/Play space total
-Move the camera for the object from left to right to see how many world units is as shown in world_units.jpg and subsctract the – position with + position
-Sprite Editor
-To enter Sprite Editor mode pick the image and then click sprite editor as show in sprite_editor.jpg and change pivot to bottom left so it will fit exactly at the frame in bottom left
-Aspect Ratio
-Aspect ratio is important since it's the analogy that the scene will scale
-Best use aspect ratio than fixed resolution since fixed resolution will not  let all people play your game
-https://forum.unity.com/threads/standard-screen-resolution-for-pc-mac-game.292586/
+<h2>Orthographic vs Perspective Camera</h2>
+<p>As you see in inspector for Camera we have an option called projection</p>
+<p>An orthographic camera doesn't take account of how far away an object is from it, at all whereas a perspective camera does</p>
+<p>Make sure the camera has lower z depth value than the object so you can see it</p>
 
-Camera size
-Camera has a Size property which means how many world units is from the center to the top of the camera as you can see in camera_size.jpg 
+<h3>World Units/Play space total</h3>
+<p>Move the camera for the object from left to right to see how many world units is as shown in <br><img src="world_units.jpg"><br> and subsctract the – position with + position</p>
 
-Pixels per unit
-They have to do with physics etc so you have to be accurate
-The bigger the number the smaller the sprite becomes
+<h3>Sprite Editor</h3>
+<p>To enter Sprite Editor mode pick the image and then click sprite editor as show in <br><img src="sprite_editor.jpg"> and change pivot to bottom left so it will fit exactly at the frame in bottom left</p>
+
+<h3>Aspect Ratio</h3>
+<p>Aspect ratio is important since it's the analogy that the scene will scale</h3>
+<p>Best use aspect ratio than fixed resolution since fixed resolution will not  let all people play your game
+https://forum.unity.com/threads/standard-screen-resolution-for-pc-mac-game.292586/</p>
+
+<h3>Camera size</h3>
+<p>Camera has a Size property which means how many world units is from the center to the top of the camera as you can see in <br><img src="camera_size.jpg"> </p>
+
+<h3>Pixels per unit</h3>
+<p>They have to do with physics etc so you have to be accurate</p>
+<p>The bigger the number the smaller the sprite becomes</p>
+
+</section>
 
 <section>
 
@@ -708,15 +716,19 @@ this.transform.position = paddlePos;</pre>
 <h4>Particle Systems</h4>
 <p>For effects like moving liquids, smoke, clouds, flames and magic spells...particle systems can be used to capture the inherent fluidity and energy.</p>
 <ol>
-<li> We create an empty object in left</li>
+<li> We create an empty object in left or directly a particle system</li>
 <li> Add a component particle system</li>
 <li> Check the Renderer down in right in the editor so it will have Material as in <img src="particle_renderer.jpg">
 <ul>
 <li>Looping means the effect will repeat</li>
+<li>Rotation changes the to where particle will move</li>
 <li>Duration tells us how much time will the effect run</li>
-<li>StartLifetime : particle will die when it reaches 0</li>
-<li>Emission : how fast particles are coming</li>
-<li>Shape : The shape the emission has</li>
+<li>StartLifetime : particle will die when it reaches 0 so the higher they bigger they live</li>
+<li>Startsize : is the size of each particle</li>
+<li>Emission : how fast particles are created, the higher the more particles we wil have</li>
+<li>Shape : The shape of the area the emission has(by chaning this you can give some depth or really nice effects)</li>
+<li>Prewarm : this option makes the particle available immediately </li>
+<li>Max particles : The toal of particles in our area we have for the whole system</li>
 <li>To enable/disable emmision
 <pre>var emission = particle.emission; 
        if (PowerUpFireball.fireball)
@@ -752,6 +764,14 @@ this.transform.position = paddlePos;</pre>
           }
         }</pre>
 </li></ol>
+<p>To give depth for particle we must use <strong>parallax.</strong></p>
+<ul>
+<li>As you move objects in the distance seem to move less than those nearby</li>
+<li>Good technique to give a sense of depth artificially even in 2D</li>
+<li>Relative speed of objects is important</li>
+
+
+</ul>
 
 <h4>Transform.childCount</h4>
 <p>It counts all the children for current object. In the below code we are searching all transforms the script has and we count every transform's children.</p>
