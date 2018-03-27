@@ -12,6 +12,14 @@ public class EnemyBehaviour : MonoBehaviour {
     public float firerate= 0.5f;
     //private float probability;
 
+    private ScoreKeeper scoreKeeper;
+
+
+    private void Start()
+    {
+        scoreKeeper = GameObject.FindGameObjectWithTag("ScoreKeeper").GetComponent<ScoreKeeper>();
+    }
+
     private void Update()
     {
         float probability = Time.deltaTime * firerate;
@@ -28,14 +36,16 @@ public class EnemyBehaviour : MonoBehaviour {
         //Check if the collider was a projectile
         projectile = collider.gameObject.GetComponent<Projectile>();
         if (projectile)
+        {
             health -= projectile.GetDamage();
-
-       
+            scoreKeeper.ScoreToGive(50);
+        }
         Destroy(collider.gameObject);
 
         if (health <= 0)
         {
             Destroy(this.gameObject);
+            scoreKeeper.ScoreToGive(1000);
         }
                 
     }
