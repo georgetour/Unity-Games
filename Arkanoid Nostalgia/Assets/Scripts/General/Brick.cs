@@ -108,7 +108,7 @@ public class Brick : MonoBehaviour {
             levelmanager.AllBricksDestroyed();
             AudioSource.PlayClipAtPoint(crack[1], transform.position);
             SmokePuffs();
-            loadPowerUp.Activate(this.transform.position);
+            loadPowerUp.Activate(new Vector3(this.transform.position.x,this.transform.position.y,-9));
             score.HitBrickScore(100);
             
         }
