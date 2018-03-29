@@ -32,7 +32,6 @@ public class LoadPowerUp : MonoBehaviour {
         {
             PowerUpTable[6].dropRarity = 0;
         }
-        Debug.Log("Drop chance" +dropChance);
        
     }
 

@@ -6,4 +6,17 @@ SPACE INVADERS NOSTALGIA
 - Different enemies
 - Power ups
 - Maybe ship permanent upgrades?
-- Shields for enemies
+- Shields for enemies and player and different weapons
+- PowerUps will have a space that will appear and then will drop to bottom
+- Also enemies and bosses will drop power ups 
+
+
+28-3-2018 
+
+Add sounds :
+
+- The player fires
+- The enemies fire
+- An enemy dies
+
+

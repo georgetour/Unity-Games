@@ -44,8 +44,9 @@ public class Paddle : MonoBehaviour {
         }
 
         if (autoPLay == false && !TimerStart.startTimer)
-        { 
-            MoveWithArrows();
+        {
+            //MoveWithArrows();
+            MoveWithMouse();
         }
         else if (autoPLay == true && !TimerStart.startTimer)
         {

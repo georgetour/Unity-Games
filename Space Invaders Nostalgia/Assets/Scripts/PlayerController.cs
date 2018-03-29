@@ -6,23 +6,24 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour {
 
     //Move speed
-    public float speed = 10f;
+    public float speed = 15f;
     public float padding = 1f;
     public float health = 250;
 
     float xmin;
     float xmax;
 
-    Projectile projectile;
-    public GameObject playerProjectile;
-    
     public float laserSpeed ;
     public float firingRate = 0.2f;
+
+    public List<Projectile> weapons = new List<Projectile>();
+    public static int currentWeapon = 0;
 
 
     // Use this for initialization
     void Start ()
     {
+
         StartingPosition();
         RestrictPosition();
     }
@@ -37,9 +38,10 @@ public class PlayerController : MonoBehaviour {
     {
         Debug.Log(collider);
         //Check if the collider was a projectile
-        projectile = collider.gameObject.GetComponent<Projectile>();
-        if (projectile)
-            health -= projectile.GetDamage();
+        
+        //projectile = collider.gameObject.GetComponent<Projectile>();
+        if (weapons[currentWeapon])
+            health -= weapons[currentWeapon].GetDamage();
 
 
         Destroy(collider.gameObject);
@@ -55,9 +57,12 @@ public class PlayerController : MonoBehaviour {
     //Shoot projectiles
     void Fire()
     {
-        GameObject beam = Instantiate(playerProjectile, new Vector3(this.transform.position.x, this.transform.position.y + 0.6f, 0), Quaternion.identity);
-        beam.GetComponent<Rigidbody2D>().velocity = new Vector3(0, laserSpeed, 0);
         
+        GameObject beam = Instantiate(weapons[currentWeapon].gameObject, new Vector3(this.transform.position.x, this.transform.position.y + 0.6f, 0), Quaternion.identity);
+        beam.GetComponent<Rigidbody2D>().velocity = new Vector3(0, laserSpeed, 0);
+        weapons[currentWeapon].LaunchSound();
+
+
     }
 
 

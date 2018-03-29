@@ -6,6 +6,10 @@ public class Projectile : MonoBehaviour {
 
 
     public float damage = 100f;
+    public AudioClip audioClip;
+    public AudioClip ongoingSound;
+    public Vector2 speed;
+    public int size;
 
     public float GetDamage()
     {
@@ -14,7 +18,15 @@ public class Projectile : MonoBehaviour {
 
     public void Hit()
     {
+       
         Destroy(gameObject);
     }
+
+    public void LaunchSound()
+    {
+        AudioSource.PlayClipAtPoint(audioClip, this.transform.position);
+    }
+
+
 
 }
