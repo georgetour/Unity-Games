@@ -1,7 +1,7 @@
 SPACE INVADERS NOSTALGIA
 
 
-- Add move with arrows for spaceship
+- Add move with arrows for spaceship ok
 - Have bosses(wow really?)
 - Different enemies
 - Power ups
@@ -9,14 +9,16 @@ SPACE INVADERS NOSTALGIA
 - Shields for enemies and player and different weapons
 - PowerUps will have a space that will appear and then will drop to bottom
 - Also enemies and bosses will drop power ups 
+- We will have shields, health, score, weapons(missiles,improved lasers etc)
+
 
 
 28-3-2018 
 
 Add sounds :
 
-- The player fires
-- The enemies fire
-- An enemy dies
+- The player fires ok
+- The enemies fire ok 
+- An enemy dies ok
 
 

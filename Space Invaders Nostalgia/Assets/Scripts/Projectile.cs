@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour {
 
 
     public float damage = 100f;
-    public AudioClip audioClip;
+    public AudioClip fireSound;
     public AudioClip ongoingSound;
     public Vector2 speed;
     public int size;
@@ -24,7 +24,7 @@ public class Projectile : MonoBehaviour {
 
     public void LaunchSound()
     {
-        AudioSource.PlayClipAtPoint(audioClip, this.transform.position);
+        AudioSource.PlayClipAtPoint(fireSound,transform.position);
     }
 
 

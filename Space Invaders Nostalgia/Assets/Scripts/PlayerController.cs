@@ -57,11 +57,9 @@ public class PlayerController : MonoBehaviour {
     //Shoot projectiles
     void Fire()
     {
-        
-        GameObject beam = Instantiate(weapons[currentWeapon].gameObject, new Vector3(this.transform.position.x, this.transform.position.y + 0.6f, 0), Quaternion.identity);
-        beam.GetComponent<Rigidbody2D>().velocity = new Vector3(0, laserSpeed, 0);
         weapons[currentWeapon].LaunchSound();
-
+        GameObject beam = Instantiate(weapons[currentWeapon].gameObject, new Vector2(this.transform.position.x, this.transform.position.y + 0.6f), Quaternion.identity);
+        beam.GetComponent<Rigidbody2D>().velocity = new Vector3(0, laserSpeed, 0);
 
     }
 

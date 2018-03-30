@@ -285,7 +285,7 @@ or we can have an index</p>
 
 <p>The objects in the left in the editor are unique and are like having new instances for each object</p>
 <p>They have different properties and you can apply to each of them different scripts</p>
-<p>Also you can change values specific to that object if they have a script with public fields/methods as in <br><img src="private_vc_public_editor.jpg"></p>
+<p>Also you can change values specific to that object if they have a script with public fields/methods as in <br><img src="private_vs_public_editor.jpg"></p>
 
 </section>
 
@@ -313,28 +313,29 @@ To import it to a project you want you go Assets -> Import Package
 
 TO ADD : Unity Packages from steore what they are and how they work
 
-Chapter 9 Fonts and Music/Sounds
+<section>
+<h1>Chapter 9 Fonts and Music/Sounds</h1>
 
-Addings Fonts
+<h2>Addings Fonts</h2>
 
-To add fonts drag and drop them  in your Assets folder and the folder in it
-To change fonts choose the object you want the font and check change_fonts.jpg
+<p>To add fonts drag and drop them  in your Assets folder and the folder in it</p>
+<p>To change fonts choose the object you want the font and check <br><img src="change_fonts.jpg"></p>
 
-	Adding Music
+	<h2>Adding Music</h2>
 
-Music and sounds improves quality of a game by a big percentage since hearing is one our most improtant senses
-To add your music create an empty object as shown in create_music_object.jpg
-Then you drag and drop the audio file to the object you created and you will have something like audio_to_object.jpg
-Then click to the inspector and reset the position for the MusicPlayer so it can be down left corner since it s a game object that doesn;t have physical meaning for the game
+<p>Music and sounds improves quality of a game by a big percentage since hearing is one our most important senses</p>
+<p>To add your music create an empty object as shown in <br><img src="create_music_object.jpg"></p>
+<p>Then you drag and drop the audio file to the object you created and you will have something like <br><img src="audio_to_object.jpg"></p>
+<p>Then click to the inspector and reset the position for the MusicPlayer so it can be down left corner since it s a game object that doesn;t have physical meaning for the game</p>
 
-	Adding Music/Sound to object
+	<h2>Adding Music/Sound to object</h2>
 
-To add sound to an object you add an Audio Source component then you drag and drop the clip you need that you have in your folders in editor
+<p>To add sound to an object you add an Audio Source component then you drag and drop the clip you need that you have in your folders in editor</p>
 
-	audio.Play()
+	<h3>audio.Play()</h3>
 
-This has been deprecated and can't be used in new Unity use:
-
+<p>This has been deprecated and can't be used in new Unity use:</p>
+<pre>
 	GetComponent<AudioSource>().Play()
 
 	private void OnCollisionEnter2D(Collision2D collision)
@@ -345,19 +346,19 @@ This has been deprecated and can't be used in new Unity use:
         	}
        
     	}
+</pre>
+	<p>We also have to add component Audio source at the editor as shown in<br> <img src="audio_source_component.jpg"></p>
 
-	We also have to add component Audio source at the editor as shown in 	audio_source_component.jpg
+<p>The correct way is to use AudioSource.PlayClipAtPoint:</p>
 
-The correct way is to use AudioSource.PlayClipAtPoint:
+	 <h3>AudioSource.PlayClipAtPoint()</h3>
 
-	 AudioSource.PlayClipAtPoint()
-
-First create the object Audioclip
-	
+<p>First create the object Audioclip</p>
+	<pre>
 	public AudioClip crack;
-
-Then you add it as  parameter :
-
+</pre>
+<p>Then you add it as argument at AudioSource.PlayClipAtPoint:</p>
+<pre>
 private void OnCollisionExit2D(Collision2D collision)
     	{
         AudioSource.PlayClipAtPoint(crack, transform.position);
@@ -367,19 +368,19 @@ private void OnCollisionExit2D(Collision2D collision)
 
 
 	GameObject.DontDestroyOnLoad()
+</pre>
+<p>First create the script that will handle the music by going to Add Component and then New script and name the same with your Audio Object</p>
+<p>As we see in gameObject.jpg gameObject is the first object in our hierarchy with all its components inspector etc</p>
 
-First create the script that will handle the music by going to Add Component and then New script and name the same with your Audio Object
-As we see in gameObject.jpg gameObject is the first object in our hierarchy with all its components inspector etc
+	<h3>Singleton</h3>
 
-	Singleton
+<p>Singleton is a pattern that you allow to a class to be instantiated only once. Ensure a class has only one instance and provide a global point of access to it. </p>
+<p><a href="http://wiki.unity3d.com/index.php/Singleton">http://wiki.unity3d.com/index.php/Singleton</a></p>
+<p><a href="https://msdn.microsoft.com/en-us/library/ff650316.aspx">https://msdn.microsoft.com/en-us/library/ff650316.aspx</a></p>
+<p><a href="http://gameprogrammingpatterns.com/singleton.html">http://gameprogrammingpatterns.com/singleton.html</a>
+</p>
 
-Singleton is a pattern that you allow to a class to be instantiated only once. Ensure a class has only one instance and provide a global point of access to it. 
-http://wiki.unity3d.com/index.php/Singleton
-https://msdn.microsoft.com/en-us/library/ff650316.aspx
-http://gameprogrammingpatterns.com/singleton.html
-
-
-
+<pre>
 class Program
 {
     static void Main()
@@ -424,15 +425,18 @@ public static Singleton Instance
     }
  }
 	 }
-	
-	Destroy()
-It is used to remove a gameObject, a component or an asset
+</pre>	
+	<h3>Destroy()</h3>
+<p>It is used to remove a gameObject, a component or an asset</p>
+<pre>
 	if (instance != null)
         {
             Destroy(gameObject);
             print("Duplicate music player self-destructing");
         }
-
+</pre>
+</section>
+<section>		
 Chapter 10 Unity script order execution
 
 	Check this nice article on how unity handles order in scripts functions etc :
@@ -449,6 +453,8 @@ Script execution order is very important since sometimes some things will not be
 GetInstanceID()
 Returns the instance id of the object.
 The instance id of an object is always guaranteed to be unique.
+
+</section>
 
 <section>
 <h1>Chapter 11 Using space and resolutions</h1>

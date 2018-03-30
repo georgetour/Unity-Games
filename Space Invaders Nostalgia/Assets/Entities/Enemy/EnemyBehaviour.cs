@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour {
 
-    Projectile projectile;
+
     public float health = 250;
 
-    public GameObject enemyProjectile;
+
     public float projectileSpeed = 10f;
     public float firerate= 0.5f;
     //private float probability;
 
     private ScoreKeeper scoreKeeper;
+
+    public List<Projectile> weapons = new List<Projectile>();
+    public int currentWeapon = 0;
+
+    public AudioClip deathSound;
 
 
     private void Start()
@@ -30,31 +35,42 @@ public class EnemyBehaviour : MonoBehaviour {
 
     }
 
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         
         //Check if the collider was a projectile
-        projectile = collider.gameObject.GetComponent<Projectile>();
-        if (projectile)
+        if (weapons[currentWeapon])
         {
-            health -= projectile.GetDamage();
+            health -= weapons[currentWeapon].GetDamage();
             scoreKeeper.ScoreToGive(50);
         }
         Destroy(collider.gameObject);
 
         if (health <= 0)
         {
-            Destroy(this.gameObject);
-            scoreKeeper.ScoreToGive(1000);
+            Die();
         }
                 
+    }
+
+
+    //What the enemy will do when they die
+    private void Die()
+    {
+        AudioSource.PlayClipAtPoint(deathSound, transform.position);
+        Destroy(this.gameObject);
+        scoreKeeper.ScoreToGive(1000);
+        
     }
 
     //Make the enemy shoot
     void Fire()
     {
-        GameObject beam = Instantiate(enemyProjectile, new Vector3(transform.position.x, transform.position.y - 1f, 0), Quaternion.identity);
+        weapons[currentWeapon].LaunchSound();
+        GameObject beam = Instantiate(weapons[currentWeapon].gameObject, new Vector3(transform.position.x, transform.position.y - 1f, 0), Quaternion.identity);
         beam.GetComponent<Rigidbody2D>().velocity = new Vector3(0, -projectileSpeed, 0);
+        
     }
 
 
