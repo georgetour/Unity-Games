@@ -287,6 +287,20 @@ or we can have an index</p>
 <p>They have different properties and you can apply to each of them different scripts</p>
 <p>Also you can change values specific to that object if they have a script with public fields/methods as in <br><img src="private_vs_public_editor.jpg"></p>
 
+<h2>Sprite Rendering Order</h2>
+<p>Some times when we instantiate an object from an object the new object will be on top of the other. Like in Space Invaders Nostalgia the lasers are on top of the sprite that created them.</p>
+
+<p>We will use sorting layer which the camera will ignore the z-depth and go by choosing the layers. So even if an object has
+ower z-dimension it will be rendered below the layer.
+<strong>Sorting layers is different than the layers we use for collisions.</strong></p>
+
+<p>First we go at Tags and Layers :</p>
+<img src="tags_and_layers.jpg">
+<p>Then we add Sorting Layers.</p>
+<p>After that we go to our Prefab and at Sprite Renderer as show in sorting_layers :</p>
+<img src="sorting_layers.jpg">
+<p>Also yo can use it so explosion or similar effects are on top of each layer.</p>
+
 </section>
 
 Chapter 7 Game Design Document
@@ -1065,6 +1079,8 @@ Finally we add at the keyframe where the object we want to be .
  
 
  </section>
+ 
+ 
 
 </body>
 </html>	
