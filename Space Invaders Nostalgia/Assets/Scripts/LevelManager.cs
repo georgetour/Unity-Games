@@ -11,13 +11,10 @@ public class LevelManager : MonoBehaviour {
 
     private void Start()
     {
-        
-        
+
         currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
 
-        
-       
     }
 
 

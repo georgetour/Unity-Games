@@ -19,11 +19,13 @@ public class PlayerController : MonoBehaviour {
     public List<Projectile> weapons = new List<Projectile>();
     public static int currentWeapon = 0;
 
+    LevelManager levelManager;
+
 
     // Use this for initialization
     void Start ()
     {
-
+        levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
         StartingPosition();
         RestrictPosition();
     }
@@ -36,10 +38,10 @@ public class PlayerController : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log(collider);
-        //Check if the collider was a projectile
-        
+
         //projectile = collider.gameObject.GetComponent<Projectile>();
+
+        //Receive damage according to weapon
         if (weapons[currentWeapon])
             health -= weapons[currentWeapon].GetDamage();
 
@@ -48,7 +50,7 @@ public class PlayerController : MonoBehaviour {
 
         if (health <= 0)
         {
-            Destroy(this.gameObject);
+            Die();
         }
 
     }
@@ -111,5 +113,13 @@ public class PlayerController : MonoBehaviour {
         this.transform.position = shipStartingPos;
     }
 
-   
+
+    //What the enemy will do when they die
+    private void Die()
+    {
+        Destroy(this.gameObject);
+        levelManager.LoadNextLevel();
+    }
+
+
 }
