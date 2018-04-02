@@ -97,9 +97,9 @@ You must select where you want to be created and if it's gonna be 2D or 3D</li>
 <h2>Cool art</h2>
 
 <a href="https://opengameart.org/">https://opengameart.org/</a>
-
+<br>
 <a href="http://www.freepngimg.com">http://www.freepngimg.com</a>
-
+<br>
 <a href="https://www.deviantart.com/">https://www.deviantart.com/</a>
 
 <h2>Cool sounds</h2>
@@ -119,6 +119,9 @@ You must select where you want to be created and if it's gonna be 2D or 3D</li>
 
 <h2>Sprites</h2>
 <a href="https://www.spriters-resource.com/">https://www.spriters-resource.com/</a>
+
+<h2>Music</h2>
+<a href="http://clearsidemusic.com">http://clearsidemusic.com</a>
 
 </section>
 
@@ -263,6 +266,63 @@ or we can have an index</p>
 <p>The first in order will be the first run as shown in <br><img src="scenes_order.jpg"></p>
 <p>You can copy the empty object and paste it in the scene you want</p>
 <p>We have Application.loadedLevel also that returns current level according to order placed in Build Settings</p>
+
+	<h3>OnLevelWasLoaded</h3>
+	<p>This is a method that checks what level was loaded.</p>
+	
+	<pre>    private static MusicPlayer instance = null;
+
+    public AudioClip startClip;
+    public AudioClip gameClip;
+    public AudioClip endClip;
+
+    private AudioSource music;
+
+     void Awake()
+     {
+        ////If any Music Player exists destroy it else continue in next scenes
+        if (instance != null && instance!=this)
+        {
+            music = GetComponent<AudioSource>();
+            Destroy(gameObject);
+            
+        }
+        else
+        {
+            instance = this;
+
+            //Continue music
+            GameObject.DontDestroyOnLoad(gameObject);
+            music = GetComponent<AudioSource>();
+            music.clip = startClip;
+            music.loop = true;
+            music.Play();
+        }
+    }
+
+    //Play different audio according to level
+    private void OnLevelWasLoaded(int level)
+    {
+        Debug.Log("MusicPlayer : loaded level" + level);
+        music.Stop();
+
+        if (level == 0)
+        {
+            music.clip = startClip;
+        }
+        if (level == 1)
+        {
+            music.clip = gameClip;
+        }
+        if (level == 2)
+        {
+            music.clip = endClip;
+        }
+
+        music.loop = true;
+        music.Play();
+    }
+</pre>
 
 	<h3>Application.Quit()</h3>
 <p>Application.Quit() quits the game but NOT if you run it in a browser or in the Debug Unity mode</p>
@@ -1078,6 +1138,26 @@ Finally we add at the keyframe where the object we want to be .
 <p>If we have position problems with Idle animation we should create another animation with 0 positions and place it in it</p>
  
 
+ </section>
+ 
+ <section>
+ <h1>Version Control System</h1>
+ <p>Versioning is very important in software since you can have history of changes and updates made to software.</p>
+ <p>We use git, the site that has the files github and the GUI is called Github desktop(alternatives are treesource and others).</p>
+ <p>To make files be readable and understandable we have to choose the options as shown :</p>
+ 
+ <img src="github_text.jpg">
+ 
+ <p>Also we have to make sure temp files are ignored in our .gitignore which has a premade template for Unity but we also have to delete all slashes at beginning of the folder. </p>
+ 
+ <pre>[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+Assets/AssetStoreTools*</pre>
+ 
+ 
  </section>
  
  
