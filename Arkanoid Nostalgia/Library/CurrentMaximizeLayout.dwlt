@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 495}
   m_MaxSize: {x: 14004, y: 14045}
   vertical: 0
-  controlID: 751
+  controlID: 3452
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 495}
   m_MaxSize: {x: 10002, y: 14045}
   vertical: 1
-  controlID: 726
+  controlID: 3453
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 727
+  controlID: 3416
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -201,9 +201,9 @@ MonoBehaviour:
     height: 633
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 404dffff
-    m_LastClickedID: -45760
-    m_ExpandedIDs: 9652ffff9655ffff1e59ffff6c5dffff6862ffffb867ffff626cffff3872fffff076ffff7e7bffff9280ffffe485ffffb88bffff9c91ffff8499ffff92a0ffffa8a9ffffb6b0ffff2ab9fffffcc5ffffdafbffff000000005485000092850000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: e498ffff3a9affff1aa0ffffa8a4ffffacf2ffffdafbffff000000009247000038480000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -279,14 +279,14 @@ MonoBehaviour:
     width: 1142
     height: 633
   m_SceneLighting: 1
-  lastFramingTime: 840.0417812289738
+  lastFramingTime: 1748.9747735121123
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.9266406, y: 10.384357, z: -0.18210025}
+    m_Target: {x: 9.198366, y: 5.3556767, z: -6}
     speed: 2
-    m_Value: {x: 0.9266406, y: 10.384357, z: -0.18210025}
+    m_Value: {x: 9.198366, y: 5.3556767, z: -6}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -313,9 +313,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 2.5466943
+    m_Target: 10.760947
     speed: 2
-    m_Value: 2.5466943
+    m_Value: 10.760947
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -389,19 +389,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/_Scenes
+    - Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/_Scenes
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Public\Documents\Unity Projects\Unity-Games\Arkanoid
     Nostalgia
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 68270000
-    m_LastClickedID: 10088
+    scrollPos: {x: 0, y: 69.999695}
+    m_SelectedIDs: b6270000
+    m_LastClickedID: 10166
     m_ExpandedIDs: 00000000962500000a280000162800004a280000f0290000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -455,9 +455,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 404dffff
-    m_LastClickedInstanceID: -45760
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300006e26000000000000ba250000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

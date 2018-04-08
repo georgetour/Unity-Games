@@ -12,7 +12,8 @@ public class Ball : MonoBehaviour {
     private Vector3 paddleToBallVector;
 
     private ParticleSystem particle;
-    
+
+    Vector2 tweak;
 
     // Use this for initialization
     void Start () {
@@ -39,6 +40,7 @@ public class Ball : MonoBehaviour {
 
         if (!TimerStart.startTimer)
             LaunchBallWithMouse();
+       
     }
 
     //Set starting position of the ball to be the same with paddle
@@ -50,13 +52,14 @@ public class Ball : MonoBehaviour {
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        //Fix the second parameter if ball can't reach top or stays in loop
-        Vector2 tweak = new Vector2(Random.Range(-0.05f, 0.3f), Random.Range(-0.05f, 0.4f));
+        //Fix the x parameter if ball can't reach top or stays in loop
+        tweak = new Vector3(Random.Range(-0.05f, 0.6f), Random.Range(-0.05f, 0.4f));
 
         if (gameStarted==true)
         {
             GetComponent<AudioSource>().Play();
             GetComponent<Rigidbody2D>().velocity += tweak;
+            
         }
        
     }
@@ -70,6 +73,7 @@ public class Ball : MonoBehaviour {
 
             //Ball spee launch
             this.GetComponent<Rigidbody2D>().velocity = new Vector2(1f, 7.2f);
+            
         }
 
         //Start the game with mouse press and launch the ball

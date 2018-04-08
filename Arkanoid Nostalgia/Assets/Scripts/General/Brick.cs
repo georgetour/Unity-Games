@@ -56,7 +56,8 @@ public class Brick : MonoBehaviour {
         {
             this.GetComponent<BoxCollider2D>().isTrigger = false;
         }
-        
+        Debug.Log(totalBricks);
+       
     }
 
 
@@ -65,7 +66,7 @@ public class Brick : MonoBehaviour {
     {
 
         //Handle hits only if you can break it
-        if (isBreakable)
+        if (!PowerUpFireball.fireball && isBreakable)
         {
             HandleHits();
         }
@@ -73,7 +74,8 @@ public class Brick : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (PowerUpFireball.fireball)
+
+        if (PowerUpFireball.fireball && isBreakable)
         {
             int maxHits = 0;
 
@@ -84,7 +86,7 @@ public class Brick : MonoBehaviour {
                 levelmanager.AllBricksDestroyed();
                 AudioSource.PlayClipAtPoint(crack[1], transform.position);
                 SmokePuffs();
-                loadPowerUp.Activate(this.transform.position);
+                loadPowerUp.Activate(new Vector3(this.transform.position.x, this.transform.position.y, -9));
                 score.HitBrickScore(100);
             }
         }

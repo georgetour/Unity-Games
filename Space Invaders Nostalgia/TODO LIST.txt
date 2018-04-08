@@ -10,6 +10,10 @@ SPACE INVADERS NOSTALGIA
 - PowerUps will have a space that will appear and then will drop to bottom
 - Also enemies and bosses will drop power ups 
 - We will have shields, health, score, weapons(missiles,improved lasers etc)
+- Different formations
+- Health bar(change the scale of a sprite by percentage of life remaining)
+
+-Share it!
 
 
 

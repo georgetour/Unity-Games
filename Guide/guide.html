@@ -423,7 +423,7 @@ TO ADD : Unity Packages from steore what they are and how they work
 </pre>
 	<p>We also have to add component Audio source at the editor as shown in<br> <img src="audio_source_component.jpg"></p>
 
-<p>The correct way is to use AudioSource.PlayClipAtPoint:</p>
+<p>The correct way is to use AudioSource.PlayClipAtPoint(The clip will be played even if the object that has called the function and that holds the clip and audio source has been destroyed):</p>
 
 	 <h3>AudioSource.PlayClipAtPoint()</h3>
 
@@ -1113,12 +1113,12 @@ Chapter 21 Resetting a script or component
 
 <section>
 <h1>Chapter 23 Animation</h1>
-<p>Animation is something that will make an object appear smoothly and not just immediately appear. First we add the animation tab :</p>
+<p>Animation is something that will make an object appear smoothly and not just immediately appear. First we add the animation tab :or we can Go to Window menu and select Animation</p>
 <img src="animation_tab.jpg">
 <p>After we choose the object we create a new clip by clicking the button Create. We see that we have a new property at our inspector.</p>
-<img src="animator.jpg"
+<img src="animator.jpg">
 <p>Then we see where it was crewated we have a controller and the animator window.</p>
-<img src="animator_controller.jpg"
+<img src="animator_controller.jpg">
 <p>Unity creates a lot of stuff that will run in background for the animation. We can see in our editor what animation we have
 chosen :</p>
 <img src="animation_choose.jpg">
@@ -1137,11 +1137,12 @@ Finally we add at the keyframe where the object we want to be .
 <img src="animation_transition.jpg">
 <p>If we have position problems with Idle animation we should create another animation with 0 positions and place it in it</p>
  
-
+ <h3>When animating position, where will the movement be relative to?</h3>
+<p>We can change it in the inspector to be relative to parent or game space.</p>
  </section>
  
  <section>
- <h1>Version Control System</h1>
+ <h1> Chapter 24 Version Control System</h1>
  <p>Versioning is very important in software since you can have history of changes and updates made to software.</p>
  <p>We use git, the site that has the files github and the GUI is called Github desktop(alternatives are treesource and others).</p>
  <p>To make files be readable and understandable we have to choose the options as shown :</p>

@@ -20,7 +20,7 @@ score,
 biggerpaddle(chocobo) 
 smallerpaddle(skull)
 fireball
-TODO laser ok
+laser
 TODO hold ball
 TODO extra balls
 
@@ -33,4 +33,10 @@ Sound for laser and fireball
 Θα υπάρχουν 9 πλανήτες και ο καθέςνας θα έχει 2  section πλην του πρώτου που έχει 5
 Σύνολο 21 πίστες
 
-Add animation in drops!!!
+Add animation in drops!!! 
+
+Fireball and laser timer
+Fireball goes through unbreakable bricks fixed 08-04-2018
+
+όταν πέφτει Power up πάνω σε τουβλάκι το πιάνει σαν hit. Πρέπει να φτιάξωlayers ώστε να αλληλεπιδρά μόνο με τη μπαλα fixed 08-04-2018
+
