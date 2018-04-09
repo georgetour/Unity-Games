@@ -53,7 +53,7 @@ public class Ball : MonoBehaviour {
     public void OnCollisionEnter2D(Collision2D collision)
     {
         //Fix the x parameter if ball can't reach top or stays in loop
-        tweak = new Vector3(Random.Range(-0.05f, 0.6f), Random.Range(-0.05f, 0.4f));
+        tweak = new Vector3(Random.Range(-0.05f, 0.6f), Random.Range(-0.05f, 0.3f));
 
         if (gameStarted==true)
         {

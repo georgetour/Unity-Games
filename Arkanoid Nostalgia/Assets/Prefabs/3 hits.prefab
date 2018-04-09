@@ -110,7 +110,7 @@ MonoBehaviour:
   - name: SmallerPaddle
     powerUp: {fileID: 1061355300975118, guid: 6db298715f5a6c14a8bd2a86eb763679, type: 2}
     dropRarity: 20
-  dropChance: 35
+  dropChance: 20
 --- !u!114 &114931948903958992
 MonoBehaviour:
   m_ObjectHideFlags: 1
