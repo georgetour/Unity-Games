@@ -21,6 +21,7 @@ biggerpaddle(chocobo)
 smallerpaddle(skull)
 fireball
 laser
+
 TODO hold ball
 TODO extra balls
 
@@ -30,13 +31,16 @@ Score ίσως σε όλα τα Powerup(ναι θα γίνει)
 Sound for laser and fireball
 Να μη γίνεται fireball και laser power up ok
 
-Θα υπάρχουν 9 πλανήτες και ο καθέςνας θα έχει 2  section πλην του πρώτου που έχει 5
+Θα υπάρχουν 8 πλανήτες και ο καθέςνας θα έχει 2  section πλην του πρώτου που έχει 5
 Σύνολο 21 πίστες
+Μένει μια πιστα
 
 Add animation in drops!!! 
 
-Fireball and laser timer
+Fireball and laser timer οκ
 Fireball goes through unbreakable bricks fixed 08-04-2018
 
 όταν πέφτει Power up πάνω σε τουβλάκι το πιάνει σαν hit. Πρέπει να φτιάξωlayers ώστε να αλληλεπιδρά μόνο με τη μπαλα fixed 08-04-2018
 
+*** TODO ***
+- Must test if the ball speed is playable and works when moving to next levels

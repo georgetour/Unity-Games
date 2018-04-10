@@ -150,6 +150,7 @@
     <Compile Include="Assets\Scripts\PowerUps\PowerUpLife.cs" />
     <Compile Include="Assets\Scripts\PowerUps\PowerUpPaddle.cs" />
     <Compile Include="Assets\Scripts\PowerUps\PowerUpScore.cs" />
+    <Compile Include="Assets\Scripts\PowerUps\PowerUpTimer.cs" />
     <Compile Include="Assets\Scripts\Score\Score.cs" />
   </ItemGroup>
   <ItemGroup>

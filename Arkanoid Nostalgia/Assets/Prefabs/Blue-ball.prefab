@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 58907626296452466}
   - component: {fileID: 114838329328673424}
   - component: {fileID: 82222414245167732}
+  - component: {fileID: 114016376548116750}
   m_Layer: 10
   m_Name: Blue-ball
   m_TagString: Untagged
@@ -159,6 +160,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114016376548116750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1933505575080612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a71bed79f99aba499bef204d30818ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114838329328673424
 MonoBehaviour:
   m_ObjectHideFlags: 1

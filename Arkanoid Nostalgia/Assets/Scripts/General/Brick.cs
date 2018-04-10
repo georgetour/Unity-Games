@@ -56,7 +56,7 @@ public class Brick : MonoBehaviour {
         {
             this.GetComponent<BoxCollider2D>().isTrigger = false;
         }
-        Debug.Log(totalBricks);
+
        
     }
 

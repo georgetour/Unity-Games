@@ -12300,7 +12300,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Uranus
+  m_Text: Neptune
 --- !u!222 &1324776621
 CanvasRenderer:
   m_ObjectHideFlags: 0

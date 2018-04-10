@@ -41,6 +41,7 @@ public  class ControlPowerUps : MonoBehaviour {
     //Handle the particle when get the power up
     public void SmokePuffs()
     {
+
         var smokePuff = Instantiate(smoke, new Vector3(this.transform.position.x, this.transform.position.y), Quaternion.identity);
         smokePuff.GetComponent<ParticleSystem>().startColor = this.GetComponent<SpriteRenderer>().color;
         //Destroy smokepuff after 2 seconds so you don't get unlimited Smoke clones

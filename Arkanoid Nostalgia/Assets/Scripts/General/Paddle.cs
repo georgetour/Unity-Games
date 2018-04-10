@@ -7,6 +7,8 @@ public class Paddle : MonoBehaviour {
     int spriteIndex = 1;//The laser sprites
     private Ball ball;
 
+    public PowerUpTimer timer { get; private set; }
+
     public float speed = 10f;
 
     private float xmin;
@@ -24,7 +26,8 @@ public class Paddle : MonoBehaviour {
     void Start () {
         this.transform.position = new Vector2(9.6f,0.51f);
         ball = GameObject.FindObjectOfType<Ball>();
-	}
+        timer = GetComponent<PowerUpTimer>();
+    }
 
    
 	
@@ -143,6 +146,7 @@ public class Paddle : MonoBehaviour {
     {
         if (PowerUpLaser.laser)
         {
+            timer.Start();
             this.GetComponent<SpriteRenderer>().sprite = paddleSprite[spriteIndex];
         }
         else

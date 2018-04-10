@@ -29,12 +29,14 @@ public class LevelManager : MonoBehaviour {
         Brick.ResetBricks();
         //Load level according to parameter
         Application.LoadLevel(name);
+        Ball.ballSpeed += 0.5f;
         if (sceneName == "Start")
         {
             Score.ResetScore();
             LifeManager.ResetLives();
+            Ball.ResetSpeed();
         }
-
+        
     }
 
 	public void QuitRequest()
@@ -44,7 +46,6 @@ public class LevelManager : MonoBehaviour {
 
     public void LoadNextLevel()
     {
-        Brick.ResetBricks();
         Application.LoadLevel(Application.loadedLevel + 1);
     }
 

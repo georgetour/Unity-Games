@@ -5,6 +5,8 @@ public class Ball : MonoBehaviour {
 
     private Paddle paddle;
 
+
+
     //Check if game has started
     public static bool gameStarted = false;
 
@@ -13,7 +15,9 @@ public class Ball : MonoBehaviour {
 
     private ParticleSystem particle;
 
-    Vector2 tweak;
+    public static float ballSpeed = 8f;
+
+    private PowerUpTimer timer;
 
     // Use this for initialization
     void Start () {
@@ -23,15 +27,17 @@ public class Ball : MonoBehaviour {
         //Connecting programmatically the paddle with the Paddle class
         paddle = GameObject.FindObjectOfType<Paddle>();
         paddleToBallVector = this.transform.position - paddle.transform.position;
-        
-
+        timer = GetComponent<PowerUpTimer>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        var emission = particle.emission; 
+        var emission = particle.emission;
         if (PowerUpFireball.fireball)
+        {
             emission.enabled = true;
+            timer.Start();
+        }
         else if (!PowerUpFireball.fireball)
             emission.enabled = false;
 
@@ -40,7 +46,7 @@ public class Ball : MonoBehaviour {
 
         if (!TimerStart.startTimer)
             LaunchBallWithMouse();
-       
+        
     }
 
     //Set starting position of the ball to be the same with paddle
@@ -50,10 +56,10 @@ public class Ball : MonoBehaviour {
     }
 
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionExit2D(Collision2D collision)
     {
         //Fix the x parameter if ball can't reach top or stays in loop
-        tweak = new Vector3(Random.Range(-0.05f, 0.6f), Random.Range(-0.05f, 0.3f));
+        Vector2 tweak = new Vector2(Random.Range(-2, 0.2f)* Time.deltaTime, Random.Range(0f, 0.4f));
 
         if (gameStarted==true)
         {
@@ -72,7 +78,7 @@ public class Ball : MonoBehaviour {
             gameStarted = true;
 
             //Ball spee launch
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(1f, 7.2f);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(1f, ballSpeed);
             
         }
 
@@ -84,6 +90,14 @@ public class Ball : MonoBehaviour {
             //Ball spee launch
             this.GetComponent<Rigidbody2D>().velocity = new Vector2(1f, 7.2f);
         }
+
+
+        
+    }
+
+    public static void ResetSpeed()
+    {
+        ballSpeed = 8f;
     }
 
 }
