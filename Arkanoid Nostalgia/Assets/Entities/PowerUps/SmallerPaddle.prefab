@@ -105,7 +105,7 @@ MonoBehaviour:
   loseTag: LoseCollider
   ballTag: Ball
   powerUp: small
-  scoreToGive: 500
+  scoreToGive: -1000
 --- !u!212 &212549494287491904
 SpriteRenderer:
   m_ObjectHideFlags: 1

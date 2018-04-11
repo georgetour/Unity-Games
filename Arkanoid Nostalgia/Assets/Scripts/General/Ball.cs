@@ -15,7 +15,7 @@ public class Ball : MonoBehaviour {
 
     private ParticleSystem particle;
 
-    public static float ballSpeed = 8f;
+    public static float ballSpeed = 8.5f;
 
     private PowerUpTimer timer;
 
@@ -46,7 +46,7 @@ public class Ball : MonoBehaviour {
 
         if (!TimerStart.startTimer)
             LaunchBallWithMouse();
-        
+        Debug.Log(GetComponent<Rigidbody2D>().velocity);
     }
 
     //Set starting position of the ball to be the same with paddle
@@ -56,11 +56,11 @@ public class Ball : MonoBehaviour {
     }
 
 
-    public void OnCollisionExit2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         //Fix the x parameter if ball can't reach top or stays in loop
         Vector2 tweak = new Vector2(Random.Range(-2, 0.2f)* Time.deltaTime, Random.Range(0f, 0.4f));
-
+        
         if (gameStarted==true)
         {
             GetComponent<AudioSource>().Play();

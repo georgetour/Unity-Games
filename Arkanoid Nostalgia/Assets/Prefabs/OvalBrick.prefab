@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4847378105554664}
   - component: {fileID: 212603923313101996}
   - component: {fileID: 50062017940693620}
-  - component: {fileID: 114622222886518898}
   - component: {fileID: 70119918850191428}
+  - component: {fileID: 114622222886518898}
   - component: {fileID: 114232787762688404}
   m_Layer: 0
   m_Name: OvalBrick

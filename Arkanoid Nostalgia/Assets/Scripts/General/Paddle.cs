@@ -21,12 +21,14 @@ public class Paddle : MonoBehaviour {
     public GameObject projectile;
     public float projectileSpeed = 5f;
     private float nextFire;
+    
 
     // Use this for initialization
     void Start () {
         this.transform.position = new Vector2(9.6f,0.51f);
         ball = GameObject.FindObjectOfType<Ball>();
         timer = GetComponent<PowerUpTimer>();
+        
     }
 
    
@@ -42,8 +44,8 @@ public class Paddle : MonoBehaviour {
         //Fire laser if laser is active
         if (Time.time > nextFire && PowerUpLaser.laser){
             nextFire = Time.time + fireRate;
-            Fire(0.8f);
-            Fire(-0.8f);
+            Fire(0.75f);
+            Fire(-0.75f);
         }
 
         if (autoPLay == false && !TimerStart.startTimer)
@@ -61,7 +63,7 @@ public class Paddle : MonoBehaviour {
 
     void Fire(float xPosition)
     {
-        Laser.CreateLasers(projectile, new Vector3(this.transform.position.x+xPosition, this.transform.position.y + 0.6f, 0),projectileSpeed);
+        Laser.CreateLasers(projectile, new Vector3(this.transform.position.x+xPosition, this.transform.position.y + 0.8f, 0),projectileSpeed);
         
     }
 
