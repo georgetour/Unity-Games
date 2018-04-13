@@ -28,7 +28,7 @@ TODO extra balls
 Να μεγαλω΄νει λίγο ίγο για κάθε cvhocobbo Και αντίστοιχα να μικραίνει και όχι fixed
 Score ίσως σε όλα τα Powerup(ναι θα γίνει)
 
-Sound for laser and fireball
+Sound for laser and fireball laser ok
 Να μη γίνεται fireball και laser power up ok
 
 Θα υπάρχουν 8 πλανήτες και ο καθέςνας θα έχει 2  section πλην του πρώτου που έχει 5
@@ -42,5 +42,5 @@ Fireball goes through unbreakable bricks fixed 08-04-2018
 
 όταν πέφτει Power up πάνω σε τουβλάκι το πιάνει σαν hit. Πρέπει να φτιάξωlayers ώστε να αλληλεπιδρά μόνο με τη μπαλα fixed 08-04-2018
 
-*** TODO ***
-- Must test if the ball speed is playable and works when moving to next levels
+TODO 
+Animation and sound when ball hits bottom

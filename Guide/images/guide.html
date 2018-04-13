@@ -1,0 +1,1184 @@
+<html>
+<head><meta charset="UTF-8">
+
+<style>
+	body{
+		font-size:1.5em; 
+		padding:20px;
+	}
+
+	section{
+		border:1px solid black; 
+		padding:10px;
+		margin-bottom :20px;
+	}
+	img{
+		width:50%;
+	}
+	
+</style>
+<link href="assets/lightbox.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+<section>
+<h1>Chapter 1 Introduction</h1>
+
+<h2>Installing and first steps</h2>
+	
+	<p>To install unity type in google unity download archive. Then download the version you want to install. Version 4 uses monodevelop as IDE. Version 5 uses Visual Studio!</p>
+
+	<p>After installation click the Unity icon if you created it in desktop else find it. If you open unity it might open your last working project. You can create a new project from top left in unity environement or open a folder with the project.</p>
+
+	<p>The layout changes top right at the button right of the layers. To go to default just chnage it to default. To create a script right click in assets and then create a new C# script. The script created are located in Assets folder.</p>
+
+	<p>For versions 4 double click will open MonoDevelop. You don't edit scripts  in Unity directly you edit them in the IDE. To save something right up left in MonoDevelop Save or Save All and then you will see changes in unity also.</p>
+
+	<p>To delete a script just right click and then Delete in Unity.</p>
+
+<h3>What you see in the editor</h3>
+
+	<img src="Unity_Editor.jpg" >
+	<ol>
+<li> Unity, scene name, name of game, web player means it runs as Web Player </li>
+<li> To play the scene or the game press Play pause to pause and pay again to stop it </li>
+<li> The game runs at Game pane/Window as you see </li>
+<li> To maximize screen when you press play </li>
+<li> The difference between these two is the one is that you see the objects you have in the scene and the Game tab is how it looks when you play it </li>
+</ol>
+
+<ul>
+<li>Paymode tint Note: When we press the play button the screen becomes a little grey which means changes we make in the game are not persistent. They are not going to be saved. </li>
+<li>Change play mode tint color : Go to Edit -> Preferences -> Colors -> Playmode Tint</li>
+<li>To create a new project go to :  File -> New Project</li>
+You must select where you want to be created and if it's gonna be 2D or 3D</li>
+<li>To create an scene as shown in first_scene.jpg Go to top right and see the options you have like New Scene, Open Scene, Save Scene, Save as Scene</li>
+<li>Note: To move a pane/window in the editor just click on it and drag and drop it around and place it where you want </li>
+<li> These icons let you do different things when you are on a scene (shortcuts q,w,e,r,t)
+<ol>
+<li>First mode moves the entire area/scene</li>
+<li>Second mode lets you move obejcts around</li>
+<li>Third mode rotates</li>
+<li>Forth mode scales</li>
+<li>Fifth mode for UI elements the user interface</li>
+</ol>
+</li>
+</ul>
+</section>
+
+
+<section>
+<h1>Chapter 2 Saving and Closing</h1>
+
+<p>To create a script right click in assets and the Create-> C# Script as shown in <img src="monodevelop_ide.jpg"></p>
+<p>It has been created in our folder and you can check by right clicking on it Show in Explorer(Windows)</p>
+<p>Then double click on it and MonoDevelop IDE will open</p>
+<p>For the options Go to : Tools -> Options</p>
+<p>Then find behavior and set Indentation Mode to Automatic rather than Smart</p>
+<p>You can see that lines are numbered in our editor</p>
+<p>To indent or oudent a line Ctlr + Alt + End or  Ctlr + Alt + Home</p>
+<p>Alt  +  right or left arrrow shifts between words</p>
+<p>You can see all shortcuts in Tools -> Options -> KeyBindings</p>
+<p>As you see in <img src="monodevelop_saving_project.jpg"> if a project has a star or a x means it hasn't been saved. To save ctlr + s or left up in file save.</p>
+<p>Note: To rename a scene in unity editor single click in the scene's name. To save check unity_saves.jpg. It saves automatically when you exit unity.</p>
+<p>After saving you can move your folder anywhere you want</p>
+
+</section>
+
+<section>
+<h1>Chapter 3 Resources</h1>
+<p>I will add more as i find them.</p>
+
+<h2>Photoshop free alternative</h2>
+<a href="www.gimp.org">www.gimp.org</a>
+
+<h2>Cool art</h2>
+
+<a href="https://opengameart.org/">https://opengameart.org/</a>
+<br>
+<a href="http://www.freepngimg.com">http://www.freepngimg.com</a>
+<br>
+<a href="https://www.deviantart.com/">https://www.deviantart.com/</a>
+
+<h2>Cool sounds</h2>
+<a href="https://freesound.org">https://freesound.org</a>
+
+<h2>Unity manual</h2>
+<a href="https://docs.unity3d.com/Manual/">https://docs.unity3d.com/Manual/</a>
+
+<h2>Unity Scripting </h2>
+<a href="https://docs.unity3d.com/ScriptReference/index.html">https://docs.unity3d.com/ScriptReference/index.html</a>
+
+<h2>Game Programming Patterns</h2>
+<a href="http://gameprogrammingpatterns.com/">http://gameprogrammingpatterns.com/</a>
+
+<h2>Some png icons</h2>
+<a href="http://www.psdgraphics.com/">http://www.psdgraphics.com/</a>
+
+<h2>Sprites</h2>
+<a href="https://www.spriters-resource.com/">https://www.spriters-resource.com/</a>
+
+<h2>Music</h2>
+<a href="http://clearsidemusic.com">http://clearsidemusic.com</a>
+
+</section>
+
+
+<section>
+<h1>Chapter 4 Number Wizard Game</h1>
+
+<p>Printing to the console check <img src="console.jpg"></p>
+<p>To delete the camera select the camera right click and the delete</p>
+<p>To have a script run we need an empty Game Object to be attached to as you can see in <img src="add_component.jpg"</p>
+<p>To create a folder wirght click in assets -> Create Folder and name it scripts so you can have scripts in it</p>
+<p>The method Start() will be executed when the game starts. </p>
+<p>To print something in the console you use the method print as you can see in the game and inside the parenthesis what you want to be printed</p>
+
+<h2>Input class </h2>
+
+<a href="https://docs.unity3d.com/ScriptReference/Input.html"> https://docs.unity3d.com/ScriptReference/Input.html</a>
+<p>To get input from user u use the Input class</p>
+<p>GetMouseButtonDown vs GetMouseButton(the first returns one click the other repeating)</p>
+
+<p>If you want to see what a keyword is ctrl + ' over the keyword</p>
+<p>The Update() method runs every frame which depends on the game on how many frames we have 30,50,1000</p>
+<p>You can see in the console menu that it has tab collapse. By that it counts the buttons pressed and not make create new lines</p>
+<p>Check out how binary search / binary chop works in here https://en.wikipedia.org/wiki/Binary_search_algorithm which is very important in computer science</p>
+
+</section>
+
+
+<section>
+<h1>Chapter 5 Interface</h1>
+
+	<h2>Adding 2D User Interface Text</h2>
+<ul>
+<li>To add an image just drag and drop it in assets and by clicking on it you can see in the Inspector up right what type it is as shown in <img src="image_type.jpg"></li>
+<li>To enable 2D mode just click the mode you want in the Scene as shown in choosing_2D_3D.jpg</li>
+<li>To insert a text in our scene check <img src="insert_item_in_scene.jpg" or
+insert UI element <img src="add_ui_element.jpg"</li>
+<li>Now we have created a canvas and the canvas renderer as you see in <img src="canvas_and_object.jpg"></li>
+<li>Also top right we have the layers as shown in <img src="layers.jpg"></li>
+<li>As you see in <img src="zoom_level.jpg"> we have high zoom </li>
+<li>You click the scene and then with mouse scroll you change the zoom level</li>
+<li>Also you can double click on the word Text below Canvas or double clik on the canvas will go in all canvas</li>
+<li>A canvas is where something is drawn in our case our entire game</li>
+<li>You can drag and drop the item inside the canvas wherever you want</li>
+<li>To change the background color of the canvas select the Main Camera and choose background color you want</li>
+<li>Don't forget permanet changes should be made outside the play/tint mode</li>
+<li>To center item check <img src="center_item.jpg"></li>
+<li>To change color in text item go to inspector and choose the color you want(we can also change the alpha which is the opacity)</li>
+<li>To add a script in a UI element see <img src="add_script_ui_element_.jpg"></li>
+<li>To access text programatically we need to drag and drop Text in Inspector as shown in <img src="access_text.jpg"></li>
+<li>To add image go to GameObject  -> Ui - > Image as shown in <img src="add_image.jpg">(dont't forget to add the image in Canvas Renderer as you did in access_text)</li>
+</ul>
+	<h2>Frame by frame play</h2>
+
+<p>If you want to see your scene running frame by frame first press pause and then play.</p>
+
+	<h2>Word Wrapping and Joining strings</h2>
+
+<p>To have text fill the whole area you have wrap or overflow option as seen in <img src="word_wrapping.jpg"></p>
+<p>To join strings which called concatenation you use the + in C# and \n to break line</p>
+
+	<h2>Changing Resolution</h2>
+
+<p>To change resolution go at Game -> Free aspect as in <img src="changing_resolution.jpg"></p>
+<p>If you drag and drop the Game window you will see how it looks with the resolution you picked as shown in <img src="dragged_game_window.jpg"></p>
+
+	
+
+	<h2>Prepare the game for publishing</h2>
+
+<p>First we need to change our build settings by going in File -> Build settings</p>
+<p>Then we drag and drop our scene and at player settings we put the resolution we want and the background</p>
+<p>According to device we want to publishwe should set and change the Aspect</p>
+
+
+	<h2>Unity 5 and WebGL</h2>
+<p>Unity 5 and above supports easy deployment with WebGL</p>
+<p>Check <img src="unity_webgl.jpg"</p>
+<p>Don't forget the resolutions at plays setting to be same as the canvas you created</p>
+
+	<h2>Multiple text dynamically</h2>
+<p>If you have text that values change from script first you must create the fields as shown in <img src="multiple_text_fields.jpg"></p>
+<p>Then you must assign them to inspector for script by draging and dropping them since they will have appeared to it as shown in <img src="multiple_text_to_script.jpg"></p>
+
+
+</section>
+
+<section>
+
+<h1>Chapter 6 Objects and Scenes</h1>
+
+	<h2>New scenes and levels</h2>
+
+<p>Unity has the concept of scenes. We ofter hear the word level in unity.  But they are the same
+Imagine you play mario. The levels it has 1 -1 1 -2 etc are levels/scenes
+Also you can have scenes for start menu/splash screen or the options menu
+Remeber to create a New scene go to File-> New Scene and then Save Scene</p>
+
+	<h3>Find Current Scene</h3>
+<pre>
+Scene currentScene = SceneManager.GetActiveScene();
+      string sceneName = currentScene.name;
+      Debug.Log(sceneName);
+</pre>
+	<h2>Canvas</h2>
+
+<p>Also it has a render mode which is how the canvas is rendered in our scene</p>
+<p>As you see in <br><img src="canvas.jpg"><br> we have some properties like Screen Space – Overlay, Screen Space – Camera, World Space</p>
+<p>With Screen Space – Overlay means that the canvas is what is rendered first in scene</p>
+<p>You can anchor an element as you see in <br><img src="text_anchoring.jpg"></p>
+<p>You can resize the ui by having pressed the u mode as shown in <br><img src="ui_mode.jpg"></p>
+<p>Holding Alt key whilce resizing the element it will scale more smoothly</p>
+<p>Also we have the event system which handles all the events that will be thrown by the UI and triggers the handlers. For example in tablet will automatically check touch events</p>
+<p>Canvas isn't needed if you will have collisions etc and you fit everything according to background</p>
+
+	<p><strong>Note : To have the ui element work make sure you have an event system as shown in</strong><br> 
+	<img src="event_system.jpg"></p>
+
+	<h3>Change Text to a Component </h3>
+
+<p>As you can see in <br><img src="change_to_component.jpg"> <br>you can change any component to something else</p>
+<p>To remove it check <br><img src="remove_component.jpg"></p>
+<p>Also we can connect a script to a text as shown in <br><img src="script_to_text.jpg"></p>
+
+
+	<h3>Change Colors in Button Hovering</h3>
+<p>You can check <br><img src="button_color_change.jpg"></p>
+
+
+<h3>Calling script from button</h3>
+
+<p>We can call a specific script for a button as shown in <br><img src="script_from_button.jpg"></p>
+<p>When you crerate a new object that have scripts on it you just set its positions to 0</p>
+<p>To add a script to a component check <br><img src="script_to_component.jpg"></p>
+<p>Also we drag and drop the script as shown in <br><img src="script_to_click.jpg"> and we must choose what function we will run (don't forget to have public the function you want to run)</p>
+
+	<h3>Application.LoadLevel() </h3>
+
+<p>Application.LoadLevel() requires one parameter that is the actual level which will load
+or we can have an index</p>
+<p>Unity must know that a level is ready so we don't get an error as shown in <br><img src="scenes_in_building.jpg"></p>
+<p>The first in order will be the first run as shown in <br><img src="scenes_order.jpg"></p>
+<p>You can copy the empty object and paste it in the scene you want</p>
+<p>We have Application.loadedLevel also that returns current level according to order placed in Build Settings</p>
+
+	<h3>OnLevelWasLoaded</h3>
+	<p>This is a method that checks what level was loaded.</p>
+	
+	<pre>    private static MusicPlayer instance = null;
+
+    public AudioClip startClip;
+    public AudioClip gameClip;
+    public AudioClip endClip;
+
+    private AudioSource music;
+
+     void Awake()
+     {
+        ////If any Music Player exists destroy it else continue in next scenes
+        if (instance != null && instance!=this)
+        {
+            music = GetComponent<AudioSource>();
+            Destroy(gameObject);
+            
+        }
+        else
+        {
+            instance = this;
+
+            //Continue music
+            GameObject.DontDestroyOnLoad(gameObject);
+            music = GetComponent<AudioSource>();
+            music.clip = startClip;
+            music.loop = true;
+            music.Play();
+        }
+    }
+
+    //Play different audio according to level
+    private void OnLevelWasLoaded(int level)
+    {
+        Debug.Log("MusicPlayer : loaded level" + level);
+        music.Stop();
+
+        if (level == 0)
+        {
+            music.clip = startClip;
+        }
+        if (level == 1)
+        {
+            music.clip = gameClip;
+        }
+        if (level == 2)
+        {
+            music.clip = endClip;
+        }
+
+        music.loop = true;
+        music.Play();
+    }
+</pre>
+
+	<h3>Application.Quit()</h3>
+<p>Application.Quit() quits the game but NOT if you run it in a browser or in the Debug Unity mode</p>
+<p>Also in mobile platforms it will NOT work and the app will be rejected</p>
+
+	<h3>Z-depth</h3>
+
+<p>Unity is always 3D even when switched to 2D</p>
+<p>The Z-position of sprites matters for rendering and the bigger is the most in the sprite is(check 3d to see where they are)</p>
+<p>Sprites further from the camera get rendered first</p>
+<p>See <br><img src="z-position.jpg"></p>
+<p>Imagine it what goes on top. The bakground has z = 0. So an object must be in front of the background. Make it z = -5 for example.</p>
+<p>If you change the camera to 3D you will see in what order the objects appear</p>
+
+	<h3>Sprite</h3>
+
+<p>To add a sprite just drag and drop it into your scene and you will see it will create an object as seen <br><img src="object_from_sprite.jpg"></p>
+
+<h3>Instances and Objects</h3>
+
+<p>The objects in the left in the editor are unique and are like having new instances for each object</p>
+<p>They have different properties and you can apply to each of them different scripts</p>
+<p>Also you can change values specific to that object if they have a script with public fields/methods as in <br><img src="private_vs_public_editor.jpg"></p>
+
+<h2>Sprite Rendering Order</h2>
+<p>Some times when we instantiate an object from an object the new object will be on top of the other. Like in Space Invaders Nostalgia the lasers are on top of the sprite that created them.</p>
+
+<p>We will use sorting layer which the camera will ignore the z-depth and go by choosing the layers. So even if an object has
+ower z-dimension it will be rendered below the layer.
+<strong>Sorting layers is different than the layers we use for collisions.</strong></p>
+
+<p>First we go at Tags and Layers :</p>
+<img src="tags_and_layers.jpg">
+<p>Then we add Sorting Layers.</p>
+<p>After that we go to our Prefab and at Sprite Renderer as show in sorting_layers :</p>
+<img src="sorting_layers.jpg">
+<p>Also yo can use it so explosion or similar effects are on top of each layer.</p>
+
+</section>
+
+Chapter 7 Game Design Document
+
+A game design document is a tool to communicate between members of your team(Artists, Developers, Designers)
+It's also a place that's we going to record decisions made before and during development. What's In? What's Out? With this someone will not get cocky and say why we don't add this since we said it would be out
+The GDD is a living document that changes all the time according to what you learn, what happens in progress 
+It's not a plan
+Our Number Wizrd UI game has a simple GDD as you can see
+
+
+
+Finally we connect the scenes so they follow our GDD. That's why we should go look back and back again at our Game Design Development
+Before starting to put a lot of stuff and code to your scenes check with simple buttons that you can move between the corscale scenes as supposed to
+
+	If we structure our game properly then adding functionality will be possible even though we 	have created multiple levels
+
+Chapter 8 Packages
+
+To create a package go to Assets -> Export Package and you choose what you want to export
+and you save it where you want         
+A common exporting is menus, level manager etc
+To import it to a project you want you go Assets -> Import Package
+
+TO ADD : Unity Packages from steore what they are and how they work
+
+<section>
+<h1>Chapter 9 Fonts and Music/Sounds</h1>
+
+<h2>Addings Fonts</h2>
+
+<p>To add fonts drag and drop them  in your Assets folder and the folder in it</p>
+<p>To change fonts choose the object you want the font and check <br><img src="change_fonts.jpg"></p>
+
+	<h2>Adding Music</h2>
+
+<p>Music and sounds improves quality of a game by a big percentage since hearing is one our most important senses</p>
+<p>To add your music create an empty object as shown in <br><img src="create_music_object.jpg"></p>
+<p>Then you drag and drop the audio file to the object you created and you will have something like <br><img src="audio_to_object.jpg"></p>
+<p>Then click to the inspector and reset the position for the MusicPlayer so it can be down left corner since it s a game object that doesn;t have physical meaning for the game</p>
+
+	<h2>Adding Music/Sound to object</h2>
+
+<p>To add sound to an object you add an Audio Source component then you drag and drop the clip you need that you have in your folders in editor</p>
+
+	<h3>audio.Play()</h3>
+
+<p>This has been deprecated and can't be used in new Unity use:</p>
+<pre>
+	GetComponent<AudioSource>().Play()
+
+	private void OnCollisionEnter2D(Collision2D collision)
+    	{
+        	if (gameStarted)
+       	{
+            	   GetComponent<AudioSource>().Play();
+        	}
+       
+    	}
+</pre>
+	<p>We also have to add component Audio source at the editor as shown in<br> <img src="audio_source_component.jpg"></p>
+
+<p>The correct way is to use AudioSource.PlayClipAtPoint(The clip will be played even if the object that has called the function and that holds the clip and audio source has been destroyed):</p>
+
+	 <h3>AudioSource.PlayClipAtPoint()</h3>
+
+<p>First create the object Audioclip</p>
+	<pre>
+	public AudioClip crack;
+</pre>
+<p>Then you add it as argument at AudioSource.PlayClipAtPoint:</p>
+<pre>
+private void OnCollisionExit2D(Collision2D collision)
+    	{
+        AudioSource.PlayClipAtPoint(crack, transform.position);
+       
+    	}
+
+
+
+	GameObject.DontDestroyOnLoad()
+</pre>
+<p>First create the script that will handle the music by going to Add Component and then New script and name the same with your Audio Object</p>
+<p>As we see in gameObject.jpg gameObject is the first object in our hierarchy with all its components inspector etc</p>
+
+	<h3>Singleton</h3>
+
+<p>Singleton is a pattern that you allow to a class to be instantiated only once. Ensure a class has only one instance and provide a global point of access to it. </p>
+<p><a href="http://wiki.unity3d.com/index.php/Singleton">http://wiki.unity3d.com/index.php/Singleton</a></p>
+<p><a href="https://msdn.microsoft.com/en-us/library/ff650316.aspx">https://msdn.microsoft.com/en-us/library/ff650316.aspx</a></p>
+<p><a href="http://gameprogrammingpatterns.com/singleton.html">http://gameprogrammingpatterns.com/singleton.html</a>
+</p>
+
+<pre>
+class Program
+{
+    static void Main()
+    {
+        SiteStructure s = SiteStructure.Instance;
+    }
+}
+
+public sealed class SiteStructure
+{
+    static readonly SiteStructure _instance = new SiteStructure();
+    public static SiteStructure Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+    SiteStructure()
+    {
+        // Initialize.
+    }
+}
+
+	//Or from microsoft
+using System;
+
+	public class Singleton
+	{
+		private static Singleton instance;
+
+		private Singleton() {}
+
+public static Singleton Instance
+{
+   get 
+   {
+      if (instance == null)
+         instance = new Singleton();
+         
+	return instance;
+    }
+ }
+	 }
+</pre>	
+	<h3>Destroy()</h3>
+<p>It is used to remove a gameObject, a component or an asset</p>
+<pre>
+	if (instance != null)
+        {
+            Destroy(gameObject);
+            print("Duplicate music player self-destructing");
+        }
+</pre>
+</section>
+<section>		
+
+
+<h1>Chapter 10 Unity script order execution</h1>
+
+	<p>Check this nice article on how unity handles order in scripts functions etc :</p>
+
+    <a href="https://docs.unity3d.com/Manual/ExecutionOrder.html">https://docs.unity3d.com/Manual/ExecutionOrder.html</a>
+
+<p>As you see in <br><img src="method_call_order.jpg"> <br>the scripts are called and we have mor time for next script more time for next script etc</p>
+<p><strong>Awake() runs before Start() as you see in the documents</strong></p>
+
+<p>We don't know what order scripts are executed but in unity we have Script Execution Order as shown in <br><img src="script_execution_order.jpg"> and we can control ONLY the classes executed</p>
+<p>Script execution order is very important since sometimes some things will not behave normally </p>
+
+
+<h2>GetInstanceID()</h2>
+<p>Returns the instance id of the object.</p>
+<p>The instance id of an object is always guaranteed to be unique.</p>
+
+</section>
+
+<section>
+<h1>Chapter 11 Using space and resolutions</h1>
+
+<h2>Orthographic vs Perspective Camera</h2>
+<p>As you see in inspector for Camera we have an option called projection</p>
+<p>An orthographic camera doesn't take account of how far away an object is from it, at all whereas a perspective camera does</p>
+<p>Make sure the camera has lower z depth value than the object so you can see it</p>
+
+<h3>World Units/Play space total</h3>
+<p>Move the camera for the object from left to right to see how many world units is as shown in <br><img src="world_units.jpg"><br> and subsctract the – position with + position</p>
+
+<h3>Sprite Editor</h3>
+<p>To enter Sprite Editor mode pick the image and then click sprite editor as show in <br><img src="sprite_editor.jpg"> and change pivot to bottom left so it will fit exactly at the frame in bottom left</p>
+
+<h3>Aspect Ratio</h3>
+<p>Aspect ratio is important since it's the analogy that the scene will scale</h3>
+<p>Best use aspect ratio than fixed resolution since fixed resolution will not  let all people play your game
+https://forum.unity.com/threads/standard-screen-resolution-for-pc-mac-game.292586/</p>
+
+<h3>Camera size</h3>
+<p>Camera has a Size property which means how many world units is from the center to the top of the camera as you can see in <br><img src="camera_size.jpg"> </p>
+
+<h3>Pixels per unit</h3>
+<p>They have to do with physics etc so you have to be accurate</p>
+<p>The bigger the number the smaller the sprite becomes</p>
+
+</section>
+
+<section>
+
+<h1>Chapter 12 Move and interact with objects</h1>
+
+<h2>Rigidbody 2D</h2>
+<p>Rigidbodies enable your GameObjects to act under the control of physics(gravity,speed etc). The Rigidbody can receive forces and torque to make your objects move in a realistic way</p>
+<p>To move a 2D object you have to add a component of physics that's called Rigidbody_2D</p>
+<p>You can see in <img src="Rigidbody_2D.jpg"> how it will look if you add it correctly</p>
+
+<h3>Rigidbody 2D Gravity scale</h3>
+<p>We have an option in Rigidbody 2D called gravity scale</p>
+<p>This affects how strong gravity is and how it will pull the object</p>
+
+<h3>rigidbody2D.velocity</h3>
+<a href="https://docs.unity3d.com/ScriptReference/Rigidbody2D-velocity.html">https://docs.unity3d.com/ScriptReference/Rigidbody2D-velocity.html</a>
+<p>The velocity of a rigidbody2D</p>
+
+<h3>Collider (No collider, no collisions and no triggers )</h3>
+
+<p>An object needs to have a psysical body so it can interact with other objects</p>
+<p>So you add a collider from Physics 2D as shown in <img src="colliders.jpg"></p>
+<p>A trigger ignores physics engines and when we click IsTrigger it will actually ignore them. If IsTrigger is clicked in either one the two colliding objects physics will be ignored</p>
+<p>Colliders work by hitting other colliders</p>
+<p>To zoom and see the collider double click on it. To change the size see collider_size.jpg though unity perfectly fits the collider to shape</p>
+<p>They have options for size and some other things as you see in <img src="colliders_options.jpg"></p>
+<p>If you untick the IsTrigger we have a collision else a trigger which means something will happen</p>
+<h4>Static : if it has a collider but NO rigidbody</h4>
+<h4>Rigidbody : Has a Rigidbody</h4>
+<h4>Kinematic : as shown in <img src="kinematic.jpg">  you have to move it</h4>
+<p><strong>IF it's going to move during the game add rigidbody on it.Avoid moving static colliders</strong></p>
+<p>As shown in <img src="colliders_table.jpg"> we can see according what we want what collider to create. For example if we want to move the object it WON'T  be static and will have a Kinematic RigidBody Collider</p>
+<p>If a Rigidbody has mass it will drop cause of gravity. You change it as shown in collider_mass.jpg from dynamic to kinetic. If two objects have mass and hit each other the one with the bigger will take with it the other.</p>
+
+<h4>BoxCollider vs Polygon Collider</h4>
+<p>A box collider has a  boxed shape. A polygon collider can be transformed to whatever you like if you grab the lines as shown in polygon <img src="polygon_collider.jpg"> </p>
+<p>By holding control and then click you can remove the angle and make it a line again</p>
+
+<h4>Offset for collider and pivot</h4>
+<p>You can set where the pivot starts from offset as shown in <img src="offset_pivot.jpg"></p>
+
+<h4>Distance between two objects</h4>
+<p>To calculate the distance between two objects you simply substract the objects transform position with the object you want the distance to calcaulated</p>
+<pre>	public Paddle paddle;
+
+    	//Distance between ball and paddle
+    	private Vector3 paddleToBallVector;
+
+	// Use this for initialization
+	void Start () {
+		   paddleToBallVector = this.transform.position - paddle.transform.position;
+		   print(paddleToBallVector);
+    	}</pre>
+	
+<h4>Message passing</h4>
+<p>Two game object with colliders meet</p>
+<p>Engine sends a message to the objects</p>
+<p>We intercept this message in our script</p>
+<p>Our script decides what to do next</p>
+<a href="https://docs.unity3d.com/Manual/CollidersOverview.html">https://docs.unity3d.com/Manual/CollidersOverview.html</a>
+<p>When collsions are happening physics is calculated</p>
+
+<h4>Collision detection</h4>
+<pre>void OnCollisionEnter2D(Collision2D collision)</pre>
+
+<h4>Triggers</h4>
+<pre>void OnTriggerEnter2D(Collider2D collider)</pre>
+
+<h4>Scripts</h4>
+<p>To add a script first you create an object from the class as shown in <img src="create_object_from_class.jpg"></p>
+<p>Then you connect the script/class to the component as shown in <img src="script_to_component2.jpg"></p>
+<p><u>Don't forget to add the scene to build else you will see an error</u></p>
+<p>If we have a private variable it is not shown in our editor here <img src="private_vs_public_editor.jpg"><strong> To refresh a public variable in editor if changed in script click the gear in script and then Reset</strong></p>
+<p>If we have a public bool variable it show in editor with a click option which clicking it will make it true <img src="bool_and_editor.jpg"></p>
+
+<h4>Physics</h4>
+<a href="https://docs.unity3d.com/Manual/class-PhysicMaterial.html">https://docs.unity3d.com/Manual/class-PhysicMaterial.html</a>
+<p>The Physics Material is used to adjust friction and bouncing effects of colliding objects</p>
+<p>To create it if you are in 2D you will need a Physics2D Material as show in <img src="physics_material_2d.jpg"></p>
+<p>Physics2D Material has two properties Friction and Bounciness as shown in <img src="friction_and_bounciness.jpg"></p>
+<p>Bounciness 1 means it doesn't lose energy while bouncing </p>
+<p>To connect the physics with the collider check <img src="physics_to_collider.jpg"</p>
+
+<h5>Changing project physics</h5>
+<p>As shown in <img src="project_physics.jpg"></p>
+<p>Those settings affets the whole project so they all behave the same.</p>
+
+<h4>Snap to grid</h4>
+<p>We can move objects around in the scene freely</p>
+<p>To limit the movement and make it more precise we can have Snap to Grid settings as shown in <img src="snap_settings.jpg"></p>
+<p>Then select the objects you want to apply the snap grid movement</p>
+<p>To make it work you should hold Ctrl</p>
+<p>Don't forget you have to be in move mode upleft at he icons for the object</p>
+
+<h4>GameObject Movement by Mouse</h4>
+<pre>Input.MousePosition.x 
+	void Update () {
+		print(Input.mousePosition.x);
+
+	}</pre>
+	
+	<p>You see with the above script that moving the mouse shows us the exact position at x coordinate</p>
+<pre>
+	//We will get a number between 0 to 1 whatever the screen size is
+	//If the screen width is 1500 and we have the mouse full right 1500/1500 = 1 
+	print(Input.mousePosition.x/Screen.width);
+</pre>	
+	<p>See <img src="mouse_coordinates.jpg"> The 1 means that the mouse is exactly at end right of screen.</p>
+	
+	<p>If we multiply it with the total blocks the scene has in x coordinates the mouse position will be in game units</p>
+<pre>
+	print(Input.mousePosition.x/Screen.width * 20);
+
+	void MoveWithMouse()
+        {
+        //Get mouse position in game units
+        float mousePosInBlocks = Input.mousePosition.x / Screen.width * 20;
+
+        //Limit left right so it doesn't leave the screen
+        float maxLeftRightPosition = Mathf.Clamp(mousePosInBlocks,maxXPosition,maxYPosition);
+
+        //Set where the paddle starts according to position.y which set in Unity and fixed x
+        Vector3 paddlePos = new Vector3(0.6f, this.transform.position.y, 0f);
+
+
+        //Move paddle horizontally according to mouse
+        paddlePos.x = maxLeftRightPosition;
+        this.transform.position = paddlePos;
+        }
+</pre>
+	
+
+<h4>Screen.width</h4>
+	<p>Shows the exact screen width</p>
+
+<h4>this.transform.position</h4>
+<p>Every object has transform property(see where the object is)</p>
+<a href="https://docs.unity3d.com/ScriptReference/Transform-position.html">https://docs.unity3d.com/ScriptReference/Transform-position.html</a>
+<p>To use it you have to build first a Vector3 object</p>
+<pre>Vector3 paddlePos = new Vector3(0.5f, 0f, 0f);
+this.transform.position = paddlePos;</pre>
+<p>As shown in <img src="vector3.jpg" the current object which the script belongs, gets immediately to the postion of the Vector we created</p>
+
+<h4>Mathf.Clamp to constrain</h4>
+<p>We use this to limit a number between min and max value</p>
+<pre>float newX = Mathf.Clamp(transform.position.x, xmin, xmax);</pre>
+<a href="https://docs.unity3d.com/ScriptReference/Mathf.Clamp.html">https://docs.unity3d.com/ScriptReference/Mathf.Clamp.html</a>
+<p>Clamps a value between a minimum float and maximum float value. </p>
+
+<h4>Vector3</h4>
+	<a href="https://docs.unity3d.com/ScriptReference/Vector3.html">https://docs.unity3d.com/ScriptReference/Vector3.html</a>
+
+<h4>Tags</h4>
+<p>We can assing tags to objects </p>
+<p>Tags are boolable values that you can control</p>
+<p>So if we name a tag Breakable and assing it the code will look:</p>
+<pre>bool isBreakable = (tag == "Breakable");</pre>
+
+<h4>GameObject Movement by Arrows</h4>
+<pre>//Move ship right and left
+    	void MoveWithArrows()
+    	{
+
+        	if (Input.GetKey(KeyCode.RightArrow))
+        	{
+            	transform.position += new Vector3(shipSpeed *Time.deltaTime, 0, 0);
+        	}	
+
+        	else if (Input.GetKey(KeyCode.LeftArrow))
+        	{
+            	transform.position += new Vector3(-shipSpeed * Time.deltaTime, 0, 0);
+        	}
+    	}
+
+       Or we can use 
+
+    void MoveWithArrows()
+    {
+        if (Input.GetKey(KeyCode.RightArrow))
+            transform.position += Vector3.right * speed * Time.deltaTime;
+
+        else if (Input.GetKey(KeyCode.LeftArrow))
+            transform.position += Vector3.left *speed * Time.deltaTime;
+    }
+</pre>
+
+<h4>Time.deltatime</h4>
+	<p>It's used to move something something smoothly in frames independent from the machine the game runs.</p>
+	
+	<h4>GetKey vs GetKeyDown vs GetKeyUp</h4>
+	<p>GetKey is used when something must be hold like arrows etc while GetKeyDown  	recognizes only when key is pressed once.GetKeyUp s when releasing the button.</p>
+	
+	<h4>InvokeRepeating(), CancelInvoke()</h4>
+	
+	<h4>InvokeRepeating()</h4>
+	<p>Makes something to be executed repeatedly like when pressing spacebar to shoot it will shoot more times. CancelInvoke cancels the repeat. It is used so something behaves smoothly 	instead of having it shoot abnormal too much.</p>
+	<p>To avoid multi shot repeating make sure that the initial delay is > 0.0.</p>
+	<p>The first parameter is a stringMethod which you call the method as a string which is a little weird.</p>
+	<pre>
+	if (Input.GetKeyDown(KeyCode.Space))
+        {
+            InvokeRepeating("Fire", 0.0000001f, firingRate);
+        }
+
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            CancelInvoke("Fire");
+        }</pre>
+
+<h4>Restricting the position</h4>
+<p>Use Mathf.clamp() to restrict movement.</p>
+<pre>//Restrict player from leaving boundaries
+        float newX = Mathf.Clamp(transform.position.x, xmin, xmax);
+        transform.position = new Vector3(newX, transform.position.y, transform.position.z);</pre>
+
+<p>Use Camera.ViewportToWorldPoint() to work out the boundaries of the playspace</p>
+<pre>	void Start () {
+        float distance = transform.position.z - Camera.main.transform.position.z;
+        Vector3 leftMost = Camera.main.ViewportToWorldPoint(new Vector3(0,0, distance));
+        Vector3 rightMost = Camera.main.ViewportToWorldPoint(new Vector3(10, 0, distance));
+        xmin = leftMost.x;
+        xmax = rightMost.x;
+
+   	 }</pre>
+
+        
+<h4>Destroy()</h4>
+<p>Removes a gameobject, component or asset.</p>
+<p>We have to destroy gameObject which is the gameObject the script is attached to</p>
+<p>If something is destroyed and for example in Arkanoid the ball continues we should use OnCollisionExit instead of OnCollisionEnter</p>
+<pre>	void OnTriggerEnter2D(Collider2D collider)
+    	{
+		   Destroy(collider.gameObject);
+    	}</pre>
+
+
+<h4>Particle Systems</h4>
+<p>For effects like moving liquids, smoke, clouds, flames and magic spells...particle systems can be used to capture the inherent fluidity and energy.</p>
+<ol>
+<li> We create an empty object in left or directly a particle system</li>
+<li> Add a component particle system</li>
+<li> Check the Renderer down in right in the editor so it will have Material as in <img src="particle_renderer.jpg">
+<ul>
+<li>Looping means the effect will repeat</li>
+<li>Rotation changes the to where particle will move</li>
+<li>Duration tells us how much time will the effect run</li>
+<li>StartLifetime : particle will die when it reaches 0 so the higher they bigger they live</li>
+<li>Startsize : is the size of each particle</li>
+<li>Emission : how fast particles are created, the higher the more particles we wil have</li>
+<li>Shape : The shape of the area the emission has(by chaning this you can give some depth or really nice effects)</li>
+<li>Prewarm : this option makes the particle available immediately </li>
+<li>Max particles : The toal of particles in our area we have for the whole system</li>
+<li>To enable/disable emmision
+<pre>var emission = particle.emission; 
+       if (PowerUpFireball.fireball)
+        emission.enabled = true;
+        else if (!PowerUpFireball.fireball)
+        emission.enabled = false;
+		</pre></li></ul>
+</li>
+<li> Create a prefab for it</li>
+<li> Instatiate the prefab as GameObject</li>
+<li> <p>Add to script the prefab <img src="prefab_programmaticaly.jpg"></p>
+<p>Check for collision only with specific object(we look if the object has a component attached to it)</p>
+<pre>   Projectile projectile;
+    	public float health = 150;
+
+    	private void OnTriggerEnter2D(Collider2D collider)
+    	{
+        //Check if the collider was a projectile
+        projectile = collider.gameObject.GetComponent<Projectile>();
+        if (projectile)
+           .......................Do stuff...................
+
+    
+
+    	private void OnTriggerEnter2D(Collider2D collider)
+    	{
+         if (collision.transform.tag == paddleTag)
+         { 
+            	SmokePuffs();
+            	score.HitBrickScore(scoreToGive);
+            	laser = true;
+            
+          }
+        }</pre>
+</li></ol>
+<p>To give depth for particle we must use <strong>parallax.</strong></p>
+<ul>
+<li>As you move objects in the distance seem to move less than those nearby</li>
+<li>Good technique to give a sense of depth artificially even in 2D</li>
+<li>Relative speed of objects is important</li>
+
+
+</ul>
+
+<h4>Transform.childCount</h4>
+<p>It counts all the children for current object. In the below code we are searching all transforms the script has and we count every transform's children.</p>
+<pre>    bool AllMembersDead()
+    {
+        foreach (Transform childPositionGameObject in transform)
+        {
+            if (childPositionGameObject.childCount >= 0)
+                return false;
+        }
+        return true;
+    }</pre>
+	
+<h3>Size of an object and localscale</h3>
+<p>To get the size of an object :</p>
+<pre>GetComponent<Renderer>().bounds.size.x</pre>
+
+<p>Scale changes the object by percentage :</p>
+<pre>    void Example()
+    {
+        // Widen the object by 0.1
+        transform.localScale += new Vector3(0.1F, 0, 0);
+    }</pre>
+
+</section>		
+		
+		
+Chapter 13 Shortcuts
+To change between scene and game in the editor Ctrl + 1, Ctrl + 2
+Ctrl + P Play again you stop it
+Ctrl + S Save scene 
+
+
+
+Chapter 14 GameObject class
+	GameObject.GetComponent
+This is a very important class that you access directly the component you want
+In the below example we access directly the Rigidbody2D's velocity of current object 
+this.GetComponent<Rigidbody2D>().velocity = new Vector2(2f,10f);
+
+GameObject.FindObjectOfType
+https://docs.unity3d.com/ScriptReference/Object.FindObjectOfType.html
+Connecting object with class programmaticaly so we don't have to associate it with the editor
+private Paddle paddle;
+	void Start () {
+
+        
+		paddle = GameObject.FindObjectOfType<Paddle>();
+		paddleToBallVector = this.transform.position - 			   		paddle.transform.position;
+        
+    	}
+
+It works like using the new keyword
+GameObject.Find().GetComponent<>
+This methods find the object exactly with its name and dynamically the component this object has
+In the below example we have gameObject called Score which has a component with a script called Score
+GameObject.Find("Score").GetComponent<Score>();
+
+<section>
+<h1>Chapter 15 Prefabs</h1>
+<ul>
+<li>Prefab is a collection of predefined GameObjects & Components that are reusabe throughout your game</li>
+<li>https://docs.unity3d.com/Manual/Prefabs.html</li>
+<li>https://docs.unity3d.com/Manual/InstantiatingPrefabs.html</li>
+<li>An example is the paddle as shown in <img src="paddle.jpg"> that has many components and we can reuse it</li>
+<li>To create a prefab you drag and drop the object from the left to the folder</li>
+<li>First you should create a duplicate and NOT use the original and we will have a prefab created as shown in <img src="prefab_creation.jpg"></li>
+<li>If you make a change to the object left you should hit Apply so changes take place in the prefab also</li>
+<li>If we make a change to the prefab and not the instance it s immediately applied so if we drag and drop new they will be the same as the prefab and all the instances will be changed</li>
+<li>Revert changes back to the prefab settings</li>
+<li>Different prefabs can have different scripts or properties values</li>
+<li>You should prefab everything os if you make changes to something it will pappy to all in next scenes etc</li>
+<li><strong>Changing prefab :</strong> If you want to change the prefab of a game object in a scene, you can simply drag the new prefab over the old object while holding the ALT key</li>
+	<li>Linking prefabs programmaticaly(check particle systems)</li>
+<li>You have to instatiate the prefab </li>
+<pre>public GameObject smoke;
+Instantiate<GameObject>(smoke, new Vector3(this.transform.position.x, this.transform.position.y), Quaternion.identity);<pre>
+<li><strong>Relative prefab position</strong>To have the prefab position relative to where it belongs you must reset it from the cog.</li>
+
+</ul>
+</section>
+
+
+Chapter 16 Sprites 
+Sprite Sheets
+A sprite sheet is a set of images that are related for various states of the sprite
+You can see single_sprites.jpg
+When we select sprite we select the thing in the drawer
+In unity we can use Multiple sprites as show in mutliple_sprites.jpg and you chop them accordingly at sprite editor. In splice option top left because we left a space around the automatic splice will work.Clicking on each image you ll see they have been recognized as in different_sprites_spliced.jpg. Name them as you want and apply.
+Then we choose the sprite we want as shown in multiple_sprites_select.jpg
+We store our sprites in an array and then bring them
+As shown in sprites_array_programmaticallly.jpg we can determine the size this object will have for the array in the editor
+As main sprite we must have it in our editor and not from code from the array
+Then we tell what sprite to load as shown to sprite_renderer.jpg
+ int spriteIndex = 0;
+
+  //Find component sprite renderer and change it according to index
+  this.GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
+
+	
+
+Affordance
+We want the player to know what to do next
+Multi hit blocks must show progress
+Player will know that hitting them shows progress
+Chapter 17 Project Settings
+	This is the general game settings.
+	project_settings.jpg
+
+
+Chapter 18Making Code Extendable
+The coding trade of triangle shows how a coder can be perfect
+
+This trangle shows that you can have 2 of these. As time passes you can have them all but still not in maximum.
+Debug.Log() vs Debug.LogError()
+To test something you can have Debug.Log which will show in the console for example the value of a variable. Debug.LogError() will thow a red error in the console.
+
+
+<section>
+<h1>Chapter 19 Create an Object from nothing</h1>
+<p>If we want to create an object from nothing we have to use the Instantiate a function. <strong>If we instantiate an object the scripts attached to it are also created along with everything else the object has.</strong></p>
+<pre>
+	public GameObject enemyPrefab;
+
+	// Use this for initialization
+	void Start () {
+
+		//Spawn new enemy 
+		Instantiate(enemyPrefab, new Vector3(0, 0, 0),Quaternion.identity);
+	}</pre>
+	<p> Quaternion is used for rotation of the object</p>
+
+	<p> To have it created now we have to drag and drop the prefab to our editor as shown in prefab_to_gameobject.jpg</p>
+	<img src="prefab_to_gameobject.jpg">
+
+	
+	<h2>Changing object hierarchy in scene</h2>
+<p>Sometimes we want an object to appear under some specific objects in scene and not go to top</p>
+<pre>	//Spawn new enemy 
+        //And keep hierarchy in editor and the Instantiation wil be a GameObject
+        GameObject enemy = Instantiate(enemyPrefab, new Vector3(0, 0,0),Quaternion.identity)as GameObject;
+        
+	//Make parent wherever this script is attached to
+        enemy.transform.parent = transform;</pre>		
+
+	  <p>As we see hierarchy_in_scene.jpg  now its parent is where it belongs to</p>
+	  <img src="hierarchy_in_scene.jpg">
+
+	<h3>Gizmos</h3>
+	<p>Gizmos are used to give visual debugging or setup aids in the scene view as show in gizmos.jpg(they are not shown in game).</p>
+	<h3>OnDrawGizmos()</h3>
+		<a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnDrawGizmos.html">https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnDrawGizmos.html</a>
+	<ol>	
+	<li>Implement OnDrawGizmos if you want to draw gizmos that are also pickable and always drawn.</li>
+	<li>To check where objects are when editing</li>
+	<li>This allows you to quickly pick important objects in your scene.</li>
+	</ol>
+	
+	<p>Find where is the object with gizmo sphere</p>
+<pre>	void OnDrawGizmos()
+    	{
+		Gizmos.DrawWireSphere(this.transform.position, 1);
+        }</pre>
+
+	 
+	<p>Now we have created a sphere gizmo as shown in  ondrawgizmo.jpg.</p>
+	<img src="ondrawgizmo.jpg">
+
+	<h3>Create multiple objects according to where they belong</h3>
+<pre>
+	public GameObject enemyPrefab;
+
+	// Use this for initialization
+	void Start () {
+
+        foreach (Transform child in transform)
+        {
+            //Spawn new enemy for every child EnemySpwane has
+            //And keep hierarchy in editor and the Instantiation wil be a GameObject
+            GameObject enemy = Instantiate(enemyPrefab, child.transform.position,Quaternion.identity) as GameObject;
+
+            //Make parent wherever this script is attached to which is the Position
+            enemy.transform.parent =child;
+        }</pre>
+
+	  <p><img src="multiple_objects_for_parent.jpg"></p>
+	  </section>
+<section>
+<h1>Chapter 20  Run something every some seconds or wait for some seconds before something happens</h1>
+	<a href="https://answers.unity.com/questions/344314/difference-with-timetime- timedeltatime-timeframeco.html">https://answers.unity.com/questions/344314/difference-with-timetime- timedeltatime-timeframeco.html</a>
+	
+	<h2>Time.time</h2>
+	<p>The general idea is p(fire this frame) = time elapsed x frequency</p>
+	<pre>public float fireRate;
+    	private float nextFire;
+
+	void Update() {
+
+ 	if (Time.time > nextFire ){
+            nextFire = Time.time + fireRate;
+            Fire(0.8f);
+            Fire(-0.8f);
+        }
+	}</pre>
+
+	<h2>Time.deltatime</h2>
+	<p>Better way using Time.deltatime</p>
+	<pre>public float firerate= 0.5f;
+   	//private float probability;
+
+    	private void Update()
+    	{
+        	    float probability = Time.deltaTime * firerate;
+         	    if (Random.value < probability)
+         	    {
+				   Fire();
+         	    }
+    	 }</pre>
+	<h3>Invoke() and Recursion</h3>
+	<p>Invoke says every how many seconds we must do something. Recursion is when a method calls itself.</p>
+	<pre>    void SpawnUntilFull()
+    {
+        Transform freePosition = NextFreePosition();
+        if (freePosition)
+        {
+            GameObject enemy = Instantiate(enemyPrefab, freePosition.position, Quaternion.identity) as GameObject;
+            enemy.transform.parent = freePosition;
+        }
+        Invoke("SpawnUntilFull", 0.5f);
+        
+    }</pre>
+	
+	<h2>WaitForSeconds</h2>
+	<p>It runs the code below this line after 3 seconds</p>
+	<pre>yield return new WaitForSeconds(3.0f);</pre>
+	</section>
+
+Chapter 21 Resetting a script or component
+	A lot of times uniy doesn t see the changes you make in your script and has 0 	values or wrong. You should go to the cog and Reset manually.
+
+<section>
+	
+<h1>Chapter 22 Controlling Collisions Using Layers</h1>
+<p>
+	Layers fix the problem we might have by having collisions that we might not need to happen like :<br>
+	Player shoot itself when firing<br>
+	Lasers hit each other<br>
+	Enemies hits itself etc<br>
+	</p>
+<img src="layers_for_collisions.jpg">
+<p>To add a new layer we click there and Add Layer...</p>
+<p>Then we add it to the object we want like we do for tags.</p>
+<p>After that we go at Physics2d(if we are building a 2D game) and we will choose in the pyramid what collides with what :</p>
+<img src="physics_2d_layers.jpg">
+<p>To see all layers and tags</p>
+<img src="all_layers_and_tags.jpg">
+</section>
+
+
+<section>
+<h1>Chapter 23 Animation</h1>
+<p>Animation is something that will make an object appear smoothly and not just immediately appear. First we add the animation tab :or we can Go to Window menu and select Animation</p>
+<img src="animation_tab.jpg">
+<p>After we choose the object we create a new clip by clicking the button Create. We see that we have a new property at our inspector.</p>
+<img src="animator.jpg">
+<p>Then we see where it was crewated we have a controller and the animator window.</p>
+<img src="animator_controller.jpg">
+<p>Unity creates a lot of stuff that will run in background for the animation. We can see in our editor what animation we have
+chosen :</p>
+<img src="animation_choose.jpg">
+<p>After all the above we need to apply the animation to the prefab.</p>
+<p>Then we click Add Property so we can tell the animation what to do :</p>
+<img src="animation_property.jpg">
+<p>Then we choose what to do in our case the position in Transform. We can see we have a timer that says what the animation position will be from 0 to 1 sec. If we press the record button in animation it shows that we are in Animation mode and we will see what the animation does. When we are at animation record mode we can drag and drop and change the position of the object.</p>
+Finally we add at the keyframe where the object we want to be .
+<p>If we want to add rotation we add at keyframe the z rotation we want the object will rotate.</p>
+<p>Animations are really sophisticated and anything you can change in the inspector it can be done in the animation(ANYTHING).</p>
+<p>When we Play the game we can see what the animation does.</p>
+<img src="animation_looping.jpg">
+<p>We will use an empty state by right clicking in the Animator and Create Sate. TO have a default animation you right click on it in the animator and choose Mkae it default :</p>
+<img src="animator_default_state.jpg">
+<p>To stop the loop we need to tell unity what to do after animation Arrival. We right click and choose Make transition and connect it with the object that will do.</p>
+<img src="animation_transition.jpg">
+<p>If we have position problems with Idle animation we should create another animation with 0 positions and place it in it</p>
+ 
+ <h3>When animating position, where will the movement be relative to?</h3>
+<p>We can change it in the inspector to be relative to parent or game space.</p>
+ </section>
+ 
+ <section>
+ <h1> Chapter 24 Version Control System</h1>
+ <p>Versioning is very important in software since you can have history of changes and updates made to software.</p>
+ <p>We use git, the site that has the files github and the GUI is called Github desktop(alternatives are treesource and others).</p>
+ <p>To make files be readable and understandable we have to choose the options as shown :</p>
+ 
+ <img src="github_text.jpg" data-lightbox="1">
+ 
+ <p>Also we have to make sure temp files are ignored in our .gitignore which has a premade template for Unity but we also have to delete all slashes at beginning of the folder. </p>
+ 
+ <pre>[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+Assets/AssetStoreTools*</pre>
+ 
+ 
+ </section>
+ 
+ <script src="assets/lightbox-plus-jquery.min.js"></script>
+<script>$( document ).ready(function() {
+
+    $.each($('img'), function (index, item) {
+        $(item).attr('data-lightbox', 'image-' +index);
+    });
+    
+	$('img').on('click',function(){
+	
+		console.log("clicked");
+	})
+	
+});</script>
+
+
+
+</body>
+</html>	
+	
