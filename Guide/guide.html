@@ -17,6 +17,15 @@
 		
 	}
 	
+	table th, table td {
+    padding: 8px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+	
+	
 </style>
 
 
@@ -1234,8 +1243,87 @@ Assets/AssetStoreTools*</pre>
  <p>Second the whole canvas has option <strong>Scale With Screen Size</strong></p>
   <br><img class="small-image" src="images/chapter26/canvas_scale_with_screen_size.jpg">
  
- 
+ <h2>Mobile Device Aspect Ratios</h2>
+ <img class="small-image" src="images/chapter26/mobile-devices-aspect-ratios.jpg">
+ <table>
+<thead>
+<tr>
+<th>Aspect ratio</th>
+<th>Resolutions</th>
+<th>Example Devices</th>
+</tr>
+</thead>
+<tbody>
+<tr valign="top">
+<td rowspan=" 3">4:3</td>
+<td>320×240</td>
+<td>Android devices</td>
+</tr>
+<tr valign="top">
+<td>1024×768</td>
+<td>iPad 1, iPad 2</td>
+</tr>
+<tr valign="top">
+<td>2048×1536</td>
+<td>iPad 3</td>
+</tr>
+<tr valign="top">
+<td rowspan=" 2">3:2</td>
+<td>480×320</td>
+<td>iPhone 3GS and lower, Android devices</td>
+</tr>
+<tr valign="top">
+<td>960×640</td>
+<td>iPhone 4, iPhone 4S</td>
+</tr>
+<tr valign="top">
+<td rowspan=" 2">16:10</td>
+<td>800×480</td>
+<td>Android devices, WindowsPhone7</td>
+</tr>
+<tr valign="top">
+<td>1280×800</td>
+<td>Android tablets like Google Nexus 7, Samsung Galaxy Tab 10.1, Motorola Xoom, Asus Eee Pad Transformer</td>
+</tr>
+<tr valign="top">
+<td rowspan=" 1">17:10</td>
+<td>1024×600</td>
+<td>Android tablets like Samsung Galaxy Tab 7</td>
+</tr>
+<tr valign="top">
+<td rowspan=" 3">16:9</td>
+<td>640×360</td>
+<td>Symbian3 devices like Nokia C7</td>
+</tr>
+<tr valign="top">
+<td>854×480</td>
+<td>Android devices, MeeGo N9</td>
+</tr>
+<tr valign="top">
+<td>1136×640</td>
+<td>iPhone 5</td>
+</tr>
+</tbody>
+</table>
+
+<p>So the most common is 16:9.</p>
+<p>The options we have is :</p>
+<ol>
+<li>Stretch : easy but may not look good in all aspects</li>
+<li>Black bars : only used in extreme cases</li>
+<li>Crop Edges : ok with care about what's lost</li>
+</ol>
+
+<p>Play with options like shrink etc. </p>
+<a href="https://docs.unity3d.com/ScriptReference/RectTransform.html">https://docs.unity3d.com/ScriptReference/RectTransform.html</a>
+<br>
+<a href="https://docs.unity3d.com/Manual/script-CanvasScaler.html">https://docs.unity3d.com/Manual/script-CanvasScaler.html</a>
+<p>If you have text you can make bigger the width anchors so it will scale better and doesn't goes on top of an item that you want to show.
+For example in our image below we don t want the text to go above the tree in the right: 
+<p>
+<img class="small-image "src="images/chapter26/text-aspect-ratio.jpg">
  </section>
+ 
  
  
  
