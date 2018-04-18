@@ -294,7 +294,7 @@ or we can have an index</p>
         ////If any Music Player exists destroy it else continue in next scenes
         if (instance != null && instance!=this)
         {
-            music = GetComponent<AudioSource>();
+            music = GetComponent&lt;AudioSource>();
             Destroy(gameObject);
             
         }
@@ -304,7 +304,7 @@ or we can have an index</p>
 
             //Continue music
             GameObject.DontDestroyOnLoad(gameObject);
-            music = GetComponent<AudioSource>();
+            music = GetComponent&lt;AudioSource>();
             music.clip = startClip;
             music.loop = true;
             music.Play();
@@ -334,6 +334,49 @@ or we can have an index</p>
         music.Play();
     }
 </pre>
+<p><strong>OnLevelWasLoaded has been replaced by SceneManager.sceneLoaded and we must use OnEnable</strong></p>
+
+<pre>public class MusicManager : MonoBehaviour {
+
+    public AudioClip[] levelMusicChangeArray;
+
+    private AudioSource audioSource;
+    
+
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+ 
+    }
+
+    // Use this for initialization
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnLevelFinishedLoading;
+    }
+
+
+    //Play music according to level and our public AudioClip array clip
+    void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
+    {
+        AudioClip thisLevelMusic = levelMusicChangeArray[scene.buildIndex];
+        if (thisLevelMusic)
+        {
+            audioSource.clip = thisLevelMusic;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
+            
+           
+        
+    }</pre>
 
 <p><strong>Application LoadLevel has been replaced by SceneManager.LoadScene() </strong></p>
 

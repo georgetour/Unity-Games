@@ -1,0 +1,9 @@
+18 Apr 2018
+
+Add an Options Scene
+
+A button in start scene that goes back to options and a button to defaults
+
+Make level_01 with Win Lose buttons so we can simulate that we load scenes correctly
+
+Test all navigations and musics
