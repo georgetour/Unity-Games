@@ -25,12 +25,10 @@ public class LevelManager : MonoBehaviour {
 
 
     public void LoadLevel(string name)
-	{ 
-         
+	{
         //Load level according to parameter
-        Application.LoadLevel(name);
+        SceneManager.LoadScene(name);
 
- 
     }
 
 	public void QuitRequest()
@@ -48,6 +46,12 @@ public class LevelManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(secondsToLoad);
         LoadNextLevel();
+    }
+
+    //Open external link at click
+    public void OpenLinkAtclick(string url)
+    {
+        Application.OpenURL(url);
     }
 
 

@@ -64,7 +64,7 @@
 <li>Change play mode tint color : Go to Edit -> Preferences -> Colors -> Playmode Tint</li>
 <li>To create a new project go to :  File -> New Project</li>
 You must select where you want to be created and if it's gonna be 2D or 3D</li>
-<li>To create an scene as shown in <br><br><img class="small-image" src="first_scene.jpg"><br> <br>Go to top left and see the options you have like New Scene, Open Scene, Save Scene, Save as Scene</li>
+<li>To create an scene as shown in <br><br><img class="small-image" src="images/first_scene.jpg"><br> <br>Go to top left and see the options you have like New Scene, Open Scene, Save Scene, Save as Scene</li>
 <li><strong>Also you can drag and drop a scene from another folder project.</strong> </li>
 <li>Note: To move a pane/window in the editor just click on it and drag and drop it around and place it where you want </li>
 <li> These icons let you do different things when you are on a scene (shortcuts q,w,e,r,t)
@@ -1006,8 +1006,8 @@ GameObject.Find("Score").GetComponent<Score>();
 	<li>Linking prefabs programmaticaly(check particle systems)</li>
 <li>You have to instatiate the prefab </li>
 <pre>public GameObject smoke;
-Instantiate<GameObject>(smoke, new Vector3(this.transform.position.x, this.transform.position.y), Quaternion.identity);<pre>
-<li><strong>Relative prefab position</strong>To have the prefab position relative to where it belongs you must reset it from the cog.</li>
+Instantiate<GameObject>(smoke, new Vector3(this.transform.position.x, this.transform.position.y), Quaternion.identity);</pre>
+<li><strong>Relative prefab position</strong><br>To have the prefab position relative to where it belongs you must reset it from the cog.</li>
 
 </ul>
 </section>
@@ -1367,7 +1367,21 @@ For example in our image below we don t want the text to go above the tree in th
 <img class="small-image "src="images/chapter26/text-aspect-ratio.jpg">
  </section>
  
+ <section>
+ <h1>Chapter 27 Links and requests to web</h1>
  
+<h3>OnClick go to external web page</h3>
+<p>We must use the Application.OpenURL() from unity. Since the method we make is public we will use OnClick in our editor.</p>
+<pre>    //Open external link at click
+    public void OpenLinkAtclick(string url)
+    {
+        Application.OpenURL(url);
+    }</pre> 
+ 
+ 
+ 
+ 
+ </section>
  
  
  
