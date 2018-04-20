@@ -437,23 +437,72 @@ ower z-dimension it will be rendered below the layer.
 <br><img class="small-image" src="images/sorting_layers.jpg"><br>
 <p>Also yo can use it so explosion or similar effects are on top of each layer.</p>
 
+<h2>Fade In Scenes</h2>
+<p>We must change use a UI->Panel that goes in front of the scene and make it change its alpha smoothly in update for some seconds.Then we must disable it.</p>
+<img class="small-image" src="images/chapter6/changing_alpha_smoothly.jpg">
+<br>
+<pre>public class Fading : MonoBehaviour {
+
+    public float fadeTime;
+
+    private Image fadePANEL;
+    private Color currentColor = Color.black;
+
+
+	// Use this for initialization
+	void Start () {
+
+        fadePANEL = GetComponent<Image>();
+   
+	}
+
+    private void Update()
+    {
+        if (Time.timeSinceLevelLoad &lt; fadeTime)
+        {
+            fadeIn();
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+
+    //This fades the panel so the scene appears smoothly and not suddelnly
+    void fadeIn()
+    {
+        //Fade In
+        float alphaChange = Time.deltaTime / fadeTime;
+        //Change alpha
+        currentColor.a -= alphaChange;
+        fadePANEL.color = currentColor;
+
+    }</pre>
+
+<p>We will see that the panel color alpha changes dynamically as shown in the image.</p>
+
+
+
 </section>
 
-Chapter 7 Game Design Document
+<section>
+<h1>Chapter 7 Game Design Document</h1>
 
-A game design document is a tool to communicate between members of your team(Artists, Developers, Designers)
-It's also a place that's we going to record decisions made before and during development. What's In? What's Out? With this someone will not get cocky and say why we don't add this since we said it would be out
-The GDD is a living document that changes all the time according to what you learn, what happens in progress 
-It's not a plan
-Our Number Wizrd UI game has a simple GDD as you can see
+<p>A game design document is a tool to communicate between members of your team(Artists, Developers, Designers)
+It's also a place that's we going to record decisions made before and during development. What's In? What's Out? With this someone will not get cocky and say why we don't add this since we said it would be out</p>
+<p>The GDD is a living document that changes all the time according to what you learn, what happens in progress. 
+It's not a plan.
+Our Number Wizard UI game has a simple GDD as you can see.</p>
 
 
 
-Finally we connect the scenes so they follow our GDD. That's why we should go look back and back again at our Game Design Development
-Before starting to put a lot of stuff and code to your scenes check with simple buttons that you can move between the corscale scenes as supposed to
+<p>Finally we connect the scenes so they follow our GDD. That's why we should go look back and back again at our Game Design Development.
+Before starting to put a lot of stuff and code to your scenes check with simple buttons that you can move between the corscale scenes as supposed to.If we structure our game properly then adding functionality will be possible even though we 	have created multiple levels</p>
 
-	If we structure our game properly then adding functionality will be possible even though we 	have created multiple levels
-
+</section>
+	
+	
 Chapter 8 Packages
 
 To create a package go to Assets -> Export Package and you choose what you want to export
