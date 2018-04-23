@@ -1,6 +1,6 @@
 <html>
 <head><meta charset="UTF-8"><br>
-
+<link href="assets/prism.css" rel=stylesheet>
 <style>
 	body{
 		font-size:1.5em; 
@@ -14,7 +14,7 @@
 	}
 	.small-image{
 		width:50%;
-		
+		height:50%;
 	}
 	
 	table th, table td {
@@ -185,6 +185,9 @@ insert UI element <br><img class="small-image" src="images/add_ui_element.jpg"><
 <li>To access text programatically we need to drag and drop Text in Inspector as shown in <br><img class="small-image" src="images/access_text.jpg"><br></li>
 <li>To add image go to GameObject  -> Ui - > Image as shown in <br><img class="small-image" src="images/add_image.jpg"><br>(dont't forget to add the image in Canvas Renderer as you did in access_text)</li>
 </ul>
+
+<h3>Image vs Raw Image</h3>
+<p>We have the option to add a UI-> Raw Image in our editor. The difference from simple UI-> Image is that you can add to it textures and have different behavior like repeat etc as shown in Chapter 16. </p>
 	<h2>Frame by frame play</h2>
 
 <p>If you want to see your scene running frame by frame first press pause and then play.</p>
@@ -232,11 +235,11 @@ Also you can have scenes for start menu/splash screen or the options menu
 Remeber to create a New scene go to File-> New Scene and then Save Scene</p>
 
 	<h3>Find Current Scene</h3>
-<pre>
+<pre><code class="language-javascript">
 Scene currentScene = SceneManager.GetActiveScene();
       string sceneName = currentScene.name;
       Debug.Log(sceneName);
-</pre>
+</code></pre>
 	<h2>Canvas</h2>
 
 <p>Also it has a render mode which is how the canvas is rendered in our scene</p>
@@ -281,7 +284,7 @@ or we can have an index</p>
 	<h3>OnLevelWasLoaded</h3>
 	<p>This is a method that checks what level was loaded.</p>
 	
-	<pre>    private static MusicPlayer instance = null;
+	<pre><code class="language-javascript">    private static MusicPlayer instance = null;
 
     public AudioClip startClip;
     public AudioClip gameClip;
@@ -333,10 +336,10 @@ or we can have an index</p>
         music.loop = true;
         music.Play();
     }
-</pre>
+</code></pre>
 <p><strong>OnLevelWasLoaded has been replaced by SceneManager.sceneLoaded and we must use OnEnable</strong></p>
 
-<pre>public class MusicManager : MonoBehaviour {
+<pre><code class="language-javascript">public class MusicManager : MonoBehaviour {
 
     public AudioClip[] levelMusicChangeArray;
 
@@ -376,12 +379,12 @@ or we can have an index</p>
             
            
         
-    }</pre>
+    }</code></pre>
 
 <p><strong>Application LoadLevel has been replaced by SceneManager.LoadScene() </strong></p>
 
 	<h3>SceneManager.LoadScene()</h3>
-	<pre>    private void Start()
+	<pre><code class="language-javascript">    private void Start()
     {
         
         currentScene = SceneManager.GetActiveScene();
@@ -395,7 +398,7 @@ or we can have an index</p>
     {
         
         SceneManager.LoadScene(currentScene.buildIndex + 1);
-    }</pre>
+    }</code></pre>
 
 	
 	
@@ -441,7 +444,7 @@ ower z-dimension it will be rendered below the layer.
 <p>We must change use a UI->Panel that goes in front of the scene and make it change its alpha smoothly in update for some seconds.Then we must disable it.</p>
 <img class="small-image" src="images/chapter6/changing_alpha_smoothly.jpg">
 <br>
-<pre>public class Fading : MonoBehaviour {
+<pre><code class="language-javascript">public class Fading : MonoBehaviour {
 
     public float fadeTime;
 
@@ -478,7 +481,7 @@ ower z-dimension it will be rendered below the layer.
         currentColor.a -= alphaChange;
         fadePANEL.color = currentColor;
 
-    }</pre>
+    }</code></pre>
 
 <p>We will see that the panel color alpha changes dynamically as shown in the image.</p>
 
@@ -534,7 +537,7 @@ TO ADD : Unity Packages from steore what they are and how they work
 	<h3>audio.Play()</h3>
 
 <p>This has been deprecated and can't be used in new Unity use:</p>
-<pre>
+<pre><code class="language-javascript">
 	GetComponent<AudioSource>().Play()
 
 	private void OnCollisionEnter2D(Collision2D collision)
@@ -545,7 +548,7 @@ TO ADD : Unity Packages from steore what they are and how they work
         	}
        
     	}
-</pre>
+</code></pre>
 	<p>We also have to add component Audio source at the editor as shown in<br> <br><img class="small-image" src="images/audio_source_component.jpg"><br></p>
 
 <p>The correct way is to use AudioSource.PlayClipAtPoint(The clip will be played even if the object that has called the function and that holds the clip and audio source has been destroyed):</p>
@@ -553,11 +556,11 @@ TO ADD : Unity Packages from steore what they are and how they work
 	 <h3>AudioSource.PlayClipAtPoint()</h3>
 
 <p>First create the object Audioclip</p>
-	<pre>
+	<pre><code class="language-javascript">
 	public AudioClip crack;
-</pre>
+</code></pre>
 <p>Then you add it as argument at AudioSource.PlayClipAtPoint:</p>
-<pre>
+<pre><code class="language-javascript">
 private void OnCollisionExit2D(Collision2D collision)
     	{
         AudioSource.PlayClipAtPoint(crack, transform.position);
@@ -567,7 +570,7 @@ private void OnCollisionExit2D(Collision2D collision)
 
 
 	GameObject.DontDestroyOnLoad()
-</pre>
+</code></pre>
 <p>First create the script that will handle the music by going to Add Component and then New script and name the same with your Audio Object</p>
 <p>As we see in gameObject.jpg gameObject is the first object in our hierarchy with all its components inspector etc</p>
 
@@ -579,7 +582,7 @@ private void OnCollisionExit2D(Collision2D collision)
 <p><a href="http://gameprogrammingpatterns.com/singleton.html"><br>http://gameprogrammingpatterns.com/singleton.html</a>
 </p>
 
-<pre>
+<pre><code class="language-javascript">
 class Program
 {
     static void Main()
@@ -624,16 +627,16 @@ public static Singleton Instance
     }
  }
 	 }
-</pre>	
+</code></pre>	
 	<h3>Destroy()</h3>
 <p>It is used to remove a gameObject, a component or an asset</p>
-<pre>
+<pre><code class="language-javascript">
 	if (instance != null)
         {
             Destroy(gameObject);
             print("Duplicate music player self-destructing");
         }
-</pre>
+</code></pre>
 </section>
 <section>		
 
@@ -727,7 +730,7 @@ https://forum.unity.com/threads/standard-screen-resolution-for-pc-mac-game.29258
 
 <h4>Distance between two objects</h4>
 <p>To calculate the distance between two objects you simply substract the objects transform position with the object you want the distance to calcaulated</p>
-<pre>	public Paddle paddle;
+<pre><code class="language-javascript">	public Paddle paddle;
 
     	//Distance between ball and paddle
     	private Vector3 paddleToBallVector;
@@ -736,7 +739,7 @@ https://forum.unity.com/threads/standard-screen-resolution-for-pc-mac-game.29258
 	void Start () {
 		   paddleToBallVector = this.transform.position - paddle.transform.position;
 		   print(paddleToBallVector);
-    	}</pre>
+    	}</code></pre>
 	
 <h4>Message passing</h4>
 <p>Two game object with colliders meet</p>
@@ -747,10 +750,10 @@ https://forum.unity.com/threads/standard-screen-resolution-for-pc-mac-game.29258
 <p>When collsions are happening physics is calculated</p>
 
 <h4>Collision detection</h4>
-<pre>void OnCollisionEnter2D(Collision2D collision)</pre>
+<pre><code class="language-javascript">void OnCollisionEnter2D(Collision2D collision)</code></pre>
 
 <h4>Triggers</h4>
-<pre>void OnTriggerEnter2D(Collider2D collider)</pre>
+<pre><code class="language-javascript">void OnTriggerEnter2D(Collider2D collider)</code></pre>
 
 <h4>Scripts</h4>
 <p>To add a script first you create an object from the class as shown in <br><img class="small-image" src="images/create_object_from_class.jpg"><br></p>
@@ -779,22 +782,22 @@ https://forum.unity.com/threads/standard-screen-resolution-for-pc-mac-game.29258
 <p>Don't forget you have to be in move mode upleft at he icons for the object</p>
 
 <h4>GameObject Movement by Mouse</h4>
-<pre>Input.MousePosition.x 
+<pre><code class="language-javascript">Input.MousePosition.x 
 	void Update () {
 		print(Input.mousePosition.x);
 
-	}</pre>
+	}</code></pre>
 	
 	<p>You see with the above script that moving the mouse shows us the exact position at x coordinate</p>
-<pre>
+<pre><code class="language-javascript">
 	//We will get a number between 0 to 1 whatever the screen size is
 	//If the screen width is 1500 and we have the mouse full right 1500/1500 = 1 
 	print(Input.mousePosition.x/Screen.width);
-</pre>	
+</code></pre>	
 	<p>See <br><img class="small-image" src="images/mouse_coordinates.jpg"><br> The 1 means that the mouse is exactly at end right of screen.</p>
 	
 	<p>If we multiply it with the total blocks the scene has in x coordinates the mouse position will be in game units</p>
-<pre>
+<pre><code class="language-javascript">
 	print(Input.mousePosition.x/Screen.width * 20);
 
 	void MoveWithMouse()
@@ -813,7 +816,7 @@ https://forum.unity.com/threads/standard-screen-resolution-for-pc-mac-game.29258
         paddlePos.x = maxLeftRightPosition;
         this.transform.position = paddlePos;
         }
-</pre>
+</code></pre>
 	
 
 <h4>Screen.width</h4>
@@ -823,13 +826,13 @@ https://forum.unity.com/threads/standard-screen-resolution-for-pc-mac-game.29258
 <p>Every object has transform property(see where the object is)</p>
 <a href="https://docs.unity3d.com/ScriptReference/Transform-position.html"><br>https://docs.unity3d.com/ScriptReference/Transform-position.html</a>
 <p>To use it you have to build first a Vector3 object</p>
-<pre>Vector3 paddlePos = new Vector3(0.5f, 0f, 0f);
-this.transform.position = paddlePos;</pre>
+<pre><code class="language-javascript">Vector3 paddlePos = new Vector3(0.5f, 0f, 0f);
+this.transform.position = paddlePos;</code></pre>
 <p>As shown in <br><img class="small-image" src="images/vector3.jpg" the current object which the script belongs, gets immediately to the postion of the Vector we created</p>
 
 <h4>Mathf.Clamp to constrain</h4>
 <p>We use this to limit a number between min and max value</p>
-<pre>float newX = Mathf.Clamp(transform.position.x, xmin, xmax);</pre>
+<pre><code class="language-javascript">float newX = Mathf.Clamp(transform.position.x, xmin, xmax);</code></pre>
 <a href="https://docs.unity3d.com/ScriptReference/Mathf.Clamp.html"><br>https://docs.unity3d.com/ScriptReference/Mathf.Clamp.html</a>
 <p>Clamps a value between a minimum float and maximum float value. </p>
 
@@ -840,10 +843,10 @@ this.transform.position = paddlePos;</pre>
 <p>We can assing tags to objects </p>
 <p>Tags are boolable values that you can control</p>
 <p>So if we name a tag Breakable and assing it the code will look:</p>
-<pre>bool isBreakable = (tag == "Breakable");</pre>
+<pre><code class="language-javascript">bool isBreakable = (tag == "Breakable");</code></pre>
 
 <h4>GameObject Movement by Arrows</h4>
-<pre>//Move ship right and left
+<pre><code class="language-javascript">//Move ship right and left
     	void MoveWithArrows()
     	{
 
@@ -868,7 +871,7 @@ this.transform.position = paddlePos;</pre>
         else if (Input.GetKey(KeyCode.LeftArrow))
             transform.position += Vector3.left *speed * Time.deltaTime;
     }
-</pre>
+</code></pre>
 
 <h4>Time.deltatime</h4>
 	<p>It's used to move something something smoothly in frames independent from the machine the game runs.</p>
@@ -882,7 +885,7 @@ this.transform.position = paddlePos;</pre>
 	<p>Makes something to be executed repeatedly like when pressing spacebar to shoot it will shoot more times. CancelInvoke cancels the repeat. It is used so something behaves smoothly 	instead of having it shoot abnormal too much.</p>
 	<p>To avoid multi shot repeating make sure that the initial delay is > 0.0.</p>
 	<p>The first parameter is a stringMethod which you call the method as a string which is a little weird.</p>
-	<pre>
+	<pre><code class="language-javascript">
 	if (Input.GetKeyDown(KeyCode.Space))
         {
             InvokeRepeating("Fire", 0.0000001f, firingRate);
@@ -891,33 +894,33 @@ this.transform.position = paddlePos;</pre>
         if(Input.GetKeyUp(KeyCode.Space))
         {
             CancelInvoke("Fire");
-        }</pre>
+        }</code></pre>
 
 <h4>Restricting the position</h4>
 <p>Use Mathf.clamp() to restrict movement.</p>
-<pre>//Restrict player from leaving boundaries
+<pre><code class="language-javascript">//Restrict player from leaving boundaries
         float newX = Mathf.Clamp(transform.position.x, xmin, xmax);
-        transform.position = new Vector3(newX, transform.position.y, transform.position.z);</pre>
+        transform.position = new Vector3(newX, transform.position.y, transform.position.z);</code></pre>
 
 <p>Use Camera.ViewportToWorldPoint() to work out the boundaries of the playspace</p>
-<pre>	void Start () {
+<pre><code class="language-javascript">	void Start () {
         float distance = transform.position.z - Camera.main.transform.position.z;
         Vector3 leftMost = Camera.main.ViewportToWorldPoint(new Vector3(0,0, distance));
         Vector3 rightMost = Camera.main.ViewportToWorldPoint(new Vector3(10, 0, distance));
         xmin = leftMost.x;
         xmax = rightMost.x;
 
-   	 }</pre>
+   	 }</code></pre>
 
         
 <h4>Destroy()</h4>
 <p>Removes a gameobject, component or asset.</p>
 <p>We have to destroy gameObject which is the gameObject the script is attached to</p>
 <p>If something is destroyed and for example in Arkanoid the ball continues we should use OnCollisionExit instead of OnCollisionEnter</p>
-<pre>	void OnTriggerEnter2D(Collider2D collider)
+<pre><code class="language-javascript">	void OnTriggerEnter2D(Collider2D collider)
     	{
 		   Destroy(collider.gameObject);
-    	}</pre>
+    	}</code></pre>
 
 
 <h4>Particle Systems</h4>
@@ -937,18 +940,18 @@ this.transform.position = paddlePos;</pre>
 <li>Prewarm : this option makes the particle available immediately </li>
 <li>Max particles : The toal of particles in our area we have for the whole system</li>
 <li>To enable/disable emmision
-<pre>var emission = particle.emission; 
+<pre><code class="language-javascript">var emission = particle.emission; 
        if (PowerUpFireball.fireball)
         emission.enabled = true;
         else if (!PowerUpFireball.fireball)
         emission.enabled = false;
-		</pre></li></ul>
+		</code></pre></li></ul>
 </li>
 <li> Create a prefab for it</li>
 <li> Instatiate the prefab as GameObject</li>
 <li> <p>Add to script the prefab <br><img class="small-image" src="images/prefab_programmaticaly.jpg"><br></p>
 <p>Check for collision only with specific object(we look if the object has a component attached to it)</p>
-<pre>   Projectile projectile;
+<pre><code class="language-javascript">   Projectile projectile;
     	public float health = 150;
 
     	private void OnTriggerEnter2D(Collider2D collider)
@@ -969,7 +972,7 @@ this.transform.position = paddlePos;</pre>
             	laser = true;
             
           }
-        }</pre>
+        }</code></pre>
 </li></ol>
 <p>To give depth for particle we must use <strong>parallax.</strong></p>
 <ul>
@@ -982,7 +985,7 @@ this.transform.position = paddlePos;</pre>
 
 <h4>Transform.childCount</h4>
 <p>It counts all the children for current object. In the below code we are searching all transforms the script has and we count every transform's children.</p>
-<pre>    bool AllMembersDead()
+<pre><code class="language-javascript">    bool AllMembersDead()
     {
         foreach (Transform childPositionGameObject in transform)
         {
@@ -990,18 +993,18 @@ this.transform.position = paddlePos;</pre>
                 return false;
         }
         return true;
-    }</pre>
+    }</code></pre>
 	
 <h3>Size of an object and localscale</h3>
 <p>To get the size of an object :</p>
-<pre>GetComponent<Renderer>().bounds.size.x</pre>
+<pre><code class="language-javascript">GetComponent<Renderer>().bounds.size.x</code></pre>
 
 <p>Scale changes the object by percentage :</p>
-<pre>    void Example()
+<pre><code class="language-javascript">    void Example()
     {
         // Widen the object by 0.1
         transform.localScale += new Vector3(0.1F, 0, 0);
-    }</pre>
+    }</code></pre>
 
 </section>		
 		
@@ -1054,53 +1057,90 @@ GameObject.Find("Score").GetComponent<Score>();
 <li><strong>Changing prefab :</strong> If you want to change the prefab of a game object in a scene, you can simply drag the new prefab over the old object while holding the ALT key</li>
 	<li>Linking prefabs programmaticaly(check particle systems)</li>
 <li>You have to instatiate the prefab </li>
-<pre>public GameObject smoke;
-Instantiate<GameObject>(smoke, new Vector3(this.transform.position.x, this.transform.position.y), Quaternion.identity);</pre>
+<pre><code class="language-javascript">public GameObject smoke;
+Instantiate<GameObject>(smoke, new Vector3(this.transform.position.x, this.transform.position.y), Quaternion.identity);</code></pre>
 <li><strong>Relative prefab position</strong><br>To have the prefab position relative to where it belongs you must reset it from the cog.</li>
 
 </ul>
 </section>
 
 
-Chapter 16 Sprites 
-Sprite Sheets
-A sprite sheet is a set of images that are related for various states of the sprite
-You can see single_sprites.jpg
-When we select sprite we select the thing in the drawer
-In unity we can use Multiple sprites as show in mutliple_sprites.jpg and you chop them accordingly at sprite editor. In splice option top left because we left a space around the automatic splice will work.Clicking on each image you ll see they have been recognized as in different_sprites_spliced.jpg. Name them as you want and apply.
-Then we choose the sprite we want as shown in multiple_sprites_select.jpg
-We store our sprites in an array and then bring them
-As shown in sprites_array_programmaticallly.jpg we can determine the size this object will have for the array in the editor
-As main sprite we must have it in our editor and not from code from the array
-Then we tell what sprite to load as shown to sprite_renderer.jpg
- int spriteIndex = 0;
+<section>
+<h1>Chapter 16 Sprites</h1> 
+<h2>Sprite Sheets</h2>
+<p>A sprite sheet is a set of images that are related for various states of the sprite.</p>
+<p>You can see</p> 
+
+<img class="small-image" src="images/chapter16/single_sprites.jpg">
+<p>When we select sprite we select the thing in the drawer.</p>
+<p>In unity we can use Multiple sprites as show in :</p>
+
+<img class="small-image" src="images/chapter16/multiple_sprites.jpg"> 
+
+<p>and you chop them accordingly at sprite editor. In splice option top left because we left a space around the automatic splice will work.</p>
+
+<p>Clicking on each image you ll see they have been recognized as in :</p>
+<img class="small-image" src="images/chapter16/different_sprites_spliced.jpg"> 
+
+<p>Name them as you want and apply.</p>
+
+<p>Then we choose the sprite we want as shown in:</p>
+
+<img class="small-image" src="images/chapter16/multiple_sprites_select.jpg">
+<p>We store our sprites in an array and then bring them.</p>
+<p>As shown in :</p>
+<img class="small-image" src="images/chapter16/sprites_array_programmaticallly.jpg">
+
+<p>we can determine the size this object will have for the array in the editor.
+As main sprite we must have it in our editor and not from code from the array.
+Then we tell what sprite to load as shown to:</p> 
+
+<img class="small-image" src="images/chapter16/sprite_renderer.jpg">
+ <pre><code class="language-javascript">int spriteIndex = 0;
 
   //Find component sprite renderer and change it according to index
   this.GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
-
+</code></pre>
 	
 
-Affordance
-We want the player to know what to do next
-Multi hit blocks must show progress
-Player will know that hitting them shows progress
+<h3>Affordance</h3>
+<p>We want the player to know what to do next. Multi hit blocks must show progress.
+Player will know that hitting them shows progress</p>
+
+<h2>Textures and texture options</h2>
+<p>Textures have different options like repeating themselves as show in:</p>
+
+<img class="small-image" src="images/chapter16/texture_options.jpg">
+<p>We must add a UI-> Raw Image so it can have textures.</p>
+
+<img class="small-image" src="images/chapter16/raw_image_texture.jpg">
+
+<p>We can choose how the texture will repeat by the options UV React :</p>
+
+<img class="small-image" src="images/chapter16/increase_repeat_textures.jpg">
+
+</section>
+
+
 Chapter 17 Project Settings
 	This is the general game settings.
 	project_settings.jpg
 
+<section>
+<h1>Chapter 18 Making Code Extendable</h1>
+<p>The coding trade of triangle shows how a coder can be perfect</p>
+<img class="small-image" src="images/chapter18/coding_trade_off_triangle.jpg">
 
-Chapter 18Making Code Extendable
-The coding trade of triangle shows how a coder can be perfect
+<p>This triangle shows that you can have 2 of these. As time passes you can have them all but still not in maximum.</p>
 
-This trangle shows that you can have 2 of these. As time passes you can have them all but still not in maximum.
-Debug.Log() vs Debug.LogError()
-To test something you can have Debug.Log which will show in the console for example the value of a variable. Debug.LogError() will thow a red error in the console.
-
+<h2>Debug.Log() vs Debug.LogError()</h2>
+<p>To test something you can have Debug.Log which will show in the console for example the value of a variable. Debug.LogError() will thow a red error in the console.</p>
+</section>
 
 <section>
 <h1>Chapter 19 Create an Object from nothing</h1>
 <p>If we want to create an object from nothing we have to use the Instantiate a function. <strong>If we instantiate an object the scripts attached to it are also created along with everything else the object has.</strong></p>
-<pre>
+<pre><code class="language-javascript">
 	public GameObject enemyPrefab;
 
 	// Use this for initialization
@@ -1108,7 +1148,7 @@ To test something you can have Debug.Log which will show in the console for exam
 
 		//Spawn new enemy 
 		Instantiate(enemyPrefab, new Vector3(0, 0, 0),Quaternion.identity);
-	}</pre>
+	}</code></pre>
 	<p> Quaternion is used for rotation of the object</p>
 
 	<p> To have it created now we have to drag and drop the prefab to our editor as shown in prefab_to_gameobject.jpg</p>
@@ -1117,12 +1157,12 @@ To test something you can have Debug.Log which will show in the console for exam
 	
 	<h2>Changing object hierarchy in scene</h2>
 <p>Sometimes we want an object to appear under some specific objects in scene and not go to top</p>
-<pre>	//Spawn new enemy 
+<pre><code class="language-javascript">	//Spawn new enemy 
         //And keep hierarchy in editor and the Instantiation wil be a GameObject
         GameObject enemy = Instantiate(enemyPrefab, new Vector3(0, 0,0),Quaternion.identity)as GameObject;
         
 	//Make parent wherever this script is attached to
-        enemy.transform.parent = transform;</pre>		
+        enemy.transform.parent = transform;</code></pre>		
 
 	  <p>As we see hierarchy_in_scene.jpg  now its parent is where it belongs to</p>
 	  <br><img class="small-image" src="images/hierarchy_in_scene.jpg"><br>
@@ -1138,17 +1178,17 @@ To test something you can have Debug.Log which will show in the console for exam
 	</ol>
 	
 	<p>Find where is the object with gizmo sphere</p>
-<pre>	void OnDrawGizmos()
+<pre><code class="language-javascript">	void OnDrawGizmos()
     	{
 		Gizmos.DrawWireSphere(this.transform.position, 1);
-        }</pre>
+        }</code></pre>
 
 	 
 	<p>Now we have created a sphere gizmo as shown in  ondrawgizmo.jpg.</p>
 	<br><img class="small-image" src="images/ondrawgizmo.jpg"><br>
 
 	<h3>Create multiple objects according to where they belong</h3>
-<pre>
+<pre><code class="language-javascript">
 	public GameObject enemyPrefab;
 
 	// Use this for initialization
@@ -1162,7 +1202,7 @@ To test something you can have Debug.Log which will show in the console for exam
 
             //Make parent wherever this script is attached to which is the Position
             enemy.transform.parent =child;
-        }</pre>
+        }</code></pre>
 
 	  <p><br><img class="small-image" src="images/multiple_objects_for_parent.jpg"><br></p>
 	  </section>
@@ -1172,7 +1212,7 @@ To test something you can have Debug.Log which will show in the console for exam
 	
 	<h2>Time.time</h2>
 	<p>The general idea is p(fire this frame) = time elapsed x frequency</p>
-	<pre>public float fireRate;
+	<pre><code class="language-javascript">public float fireRate;
     	private float nextFire;
 
 	void Update() {
@@ -1182,11 +1222,11 @@ To test something you can have Debug.Log which will show in the console for exam
             Fire(0.8f);
             Fire(-0.8f);
         }
-	}</pre>
+	}</code></pre>
 
 	<h2>Time.deltatime</h2>
 	<p>Better way using Time.deltatime</p>
-	<pre>public float firerate= 0.5f;
+	<pre><code class="language-javascript">public float firerate= 0.5f;
    	//private float probability;
 
     	private void Update()
@@ -1196,10 +1236,10 @@ To test something you can have Debug.Log which will show in the console for exam
          	    {
 				   Fire();
          	    }
-    	 }</pre>
+    	 }</code></pre>
 	<h3>Invoke() and Recursion</h3>
 	<p>Invoke says every how many seconds we must do something. Recursion is when a method calls itself.</p>
-	<pre>    void SpawnUntilFull()
+	<pre><code class="language-javascript">    void SpawnUntilFull()
     {
         Transform freePosition = NextFreePosition();
         if (freePosition)
@@ -1209,16 +1249,16 @@ To test something you can have Debug.Log which will show in the console for exam
         }
         Invoke("SpawnUntilFull", 0.5f);
         
-    }</pre>
+    }</code></pre>
 	
 	<h2>WaitForSeconds</h2>
 	<p>It runs the code below this line after some seconds and you also need Start method. </p>
-	<pre>	public void Start () {
+	<pre><code class="language-javascript">	public void Start () {
 
             StartCoroutine(CountDown());
         
-    }</pre>
-	<pre>    IEnumerator CountDown()
+    }</code></pre>
+	<pre><code class="language-javascript">    IEnumerator CountDown()
     {
         if (paddleDestroyed)
             reseting.DestroyPaddle();
@@ -1237,7 +1277,7 @@ To test something you can have Debug.Log which will show in the console for exam
         yield return new WaitForSeconds(0.3f);
         paddleDestroyed = false;
 
-    }</pre>
+    }</code></pre>
 	</section>
 
 Chapter 21 Resetting a script or component
@@ -1302,12 +1342,12 @@ Finally we add at the keyframe where the object we want to be .
  
  <p>Also we have to make sure temp files are ignored in our .gitignore which has a premade template for Unity but we also have to delete all slashes at beginning of the folder. </p>
  
- <pre>[Ll]ibrary/
+ <pre><code class="language-javascript">[Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
-Assets/AssetStoreTools*</pre>
+Assets/AssetStoreTools*</code></pre>
  
  
  </section>
@@ -1406,7 +1446,8 @@ Assets/AssetStoreTools*</pre>
 <li>Crop Edges : ok with care about what's lost</li>
 </ol>
 
-<p>Play with options like shrink etc. </p>
+<p>Play with options like shrink etc. With shrink the screen will try to fit and for example a 16:9 ratio in 4:3 we won;t lose anything but we will get get black cinematic borders.
+ </p>
 <a href="https://docs.unity3d.com/ScriptReference/RectTransform.html">https://docs.unity3d.com/ScriptReference/RectTransform.html</a>
 <br>
 <a href="https://docs.unity3d.com/Manual/script-CanvasScaler.html">https://docs.unity3d.com/Manual/script-CanvasScaler.html</a>
@@ -1421,14 +1462,83 @@ For example in our image below we don t want the text to go above the tree in th
  
 <h3>OnClick go to external web page</h3>
 <p>We must use the Application.OpenURL() from unity. Since the method we make is public we will use OnClick in our editor.</p>
-<pre>    //Open external link at click
+<pre><code class="language-javascript">    //Open external link at click
     public void OpenLinkAtclick(string url)
     {
         Application.OpenURL(url);
-    }</pre> 
+    }</code></pre> 
+ 
+ </section>
  
  
  
+ <!--Chapter 27 PlayerPrefs-->
+ <section>
+ <h1>PlayerPrefs</h1>
+ <p>PlayerPrefs is a very important topic. PlayerPrefs is a persistent storage on your device. It doesn't have to do
+ with the device playstation, xbox etc since unity always have a space for PlayerPrefs. This storage is unencrypted 
+ so when we use it for level unlocks or things that shouldn't be changed by a user a hacker can use a hex editor and make changes.
+ </p>
+ 
+ <p>Also we can't see what we have store to PlayerPrefs for example a specific value from a property.
+ <strong>So we should create a wrapper class. We would have constants so we know what we will use.</strong>
+ </p>
+ <a href="https://docs.unity3d.com/ScriptReference/PlayerPrefs.html">https://docs.unity3d.com/ScriptReference/PlayerPrefs.html</a>
+ 
+ <h2>Limitations</h2>
+ <ol>
+ <li>Can be slow to read and write</li>
+  <li>Max file size is 1mb</li>
+  <li>Only supports float, int ,string</li>
+  <li>Can be hacked if it's used for changing level etc with a hex editor.</li>
+  <li>Don't abuse!</li>
+ </ol>
+ 
+ <p>So we will create a general script with constants(in C# constants are static) that we will use as reference.</p>
+ 
+ <pre>
+ <code class="language-javascript">
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class NewBehaviourScript : MonoBehaviour {
+
+
+    //Constants for general use everywhere we want as PlayerPrefs
+    const string MASTER_VOLUME_KEY = "master_volume";
+    const string DIFFICULTY_KEY = "difficulty";
+    const string  LEVEL_KEY = "level_unlocked_";
+
+
+    //Set master volume to PlayerPrefs
+	public static void SetMasterVolume(float volume)
+    {
+        if (volume>0f && volume <1f)
+        {
+            PlayerPrefs.SetFloat(MASTER_VOLUME_KEY, volume);
+        }
+        else
+        {
+            Debug.LogError("Master Volume out of range");
+        }
+        
+    }
+
+
+
+    //Get master volume from PlayerPrefs
+    public static float GetVolume()
+    {
+       return PlayerPrefs.GetFloat(MASTER_VOLUME_KEY);
+        
+    }
+}
+
+ </code>
+ </pre>
+ 
+ <p>So we are storing something though PlayerRefs in a constant we use that constant.</p>
  
  </section>
  
@@ -1437,7 +1547,9 @@ For example in our image below we don t want the text to go above the tree in th
  
  
  
+ 
  <script src="assets/jquery-3.3.1.min.js"><br></script>
+ <script src="assets/prism.js"></script>
 <script>$( document ).ready(function() {
 
 
