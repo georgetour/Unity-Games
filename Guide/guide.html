@@ -160,7 +160,7 @@ You must select where you want to be created and if it's gonna be 2D or 3D</li>
 
 </section>
 
-
+<!--Chapter 5 Interface-->
 <section>
 <h1>Chapter 5 Interface</h1>
 
@@ -220,8 +220,29 @@ insert UI element <br><img class="small-image" src="images/add_ui_element.jpg"><
 <p>If you have text that values change from script first you must create the fields as shown in <br><img class="small-image" src="images/multiple_text_fields.jpg"><br></p>
 <p>Then you must assign them to inspector for script by draging and dropping them since they will have appeared to it as shown in <br><img class="small-image" src="images/multiple_text_to_script.jpg"><br></p>
 
+<h3>UI Slider</h3>
+<p>A UI slider is a premade slider that you can move to increase for example volume etc.</p>
+
+<img class="small-image" src="images/chapter5/add_ui_slider.jpg">
+<br>
+<p>You can control the slider dynamically in the Update() </p>
+<pre>
+<code class="language-javascript">
+    private void Update()
+    {
+        musicManager.ChangeVolume(volumeSlider.value);
+    }
+</code>
+</pre>
+<p>And then save it to PlayerPrefs as we can see in Glitch Garden.</p>
+<p>Also you can have the slider change in whole numbers. This is useful for let's say Easy - Medium - Hard difficulty.</p>
+<img class="small-image" src="images/chapter5/ui_slider_whole_numbers.jpg">
+
 
 </section>
+<!--End Chapter 5 Interface-->
+
+
 
 <section>
 

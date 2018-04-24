@@ -72,11 +72,11 @@ public class PlayerPrefsManager : MonoBehaviour
     }
 
     //Set difficulty
-    public static void SetDifficulty(int difficulty)
+    public static void SetDifficulty(float difficulty)
     {
         if (difficulty > 0 && difficulty<= 3)
         {
-            PlayerPrefs.SetInt(DIFFICULTY_KEY, difficulty);
+            PlayerPrefs.SetFloat(DIFFICULTY_KEY, difficulty);
         }
         else
         {
@@ -89,7 +89,7 @@ public class PlayerPrefsManager : MonoBehaviour
     //Get difficulty
     public static float GetDifficulty()
     {
-        return PlayerPrefs.GetInt(DIFFICULTY_KEY);
+        return PlayerPrefs.GetFloat(DIFFICULTY_KEY);
 
     }
 

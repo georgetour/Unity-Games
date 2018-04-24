@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour {
     Scene currentScene;
     string sceneName;
 
-    float secondsToLoad = 5;
+    float secondsToLoad = 3;
 
     private void Start()
     {

@@ -34,7 +34,7 @@ public class MusicManager : MonoBehaviour {
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
         AudioClip thisLevelMusic = levelMusicChangeArray[scene.buildIndex];
-        if (thisLevelMusic)
+        if (thisLevelMusic && audioSource.clip != thisLevelMusic)
         {
             Debug.Log("start music");
             audioSource.clip = thisLevelMusic;
@@ -44,6 +44,11 @@ public class MusicManager : MonoBehaviour {
             
            
         
+    }
+
+    public void ChangeVolume(float volume)
+    {
+        audioSource.volume = volume;
     }
 
     // Update is called once per frame
