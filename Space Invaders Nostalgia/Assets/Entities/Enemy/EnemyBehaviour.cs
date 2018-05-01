@@ -6,6 +6,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
 
     public float health = 250;
+    public static int enemiesKilled ;
 
 
     public float projectileSpeed = 10f;
@@ -15,7 +16,7 @@ public class EnemyBehaviour : MonoBehaviour {
     private ScoreKeeper scoreKeeper;
 
     public List<Projectile> weapons = new List<Projectile>();
-    public int currentWeapon = 0;
+    public int currentWeapon = 1;
 
     public AudioClip deathSound;
 
@@ -23,6 +24,7 @@ public class EnemyBehaviour : MonoBehaviour {
     private void Start()
     {
         scoreKeeper = GameObject.FindGameObjectWithTag("ScoreKeeper").GetComponent<ScoreKeeper>();
+        
     }
 
     private void Update()
@@ -51,7 +53,10 @@ public class EnemyBehaviour : MonoBehaviour {
         {
             Die();
         }
-                
+        if (enemiesKilled >5)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 
@@ -61,7 +66,8 @@ public class EnemyBehaviour : MonoBehaviour {
         AudioSource.PlayClipAtPoint(deathSound, transform.position);
         Destroy(this.gameObject);
         scoreKeeper.ScoreToGive(1000);
-        
+        enemiesKilled++;
+        Debug.Log(enemiesKilled);
     }
 
     //Make the enemy shoot

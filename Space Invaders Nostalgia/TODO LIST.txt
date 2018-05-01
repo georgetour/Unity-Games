@@ -25,4 +25,10 @@ Add sounds :
 - The enemies fire ok 
 - An enemy dies ok
 
+How it will work :
+We will have a formation prefab which we already have (Enemy Formation) that will work like scenes
+Each prefab will have total enemies if all enemies die Instatiate nexr prefab
 
+Probably must use Resources.Load
+
+https://www.udemy.com/unitycourse/learn/v4/questions/1390034

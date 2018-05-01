@@ -40,6 +40,7 @@ public class FormationController : MonoBehaviour {
         if (AllMembersDead())
         {
             SpawnUntilFull();
+            Destroy(gameObject);
         }
         
     }
